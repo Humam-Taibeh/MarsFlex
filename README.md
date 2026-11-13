@@ -19,6 +19,19 @@ Start from the whole planet (**Globe**, Viking MDIM 2.1), descend to Jezero (**3
 |---|---|
 | ![Globe](docs/images/globe.png) | ![2D map](docs/images/map-2d.png) |
 
+## Challenge requirements at a glance
+
+| Challenge requirement | Where it is met |
+|---|---|
+| Layered, integrated view of a Martian location and route, from several NASA missions | Jezero Crater: CTX imagery + terrain, HiRISE terrain, CRISM spectral parameters, USGS geologic units, PIXL chemistry, MEDA weather, MSL RAD radiation context, Viking global mosaic |
+| At least three kinds of data | Optical, topographic, spectral, chemical, atmospheric, geologic, radiation (see [DATA_SOURCES](docs/legal/DATA_SOURCES.md)) |
+| Safety first | Time reserve and return-feasibility colouring, slope gates, radiation context, explicit limits on every number |
+| Route that avoids obstacles | Terrain-aware routing with slope and NoData gates; unresolved boulder-scale hazards are disclosed |
+| Helps plan and carry out a Marswalk | Scenario planner: stops, detour test, time/metabolic budget, evidence for each stop, profile, export |
+| Use NASA data and credit it | Every source is cited in the app and in `docs/`; no data without a stated origin |
+
+Equations are checked by independent re-derivation tests; see [docs/science/VERIFICATION.md](docs/science/VERIFICATION.md) for what is and is not claimed.
+
 ## Run it
 
 Requires Python 3.12+ and internet access on first launch (installs pinned dependencies into `.marsflex-venv`).
