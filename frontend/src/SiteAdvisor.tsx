@@ -21,7 +21,7 @@ export function SiteAdvisor({data,busy,weights,onWeights,onRecompute,onFly,onPla
     <ol className="site-list">{sites.map(s=><li key={s.rank} className={open===s.rank?'open':''}>
       <button className="site-row" aria-expanded={open===s.rank} onClick={()=>{setOpen(s.rank);onFly(s);}}>
         <span className="site-rank">{s.rank}</span>
-        <span className="site-main"><b>{s.nearest_target&&s.nearest_target_m<600?`Near ${s.nearest_target}`:`Candidate ${s.rank}`}</b>
+        <span className="site-main"><b>{s.nearest_target&&s.nearest_target_m<600?`Near ${s.nearest_target} · ${Math.round(s.nearest_target_m)} m`:`Candidate ${s.rank}`}</b>
           <small>{Math.round(s.round_trip_min)} min round trip · {s.round_trip_o2_kg.toFixed(2)} kg O₂ · slope {s.slope_deg.toFixed(1)}°</small></span>
         <span className="site-score"><b>{Math.round(s.score*100)}</b><small>/100</small></span>
       </button>
