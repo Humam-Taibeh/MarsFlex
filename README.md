@@ -7,11 +7,17 @@ plans scenario walks for a human explorer: terrain-aware routes, optional scienc
 metabolic budget, and traceable orbital/rover evidence for every number shown.
 
 Data layers: CTX and HiRISE terrain (MRO/USGS), CRISM spectral parameters, USGS geologic units,
-PIXL rover measurements, and archived Perseverance MEDA weather.
+PIXL rover measurements, archived Perseverance MEDA weather, a published Mars-surface radiation rate (MSL RAD), and the Viking MDIM 2.1 global mosaic for the planet view.
 Green/Yellow/Red denotes feasibility under declared scenario assumptions; it is **not** an operational
 safety certification. Details: [docs/science/MODEL_ASSUMPTIONS.md](docs/science/MODEL_ASSUMPTIONS.md).
 
 ![Workbench](docs/images/workbench.png)
+
+Start from the whole planet (**Globe**, Viking MDIM 2.1), descend to Jezero (**3D** relief, drawn 2.2× for display only, or a top-down **2D** map), plan a walk, and read the evidence and radiation context for it.
+
+| Globe | 2D map |
+|---|---|
+| ![Globe](docs/images/globe.png) | ![2D map](docs/images/map-2d.png) |
 
 ## Run it
 

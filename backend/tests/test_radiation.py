@@ -35,3 +35,10 @@ def test_large_payloads_are_compressed_and_cacheable():
     r = client.get('/v1/terrain/surface', headers={'Accept-Encoding': 'gzip'})
     assert r.headers.get('content-encoding') == 'gzip'
     assert 'max-age' in r.headers.get('cache-control', '')
+
+
+def test_globe_texture_is_served_with_cache_header():
+    r = client.get('/v1/map/image/globe')
+    assert r.status_code == 200 and r.headers['content-type'] == 'image/jpeg'
+    assert 'max-age' in r.headers.get('cache-control', '')
+    assert r.content[:2] == b'\xff\xd8'

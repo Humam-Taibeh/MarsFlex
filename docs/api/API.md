@@ -110,3 +110,5 @@ endpoint and freedom field remain time-only. See INTEGRATION_LEVEL1_AR.md.
 `GET /v1/environment/radiation?minutes=300` (0–1440) returns the published Mars-surface GCR dose rate (RAD, Hassler et al. 2014)
 scaled to the walk duration, the fraction of NASA's 600 mSv career limit, a 500-day reference stay, the sources and the limitations.
 Status is always `scenario_context_not_a_dose_prediction`. Never used by routing.
+
+`GET /v1/map/image/globe` returns the 6144 × 3072 equirectangular Viking MDIM 2.1 texture used by the Globe view (see docs/legal/DATA_SOURCES.md).

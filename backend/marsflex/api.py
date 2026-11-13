@@ -548,7 +548,7 @@ def map_layers():
 @app.get('/v1/map/image/{name}')
 def map_image(name: str):
     files={'orbital':'ctx_orbital.jpg','hirise':'hirise_delta.jpg','slope':'slope_overlay.png',
-           'geology':'geology_units_display.png',**{v:f'{v}_overlay.png' for v in ['BD1900_2','D2300','BD2500_2']}}
+           'geology':'geology_units_display.png','globe':'mars_globe_viking_6k.jpg',**{v:f'{v}_overlay.png' for v in ['BD1900_2','D2300','BD2500_2']}}
     if name not in files:raise HTTPException(404,'Unknown layer')
     return FileResponse(OUT/files[name])
 

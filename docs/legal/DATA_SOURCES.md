@@ -195,3 +195,12 @@ The radiation card uses **one published measurement**, scaled linearly by walk d
 Limits (also shown in the app): measured at Gale, not Jezero (Jezero is higher, so a somewhat higher dose is expected; not modelled);
 galactic cosmic rays only, solar particle events are not modelled; measured inside the rover, so spacesuit shielding is not modelled.
 This is scenario context, not a dose prediction or operational guidance. Radiation is not used by routing or the green/yellow/red field.
+
+## Global Mars globe texture (Viking MDIM 2.1)
+
+The Globe view uses the **Viking MDIM 2.1 Colorized Global Mosaic, 232 m/pixel** (USGS Astrogeology Science Center, NASA Ames originator;
+public domain): https://astrogeology.usgs.gov/search/map/mars_viking_colorized_global_mosaic_232m
+The 12.7 GB source GeoTIFF (92160 × 46080, simple cylindrical, Mars 2000 sphere) is not stored in git. `backend/pipeline/build_globe_texture.py`
+area-averages it to `data/derived/mars_globe_viking_6k.jpg` (6144 × 3072) with a JSON receipt (`mars_globe_viking_6k.json`, SHA-256 included).
+The globe is context only: it is a coarse colour image on a sphere, without relief. Routing, slopes and all measurements use the CTX/HiRISE products above.
+The credit "Globe: USGS / NASA Viking MDIM 2.1" is shown in the viewer.

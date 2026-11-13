@@ -33,6 +33,14 @@ export class MarsScene {
   mode='inspect';
   layerSerial=0;
   routeSerial=0;
+  terrain!:C.Primitive;
+  globeLayer?:C.ImageryLayer;
+  globeData?:C.CustomDataSource;
+  globeReady=false;
+  globeMode=false;
+  globeLoading:Promise<void>=Promise.resolve();
+  fadeSerial=0;
+  onMode?:(m:'globe'|'3d'|'2d')=>void;
   orbital:HTMLImageElement|undefined;
   markerEntities:C.Entity[]=[];
   contactEntities:C.Entity[]=[];
@@ -92,7 +100,7 @@ export class MarsScene {
       indices,primitiveType:C.PrimitiveType.TRIANGLES,boundingSphere:C.BoundingSphere.fromVertices(positions)});
     geometry=C.GeometryPipeline.computeNormal(geometry);
     this.material=C.Material.fromType('Image',{image:this.texture(this.base)});
-    this.viewer.scene.primitives.add(new C.Primitive({geometryInstances:new C.GeometryInstance({geometry,modelMatrix:this.frame,id:'ctx-terrain'}),
+    this.terrain=this.viewer.scene.primitives.add(new C.Primitive({geometryInstances:new C.GeometryInstance({geometry,modelMatrix:this.frame,id:'ctx-terrain'}),
       appearance:new C.MaterialAppearance({material:this.material,translucent:false,faceForward:true}),asynchronous:false}));
     this.rover=this.viewer.scene.primitives.add(new C.PointPrimitiveCollection());
     this.click=new C.ScreenSpaceEventHandler(this.viewer.canvas);
@@ -104,15 +112,82 @@ export class MarsScene {
       const point={lon:(p.x/this.cos+this.cx)/this.grid.radius_m*180/Math.PI,lat:(p.y+this.cy)/this.grid.radius_m*180/Math.PI};
       if(this.index(point)!==null)onPick(point);
     },C.ScreenSpaceEventType.LEFT_CLICK);
-    this.home(false,false);this.intro();
+    this.home(false,false);
+    this.viewer.creditDisplay.addStaticCredit(new C.Credit('Globe: USGS / NASA Viking MDIM 2.1',true));
+    this.globeLoading=this.initGlobe().catch(()=>{this.globeReady=false;});
   }
+  /** Global Mars sphere textured with the Viking MDIM 2.1 colour mosaic (down-sampled from 232 m/pixel). */
+  private async initGlobe(){
+    const sphere=this.viewer.scene.mapProjection.ellipsoid;
+    const provider=await C.SingleTileImageryProvider.fromUrl('/v1/map/image/globe',{rectangle:C.Rectangle.MAX_VALUE});
+    const globe=new C.Globe(sphere);globe.show=false;globe.showGroundAtmosphere=false;globe.enableLighting=false;
+    globe.baseColor=C.Color.fromCssColorString('#140e0b');globe.showWaterEffect=false;
+    this.viewer.scene.globe=globe;this.globeLayer=globe.imageryLayers.addImageryProvider(provider);
+    this.globeData=new C.CustomDataSource('globe-overview');this.globeData.show=false;void this.viewer.dataSources.add(this.globeData);
+    this.globeData.entities.add({position:C.Cartesian3.fromDegrees(77.45,18.44,0,sphere),
+      point:{pixelSize:13,color:C.Color.fromCssColorString('#ff8a4c'),outlineWidth:3,outlineColor:C.Color.fromCssColorString('#0a1217'),disableDepthTestDistance:Number.POSITIVE_INFINITY},
+      label:{text:'Jezero Crater · Perseverance landing region',font:'600 13px "Segoe UI Variable","Segoe UI",Inter,system-ui,sans-serif',fillColor:C.Color.WHITE,showBackground:true,
+        backgroundColor:C.Color.fromCssColorString('#09131ad9'),backgroundPadding:new C.Cartesian2(10,7),style:C.LabelStyle.FILL,pixelOffset:new C.Cartesian2(0,-22),
+        verticalOrigin:C.VerticalOrigin.BOTTOM,disableDepthTestDistance:Number.POSITIVE_INFINITY}});
+    this.globeReady=true;
+  }
+  private reduced(){return typeof matchMedia==='function'&&matchMedia('(prefers-reduced-motion: reduce)').matches;}
+  private setGlobeVisible(on:boolean){
+    this.globeMode=on;const g=this.viewer.scene.globe;if(g)g.show=on;
+    this.terrain.show=!on;this.rover.show=!on;this.viewer.entities.show=!on;if(this.globeData)this.globeData.show=on;
+    const ctl=this.viewer.scene.screenSpaceCameraController;ctl.minimumZoomDistance=on?400000:80;ctl.maximumZoomDistance=on?4e7:45000;ctl.enableTilt=on?true:!this.is2D;
+    this.viewer.scene.requestRender();
+  }
+  private fadeGlobe(from:number,to:number,ms:number,delay=0){
+    const layer=this.globeLayer;if(!layer)return;const serial=++this.fadeSerial,t0=performance.now()+delay;
+    if(ms<=0){layer.alpha=to;this.viewer.scene.requestRender();return;}
+    const step=(now:number)=>{if(serial!==this.fadeSerial)return;const k=Math.max(0,Math.min(1,(now-t0)/ms));layer.alpha=from+(to-from)*k;this.viewer.scene.requestRender();if(k<1)requestAnimationFrame(step);};
+    layer.alpha=from;requestAnimationFrame(step);
+  }
+  /** Planet view: full Mars disc with the mission area marked. */
+  toGlobe(instant=false){
+    if(!this.globeReady||this.globeMode)return;
+    const cam=this.viewer.camera;cancelAnimationFrame(this.anim);
+    const pos=C.Cartesian3.clone(cam.positionWC),dir=C.Cartesian3.clone(cam.directionWC),up=C.Cartesian3.clone(cam.upWC);
+    cam.lookAtTransform(C.Matrix4.IDENTITY);cam.setView({destination:pos,orientation:{direction:dir,up}});
+    this.onMode?.('globe');this.setGlobeVisible(true);
+    const sphere=this.viewer.scene.mapProjection.ellipsoid,dest=C.Cartesian3.fromDegrees(77.4,14,9_000_000,sphere),ori={heading:0,pitch:-Math.PI/2,roll:0};
+    if(instant||this.reduced()){this.fadeGlobe(1,1,0);cam.setView({destination:dest,orientation:ori});this.viewer.scene.requestRender();return;}
+    this.fadeGlobe(0,1,900);
+    cam.flyTo({destination:dest,orientation:ori,duration:2.4,easingFunction:C.EasingFunction.CUBIC_IN_OUT});
+  }
+  /** Fly from the planet down to the local relief; the globe fades out as the CTX/HiRISE surface takes over. */
+  toLocal(flat=false,after?:()=>void){
+    if(!this.globeMode){after?.();return;}
+    cancelAnimationFrame(this.anim);this.onMode?.(flat?'2d':'3d');
+    const sphere=this.viewer.scene.mapProjection.ellipsoid,H:Point={lon:77.397,lat:18.49},home=this.local(H,this.index(H)??0);
+    const finish=()=>{this.setGlobeVisible(false);this.setPlanar(flat);
+      this.apply(home,0,-Math.PI/2,120000);this.fly(home,0,flat?-Math.PI/2:-1.0,flat?10500:8200,this.reduced()?0:1800);after?.();};
+    if(this.reduced()){finish();return;}
+    this.fadeGlobe(1,0,1100,1500);
+    this.viewer.camera.flyTo({destination:C.Cartesian3.fromDegrees(H.lon,H.lat,120000,sphere),orientation:{heading:0,pitch:-Math.PI/2,roll:0},
+      duration:2.7,easingFunction:C.EasingFunction.CUBIC_IN_OUT,complete:finish});
+  }
+  /** Single entry point for the Globe / 3D / 2D switch. */
+  go(mode:'globe'|'3d'|'2d'){
+    if(mode==='globe'){this.toGlobe();return;}
+    if(this.globeMode){this.toLocal(mode==='2d');return;}
+    this.onMode?.(mode);this.home(mode==='2d');
+  }
+  /** Opening sequence: planet first, then down to the mission area. */
+  async startIntro(){
+    await this.globeLoading;
+    if(!this.globeReady||this.reduced()){this.onMode?.('3d');this.intro();return;}
+    this.toGlobe(true);setTimeout(()=>this.toLocal(false),1300);
+  }
+
   texture(pixels:Uint8ClampedArray){const canvas=document.createElement('canvas');canvas.width=this.w;canvas.height=this.h;canvas.getContext('2d')!.putImageData(new ImageData(new Uint8ClampedArray(pixels),this.w,this.h),0,0);return canvas;}
   index(p:Point){const [a,,c,,,f]=this.grid.transform;const col=Math.floor((p.lon*Math.PI/180*this.grid.radius_m-c)/a),r=Math.floor((f-p.lat*Math.PI/180*this.grid.radius_m)/a);return col>=0&&col<this.w&&r>=0&&r<this.h?r*this.w+col:null;}
   /** Scene height of a source elevation (display exaggeration applied). */
   zz(z:number){return (z-this.baseHeight)*this.exag;}
   local(p:Point,i:number){return new C.Cartesian3((p.lon*Math.PI/180*this.grid.radius_m-this.cx)*this.cos,p.lat*Math.PI/180*this.grid.radius_m-this.cy,this.zz(this.z[i]));}
   world(p:Point,z?:number,lift=5){const i=this.index(p);if(i===null)return null;return C.Matrix4.multiplyByPoint(this.frame,new C.Cartesian3((p.lon*Math.PI/180*this.grid.radius_m-this.cx)*this.cos,p.lat*Math.PI/180*this.grid.radius_m-this.cy,this.zz(z??this.z[i])+lift),new C.Cartesian3());}
-  home(top=false,animate=true){this.focus({lon:77.397,lat:18.49},top?10500:8200,top,animate);}
+  home(top=false,animate=true){if(this.globeMode){this.toLocal(top);return;}this.focus({lon:77.397,lat:18.49},top?10500:8200,top,animate);}
   /** Current camera as local target + heading/pitch/range, so transitions start where the user left the view. */
   private pose(){const c=this.viewer.camera;const origin=C.Matrix4.getTranslation(c.transform,new C.Cartesian3());
     return {target:C.Matrix4.multiplyByPoint(this.inverse,origin,new C.Cartesian3()),heading:c.heading,pitch:c.pitch,range:C.Cartesian3.magnitude(c.position)};}
@@ -134,13 +209,14 @@ export class MarsScene {
     this.apply(home,.9,-.55,26000);this.fly(home,0,-1.0,8200,2600);setTimeout(()=>{this.introDone=true;},2700);}
   focus(p:Point,range=3400,top=false,animate=true){
     const i=this.index(p);if(i===null)return;
+    if(this.globeMode){this.toLocal(top,()=>this.focus(p,range,top,animate));return;}
     this.setPlanar(top);
     this.fly(this.local(p,i),0,top?-Math.PI/2:-1.0,range,animate?900:0);
   }
   /** 2D = top-down map: tilt is disabled so the view cannot be dragged edge-on. 3D keeps tilt within a safe range. */
   setPlanar(flat:boolean){this.is2D=flat;this.viewer.scene.screenSpaceCameraController.enableTilt=!flat;}
   private limitPitch(){
-    if(this.is2D)return;const c=this.viewer.camera;
+    if(this.is2D||this.globeMode)return;const c=this.viewer.camera;
     if(c.pitch>-.28){const t=c.transform,h=c.heading,r=C.Cartesian3.magnitude(c.position);c.lookAtTransform(t,new C.HeadingPitchRange(h,-.28,r));}
   }
   zoom(factor:number){this.viewer.camera.zoomIn(this.viewer.camera.positionCartographic.height*factor);this.viewer.scene.requestRender();}
@@ -205,5 +281,5 @@ export class MarsScene {
         pixelOffset:new C.Cartesian2(0,-20),verticalOrigin:C.VerticalOrigin.BOTTOM,horizontalOrigin:C.HorizontalOrigin.CENTER,disableDepthTestDistance:Number.POSITIVE_INFINITY}}));}
     this.viewer.scene.requestRender();
   }
-  destroy(){cancelAnimationFrame(this.anim);this.routeSerial++;this.click.destroy();this.viewer.destroy();}
+  destroy(){cancelAnimationFrame(this.anim);this.fadeSerial++;this.routeSerial++;this.click.destroy();this.viewer.destroy();}
 }

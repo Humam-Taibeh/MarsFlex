@@ -196,3 +196,25 @@ button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{o
 .decision-app.presentation .map-space::before{content:"";position:absolute;inset:0 0 auto 0;height:170px;background:linear-gradient(180deg,#060b10cc,#060b1000);pointer-events:none;z-index:1}
 .decision-app.presentation .decision-map-title,.decision-app.presentation .view-tools{z-index:4}
 .cesium-viewer-bottom .cesium-widget-credits{background:#060b10b8;padding:4px 10px;border-radius:8px}
+
+/* ---- Globe / 3D / 2D switch: the old fixed 31px buttons clipped the labels ---- */
+.view-switch{display:flex;gap:2px}
+.view-switch button{width:auto!important;min-width:0;white-space:nowrap;padding:8px 15px!important;font-size:12.5px!important}
+
+/* ---- collapsed dock = slim summary bar ---- */
+.dock-summary{display:none}
+.trust-strip.collapsed{max-height:52px;min-height:52px;border-top-color:var(--mf-line-strong)}
+.trust-strip.collapsed>div:not(.dock-summary){display:none}
+.trust-strip.collapsed .dock-summary{display:flex;visibility:visible;align-items:center;gap:34px;padding:0 26px;border-left:0;grid-column:1/-1;width:100%}
+.dock-summary>span{display:flex;align-items:baseline;gap:10px;white-space:nowrap}
+.dock-summary small{font-size:11px;letter-spacing:.06em;color:var(--mf-dim);text-transform:uppercase}
+.dock-summary b{font-size:15px;font-weight:600;color:var(--mf-text)}
+.dock-more{margin-left:auto;background:transparent;border:1px solid var(--mf-line-strong);color:var(--mf-muted);border-radius:999px;padding:7px 14px;font-size:12px;cursor:pointer}
+.dock-more:hover{color:var(--mf-text);border-color:var(--mf-accent)}
+.trust-strip.collapsed .dock-toggle{display:none}
+.trust-strip{grid-template-columns:minmax(220px,1.1fr) minmax(170px,.8fr) minmax(280px,1.6fr) minmax(250px,1.3fr)}
+@media (max-width:1180px){.dock-summary{gap:18px;flex-wrap:wrap}.trust-strip.collapsed{max-height:none;padding:8px 0}.trust-strip.collapsed .dock-summary{padding:6px 16px}}
+@media (max-width:640px){.dock-summary>span:nth-child(2){display:none}}
+
+/* the map always fills the stage (old rule capped it at 330px on narrow screens) */
+.decision-app.presentation .terrain-canvas{inset:0!important;height:auto!important;bottom:0!important}

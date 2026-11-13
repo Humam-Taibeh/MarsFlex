@@ -1,0 +1,27 @@
+{
+  "source_file": "Mars_Viking_MDIM21_ClrMosaic_global_232m.tif",
+  "source_size": [
+    92160,
+    46080
+  ],
+  "source_res_m": [
+    231.5417872,
+    231.5417872
+  ],
+  "bounds_m": [
+    -10669445.55419512,
+    -5334722.777078439,
+    10669445.554156877,
+    5334722.77709756
+  ],
+  "sphere_radius_m": 3396189.999987827,
+  "output": "mars_globe_viking_6k.jpg",
+  "output_size": [
+    6144,
+    3072
+  ],
+  "output_bytes": 3893837,
+  "output_sha256": "1c19d7f48c724d8979ebfdf7ac20ed815ce3c1d343296060ce34756f7f7fe075",
+  "resampling": "area average of source pixels; no sharpening",
+  "credit": "USGS Astrogeology Science Center / NASA, Viking MDIM 2.1 colorized global mosaic"
+}
