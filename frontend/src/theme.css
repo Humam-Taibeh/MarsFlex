@@ -382,3 +382,37 @@ button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{o
 @media (prefers-reduced-motion:reduce){.mf-fx{display:none}}
 
 /* Performance rule: no endless CSS animation over the 3D map except loaders and alerts (they force full-frame compositing of the blurred panels). */
+
+/* ===== Advanced mode: same identity as the decision view ===== */
+.decision-app.advanced{font-family:var(--mf-font);background:var(--mf-bg)}
+.decision-app.advanced .topbar{background:var(--mf-bg);border-bottom:1px solid var(--mf-line)}
+.decision-app.advanced .brand span{color:var(--mf-accent)}
+.decision-app.advanced .top-right>button{border-radius:999px;font-size:12px;color:var(--mf-muted)}
+.decision-app.advanced .top-right>button:hover{color:var(--mf-text)}
+.decision-app.advanced .glass{background:var(--mf-panel)!important;backdrop-filter:blur(22px) saturate(1.25);border:1px solid var(--mf-line)!important;border-radius:18px!important;box-shadow:0 24px 60px #0008}
+.decision-app.advanced .overline{color:var(--mf-accent);letter-spacing:.18em;font-weight:700;font-size:10.5px}
+.decision-app.advanced .left-panel h1,.decision-app.advanced .right-panel h3{font-weight:650;letter-spacing:-.02em;color:var(--mf-text)}
+.decision-app.advanced .subtle,.decision-app.advanced .footnote,.decision-app.advanced .mission-contract{font-size:12px;line-height:1.55}
+.decision-app.advanced .workspace-tabs{border-radius:14px;background:var(--mf-panel);border:1px solid var(--mf-line)}
+.decision-app.advanced .workspace-tabs button.active{background:var(--mf-accent-soft);color:#ffd9c2}
+.decision-app.advanced .calculate{border-radius:12px;border:0;color:#1a0d05;font-weight:700;background:linear-gradient(135deg,#ffb27a,var(--mf-accent))}
+.decision-app.advanced .route-deck{background:linear-gradient(180deg,#0a141b,#070e13);border-top:1px solid var(--mf-line-strong)}
+.decision-app.advanced .map-heading .overline{color:var(--mf-accent)}
+.decision-app.advanced .cesium-viewer-bottom{left:50%!important;right:auto!important;transform:translateX(-50%);bottom:6px!important}
+
+/* ===== 3D terrain & sections (GeoStudio) ===== */
+.modebar{background:var(--mf-bg)!important;border-bottom:1px solid var(--mf-line)!important;font-family:var(--mf-font)}
+.modebar>span{font-size:10px!important;color:var(--mf-dim)!important}
+.modebar>button{font-size:12.5px!important;color:var(--mf-muted)!important}
+.modebar>button.active{border-color:var(--mf-accent)!important;background:#ffffff08!important;color:var(--mf-text)!important}
+.geo-studio{font-family:var(--mf-font);background:var(--mf-bg)!important;height:calc(100vh - 37px)!important;height:calc(100dvh - 37px)!important;min-height:0!important}
+.geo-header{background:var(--mf-bg)!important;border-bottom:1px solid var(--mf-line)!important}
+.geo-brand>span{color:var(--mf-accent)!important}
+.geo-brand>small,.geo-breadcrumb{font-size:10px!important}
+.geo-eyebrow{color:var(--mf-accent)!important;font-weight:700;letter-spacing:.18em}
+.geo-header-mission{background:linear-gradient(135deg,#ffb27a,var(--mf-accent))!important;color:#1a0d05!important;border:0!important;border-radius:999px!important;font-weight:700}
+.geo-header-right>button,.geo-header-right>a{font-size:12px!important}
+.geo-camera{border-radius:999px!important;overflow:hidden;background:var(--mf-panel)!important;backdrop-filter:blur(14px)}
+.geo-camera button{font-size:12px!important}
+.geo-elevation-legend,.geo-block-note{border-radius:14px!important;background:var(--mf-panel)!important;backdrop-filter:blur(14px);border:1px solid var(--mf-line)!important}
+.geo-nav-hint{border-radius:999px!important;font-size:11.5px!important}
