@@ -99,3 +99,19 @@ def test_api_validation():
     assert client.post('/v1/mission/life-support', json={**BODY, 'suit_id': 'mars_suit'}).status_code == 422
     assert client.post('/v1/mission/life-support', json={**BODY, 'body_mass_kg': 5}).status_code == 422
     assert client.get('/v1/life-support/suits').json()['suits'][0]['primary_o2_kg'] == 0.54
+
+
+def test_pov_images_are_credited_and_served_only_from_manifest():
+    m = client.get('/v1/pov').json()
+    assert set(m['stations']) == {'swift-run', 'hazeltop', 'shuyak'}
+    for s in m['stations'].values():
+        assert len(s['images']) >= 2
+        for img in s['images']:
+            assert img['credit'].startswith('NASA/JPL-Caltech')
+            assert img['link'].startswith('https://mars.nasa.gov/')
+            r = client.get('/v1/pov/image/' + img['file'])
+            assert r.status_code == 200 and r.content[:2] == b'\xff\xd8'
+            import hashlib
+            assert hashlib.sha256(r.content).hexdigest() == img['sha256']
+    assert client.get('/v1/pov/image/..%2Fgrid.json').status_code == 404
+    assert client.get('/v1/pov/image/manifest.json').status_code == 404

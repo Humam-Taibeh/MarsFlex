@@ -30,7 +30,7 @@ COMPUTE_LOCK = threading.Lock()
 # Compress JSON/JS/CSS (the terrain payload and Cesium bundle are several MB uncompressed).
 app.add_middleware(GZipMiddleware, minimum_size=1024, compresslevel=5)
 
-_CACHEABLE = ('/v1/map/image/', '/v1/terrain/surface', '/v1/layers/', '/assets/', '/cesium/')
+_CACHEABLE = ('/v1/pov/image/', '/v1/map/image/', '/v1/terrain/surface', '/v1/layers/', '/assets/', '/cesium/')
 
 
 @app.middleware('http')
@@ -645,6 +645,23 @@ def site_score(request: SiteRequest):
                 'operational_safety_certified': False}
     finally:
         COMPUTE_LOCK.release()
+
+
+@app.get('/v1/pov')
+def pov_manifest():
+    """Point-of-view rover images per science station (NASA Mars 2020 raw images, credited)."""
+    path = OUT / 'pov/manifest.json'
+    if not path.is_file():
+        raise HTTPException(404, 'No point-of-view images prepared')
+    return json.loads(path.read_text())
+
+
+@app.get('/v1/pov/image/{name}')
+def pov_image(name: str):
+    allowed = {img['file'] for s in pov_manifest()['stations'].values() for img in s['images']}
+    if name not in allowed:
+        raise HTTPException(404, 'Unknown image')
+    return FileResponse(OUT / 'pov' / name, media_type='image/jpeg')
 
 
 @app.get('/v1/mission/metabolic/assumptions')

@@ -231,3 +231,12 @@ round-trip O₂ / reference-suit O₂, and round trip / reference-suit EVA time 
 target (Mars 2020 Initial Reports, e-folding 300 m), 35% CRISM summary-parameter strength (max of BD1900_2, D2300, BD2500_2 after the
 published P5–P95 display stretch), 20% within 500 m of a recorded Perseverance position (Mars 2020 PDS places). Default weights 25/25/50 are a
 declared team choice, shown in the app and adjustable. The advisor ranks planning candidates; it does not identify minerals or certify safety.
+
+## Point-of-view rover images
+
+`data/derived/pov/` holds 9 browse JPGs (3 per station) selected from the public NASA Mars 2020 raw-image feed
+(https://mars.nasa.gov/mars2020/multimedia/raw-images/) for the abrasion and sampling sols of Swift Run (484/490), Hazeltop (505/509) and
+Shuyak (570/575), using `backend/pipeline/fetch_pov.py`. `manifest.json` records for each image: image id, sol, camera, UTC date, the credit
+exactly as published ("NASA/JPL-Caltech" or "NASA/JPL-Caltech/ASU"), the original page link and a SHA-256. `candidates.json` lists every
+candidate that was reviewed. Images are raw and unprocessed, show the rover viewpoint (not an astronaut viewpoint), and are shown with their
+credit; use follows the JPL Image Use Policy (https://www.jpl.nasa.gov/jpl-image-use-policy/). No NASA endorsement is implied.

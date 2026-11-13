@@ -333,3 +333,22 @@ button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{o
 @keyframes mf-twinkle{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.55;transform:scale(.82)}}
 @keyframes mf-spin{to{transform:rotate(360deg)}}
 @keyframes mf-grow{from{width:0}}
+
+/* ---- point-of-view rover images ---- */
+.pov{margin:12px 0 14px}
+.pov-head{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:8px}
+.pov-head small{font-size:11px;color:var(--mf-dim)}
+.pov-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.pov-strip button{position:relative;padding:0;border:1px solid var(--mf-line);border-radius:10px;overflow:hidden;cursor:zoom-in;background:#000;aspect-ratio:4/3;animation:mf-pop .5s var(--mf-ease) backwards}
+.pov-strip img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s var(--mf-ease),filter .3s;filter:saturate(1.05)}
+.pov-strip button:hover img{transform:scale(1.08);filter:saturate(1.2) brightness(1.08)}
+.pov-strip button:hover{border-color:var(--mf-accent);box-shadow:0 0 18px #ff8a4c44}
+.pov-strip span{position:absolute;left:0;right:0;bottom:0;padding:14px 6px 4px;font-size:9.5px;color:#fff;background:linear-gradient(transparent,#000c);text-align:left}
+.pov-note{display:block;font-size:10.5px;color:var(--mf-dim);margin-top:6px;line-height:1.4}
+.pov-lightbox{position:fixed;inset:0;z-index:200;display:grid;place-items:center;background:#02050899;backdrop-filter:blur(10px);animation:mf-fade .25s ease}
+.pov-lightbox figure{position:relative;margin:0;max-width:min(1100px,94vw);border-radius:16px;overflow:hidden;border:1px solid var(--mf-line-strong);box-shadow:0 30px 80px #000c;background:#0b151d;animation:mf-pop .35s var(--mf-ease)}
+.pov-lightbox img{display:block;width:100%;max-height:76vh;object-fit:contain;background:#000}
+.pov-lightbox figcaption{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:baseline;padding:12px 16px;font-size:12.5px;color:#c4d2d9}
+.pov-lightbox figcaption b{color:var(--mf-text)}.pov-lightbox figcaption a{margin-left:auto;color:#ffb98c}
+.pov-close{position:absolute;top:10px;right:10px;width:36px;height:36px;border-radius:50%;border:0;background:#000a;color:#fff;cursor:pointer}
+@keyframes mf-fade{from{opacity:0}}

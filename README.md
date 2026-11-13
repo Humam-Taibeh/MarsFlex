@@ -28,6 +28,7 @@ Start from the whole planet (**Globe**, Viking MDIM 2.1), descend to Jezero (**3
 | At least three kinds of data | Optical, topographic, spectral, chemical, atmospheric, geologic, radiation (see [DATA_SOURCES](docs/legal/DATA_SOURCES.md)) |
 | Safety first | Time reserve and return-feasibility colouring, slope gates, **oxygen and suit-time ledger with a turn-back point** (NASA EMU as reference suit), radiation context, explicit limits on every number |
 | Route that avoids obstacles | Terrain-aware routing with slope and NoData gates; unresolved boulder-scale hazards are disclosed |
+| Point-of-view images (suggested by the challenge) | Each science station shows raw Perseverance Hazcam, Navcam and Mastcam-Z images taken there, with NASA credit and a link to the original |
 | Helps plan and carry out a Marswalk | Scenario planner: stops, detour test, time and oxygen budget, **Walk the route** replay with a suit HUD, evidence for each stop, profile, export |
 | Use NASA data and credit it | Every source is cited in the app and in `docs/`; no data without a stated origin |
 

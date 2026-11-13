@@ -1,0 +1,139 @@
+{
+ "source": "NASA Mars 2020 raw images, https://mars.nasa.gov/mars2020/multimedia/raw-images/",
+ "policy": "JPL Image Use Policy: https://www.jpl.nasa.gov/jpl-image-use-policy/ ; credit shown with every image; no NASA endorsement implied.",
+ "note": "Raw, unprocessed rover images taken at or next to the station. They show the rover viewpoint, not an astronaut viewpoint.",
+ "stations": {
+  "swift-run": {
+   "name": "Swift Run",
+   "images": [
+    {
+     "imageid": "NLF_0490_0710456117_926ECM_N0261004NCAM00709_01_095J",
+     "sol": 490,
+     "camera": "NAVCAM_LEFT",
+     "filter": "UNK",
+     "date_taken_utc": "2022-07-07T09:02:42.128",
+     "credit": "NASA/JPL-Caltech",
+     "caption": "NASA's Mars Perseverance rover acquired this image using its onboard Left Navigation Camera (Navcam). The camera is located high on the rover's mast and aids in driving. \n\nThis image was acquired on July 7, 2022 (Sol 490) at the local mean solar time of 16:52:35.",
+     "link": "https://mars.nasa.gov/mars2020/multimedia/raw-images/NLF_0490_0710456117_926ECM_N0261004NCAM00709_01_095J",
+     "file": "NLF_0490_0710456117_926ECM_N0261004NCAM00709_01_095J.jpg",
+     "sha256": "7cb5ecd8cf6e0be168f5428dff09f89a5406419123eaa676fd9ba052b873e416",
+     "bytes": 82195
+    },
+    {
+     "imageid": "FLF_0490_0710454121_433ECM_N0261004FHAZ00203_16_195J",
+     "sol": 490,
+     "camera": "FRONT_HAZCAM_LEFT_A",
+     "filter": "UNK",
+     "date_taken_utc": "2022-07-07T08:29:18.998",
+     "credit": "NASA/JPL-Caltech",
+     "caption": "NASA's Mars Perseverance rover acquired this image of the area in front of it using its onboard Front Left Hazard Avoidance Camera A. \n\nThis image was acquired on July 7, 2022 (Sol 490) at the local mean solar time of 16:20:12.",
+     "link": "https://mars.nasa.gov/mars2020/multimedia/raw-images/FLF_0490_0710454121_433ECM_N0261004FHAZ00203_16_195J",
+     "file": "FLF_0490_0710454121_433ECM_N0261004FHAZ00203_16_195J.jpg",
+     "sha256": "bc271bbcd7ca35120d3a8610ad20ce07c23a2a9b9b50cc7500e123efdc107e69",
+     "bytes": 38856
+    },
+    {
+     "imageid": "ZL0_0490_0710456749_399EBY_N0261004ZCAM05069_0340LMJ",
+     "sol": 490,
+     "camera": "MCZ_LEFT",
+     "filter": "ZCAM_L0_RGB",
+     "date_taken_utc": "2022-07-07T09:13:13.220",
+     "credit": "NASA/JPL-Caltech/ASU",
+     "caption": "NASA's Mars Perseverance rover acquired this image using its Left Mastcam-Z camera. Mastcam-Z is a pair of cameras located high on the rover's mast.\n\nThis image was acquired on July 7, 2022 (Sol 490) at the local mean solar time of 17:03:00.",
+     "link": "https://mars.nasa.gov/mars2020/multimedia/raw-images/ZL0_0490_0710456749_399EBY_N0261004ZCAM05069_0340LMJ",
+     "file": "ZL0_0490_0710456749_399EBY_N0261004ZCAM05069_0340LMJ.jpg",
+     "sha256": "ebf66a63ac19b47c6fb543eb68e533ddda049ea4355ac677807421837e1cc918",
+     "bytes": 38666
+    }
+   ]
+  },
+  "hazeltop": {
+   "name": "Hazeltop",
+   "images": [
+    {
+     "imageid": "ZL0_0505_0711778395_239EBY_N0261222ZCAM08526_1100LMJ",
+     "sol": 505,
+     "camera": "MCZ_LEFT",
+     "filter": "ZCAM_L0_RGB",
+     "date_taken_utc": "2022-07-22T16:20:46.630",
+     "credit": "NASA/JPL-Caltech/ASU",
+     "caption": "NASA's Mars Perseverance rover acquired this image using its Left Mastcam-Z camera. Mastcam-Z is a pair of cameras located high on the rover's mast.\n\nThis image was acquired on July 22, 2022 (Sol 505) at the local mean solar time of 14:21:12.",
+     "link": "https://mars.nasa.gov/mars2020/multimedia/raw-images/ZL0_0505_0711778395_239EBY_N0261222ZCAM08526_1100LMJ",
+     "file": "ZL0_0505_0711778395_239EBY_N0261222ZCAM08526_1100LMJ.jpg",
+     "sha256": "cb9703b5c9b645e4bce7551c55c3b439aac85ae9f1749461c35d4067e7e66be6",
+     "bytes": 94858
+    },
+    {
+     "imageid": "FLF_0505_0711772618_319ECM_N0261222FHAZ00206_01_295J",
+     "sol": 505,
+     "camera": "FRONT_HAZCAM_LEFT_A",
+     "filter": "UNK",
+     "date_taken_utc": "2022-07-22T14:44:23.038",
+     "credit": "NASA/JPL-Caltech",
+     "caption": "NASA's Mars Perseverance rover acquired this image of the area in front of it using its onboard Front Left Hazard Avoidance Camera A. \n\nThis image was acquired on July 22, 2022 (Sol 505) at the local mean solar time of 12:47:22.",
+     "link": "https://mars.nasa.gov/mars2020/multimedia/raw-images/FLF_0505_0711772618_319ECM_N0261222FHAZ00206_01_295J",
+     "file": "FLF_0505_0711772618_319ECM_N0261222FHAZ00206_01_295J.jpg",
+     "sha256": "2688241b479e1b4c7803ea05b9b9e094d5c6afac28703da5f82b97ae4f305a3b",
+     "bytes": 71844
+    },
+    {
+     "imageid": "NLF_0509_0712140650_691ECM_N0261222NCAM00709_01_095J",
+     "sol": 509,
+     "camera": "NAVCAM_LEFT",
+     "filter": "UNK",
+     "date_taken_utc": "2022-07-26T20:58:19.033",
+     "credit": "NASA/JPL-Caltech",
+     "caption": "NASA's Mars Perseverance rover acquired this image using its onboard Left Navigation Camera (Navcam). The camera is located high on the rover's mast and aids in driving. \n\nThis image was acquired on July 26, 2022 (Sol 509) at the local mean solar time of 16:17:10.",
+     "link": "https://mars.nasa.gov/mars2020/multimedia/raw-images/NLF_0509_0712140650_691ECM_N0261222NCAM00709_01_095J",
+     "file": "NLF_0509_0712140650_691ECM_N0261222NCAM00709_01_095J.jpg",
+     "sha256": "f4312432fa70bf649a1825f81c2db2dbb5cd4b780419d35be3f5111dd67290c6",
+     "bytes": 107884
+    }
+   ]
+  },
+  "shuyak": {
+   "name": "Shuyak",
+   "images": [
+    {
+     "imageid": "FLF_0575_0717995528_147ECM_N0290000FHAZ00215_01_275J",
+     "sol": 575,
+     "camera": "FRONT_HAZCAM_LEFT_A",
+     "filter": "UNK",
+     "date_taken_utc": "2022-10-02T15:20:22.182",
+     "credit": "NASA/JPL-Caltech",
+     "caption": "NASA's Mars Perseverance rover acquired this image of the area in front of it using its onboard Front Left Hazard Avoidance Camera A. \n\nThis image was acquired on  Oct. 2, 2022 (Sol 575) at the local mean solar time of 15:08:21.",
+     "link": "https://mars.nasa.gov/mars2020/multimedia/raw-images/FLF_0575_0717995528_147ECM_N0290000FHAZ00215_01_275J",
+     "file": "FLF_0575_0717995528_147ECM_N0290000FHAZ00215_01_275J.jpg",
+     "sha256": "b3d94c6cb1c9e544eb124c43d0a8e2a536c06dca9ef0266b4537546feefc9059",
+     "bytes": 41907
+    },
+    {
+     "imageid": "NLF_0575_0717997335_774ECM_N0290000NCAM00709_01_095J",
+     "sol": 575,
+     "camera": "NAVCAM_LEFT",
+     "filter": "UNK",
+     "date_taken_utc": "2022-10-02T15:50:31.205",
+     "credit": "NASA/JPL-Caltech",
+     "caption": "NASA's Mars Perseverance rover acquired this image using its onboard Left Navigation Camera (Navcam). The camera is located high on the rover's mast and aids in driving. \n\nThis image was acquired on  Oct. 2, 2022 (Sol 575) at the local mean solar time of 15:37:40.",
+     "link": "https://mars.nasa.gov/mars2020/multimedia/raw-images/NLF_0575_0717997335_774ECM_N0290000NCAM00709_01_095J",
+     "file": "NLF_0575_0717997335_774ECM_N0290000NCAM00709_01_095J.jpg",
+     "sha256": "d2db4acc483d7c6e3ed962422496a120be109c3ee11b3ab993ca65afab52169e",
+     "bytes": 99714
+    },
+    {
+     "imageid": "NLF_0575_0717997335_774ECM_N0290000NCAM00709_04_095J",
+     "sol": 575,
+     "camera": "NAVCAM_LEFT",
+     "filter": "UNK",
+     "date_taken_utc": "2022-10-02T15:50:31.205",
+     "credit": "NASA/JPL-Caltech",
+     "caption": "NASA's Mars Perseverance rover acquired this image using its onboard Left Navigation Camera (Navcam). The camera is located high on the rover's mast and aids in driving. \n\nThis image was acquired on  Oct. 2, 2022 (Sol 575) at the local mean solar time of 15:37:40.",
+     "link": "https://mars.nasa.gov/mars2020/multimedia/raw-images/NLF_0575_0717997335_774ECM_N0290000NCAM00709_04_095J",
+     "file": "NLF_0575_0717997335_774ECM_N0290000NCAM00709_04_095J.jpg",
+     "sha256": "36b90fc6d69df892a2c921804f66adada83c3d0facbd03671f1f6295665eb3c8",
+     "bytes": 104191
+    }
+   ]
+  }
+ }
+}
