@@ -180,3 +180,18 @@ terrain routing as a measured obstacle or roughness classifier.
 `map_layers.json` specifies display legends. CRISM visualization uses nearest
 native pixels and P5/P95 color stretching; raw signed values remain in the API.
 Geologic contacts remain contextual source-service interpretation.
+
+## Radiation context (added in the pre-submission improvement pass)
+
+The radiation card uses **one published measurement**, scaled linearly by walk duration (`backend/marsflex/radiation.py`,
+`GET /v1/environment/radiation`):
+
+- Galactic-cosmic-ray dose equivalent on the Martian surface, about **0.64 mSv/day** (cruise value 1.84 mSv/day), measured by the
+  Radiation Assessment Detector (RAD) on the Curiosity rover at Gale crater. Hassler, D. M. et al. (2014), *Mars' surface radiation
+  environment measured with the Mars Science Laboratory's Curiosity rover*, Science 343, 1244797. https://doi.org/10.1126/science.1244797
+- NASA career effective-dose limit of **600 mSv** (NASA-STD-3001). NASA Office of the Chief Health and Medical Officer,
+  radiation protection technical brief: https://www.nasa.gov/wp-content/uploads/2023/03/radiation-protection-technical-brief-ochmo.pdf
+
+Limits (also shown in the app): measured at Gale, not Jezero (Jezero is higher, so a somewhat higher dose is expected; not modelled);
+galactic cosmic rays only, solar particle events are not modelled; measured inside the rover, so spacesuit shielding is not modelled.
+This is scenario context, not a dose prediction or operational guidance. Radiation is not used by routing or the green/yellow/red field.

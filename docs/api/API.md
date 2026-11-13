@@ -104,3 +104,9 @@ The result includes return and ordered mission routes, edge power/speed/energy,
 resource balances, and explicit calibration/search limits. Empty resources produce
 an incomplete assessment, not a positive safety decision. The original evaluate
 endpoint and freedom field remain time-only. See INTEGRATION_LEVEL1_AR.md.
+
+## Radiation context
+
+`GET /v1/environment/radiation?minutes=300` (0–1440) returns the published Mars-surface GCR dose rate (RAD, Hassler et al. 2014)
+scaled to the walk duration, the fraction of NASA's 600 mSv career limit, a 500-day reference stay, the sources and the limitations.
+Status is always `scenario_context_not_a_dose_prediction`. Never used by routing.

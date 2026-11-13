@@ -19,7 +19,7 @@ export class GeoScene{
  constructor(host:HTMLElement,onPick:(p:Pick)=>void){
   this.onPick=onPick;this.scene.background=new T.Color('#101c25');
   this.renderer=new T.WebGLRenderer({antialias:true,alpha:false,preserveDrawingBuffer:true});this.renderer.setPixelRatio(Math.min(devicePixelRatio,1.6));this.renderer.localClippingEnabled=true;this.renderer.outputColorSpace=T.SRGBColorSpace;
-  this.renderer.shadowMap.enabled=true;this.renderer.shadowMap.autoUpdate=false;this.renderer.shadowMap.type=T.PCFSoftShadowMap;this.renderer.toneMapping=T.ACESFilmicToneMapping;this.renderer.toneMappingExposure=1.05;
+  this.renderer.shadowMap.enabled=true;this.renderer.shadowMap.autoUpdate=false;this.renderer.shadowMap.type=T.PCFShadowMap;this.renderer.toneMapping=T.ACESFilmicToneMapping;this.renderer.toneMappingExposure=1.05;
   this.renderer.setSize(host.clientWidth,host.clientHeight);host.appendChild(this.renderer.domElement);this.canvas=this.renderer.domElement;
   this.camera=new T.PerspectiveCamera(45,host.clientWidth/host.clientHeight,.1,1e6);this.controls=new OrbitControls(this.camera,this.renderer.domElement);this.controls.enableDamping=true;this.controls.dampingFactor=.09;this.controls.minPolarAngle=.06;this.controls.maxPolarAngle=Math.PI*.49;this.controls.minZoom=.3;this.controls.maxZoom=12;
   this.scene.add(new T.HemisphereLight('#d7edff','#293943',.8));const key=this.key;key.castShadow=true;key.shadow.mapSize.set(2048,2048);key.shadow.bias=-.00065;this.scene.add(key,key.target);const fill=new T.DirectionalLight('#accce4',.25);fill.position.set(1,.4,-1);this.scene.add(fill);
