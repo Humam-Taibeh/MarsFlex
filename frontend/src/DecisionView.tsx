@@ -43,3 +43,18 @@ export function LifeSupportCard({life}:{life?:any}){
    <details><summary>How this is calculated</summary><div><p>Walking power: Pandolf (1977) load-carriage equation plus a declared suit offset; mean {Math.round(m.mean_power_W)} W. Oxygen: energy ÷ 19.6–21.1 kJ per litre O₂ (conservative end used) × 1.429 g/L. Suit: NASA EMU, 0.54 kg O₂ for a normal 7-hour EVA, used as a reference only (no Mars suit capacities are published).</p><p><b>Not modelled:</b> {life.not_modelled.join('; ')}.</p>{Object.values(life.sources).map((s:any)=><a key={s.url} href={s.url} target="_blank" rel="noreferrer">{s.citation.split('.')[0]} ↗</a>)}</div></details>
   </div></div>;
 }
+
+/** Floating card shown while the pointer is over a map marker (no click needed). */
+export function HoverCard({hover,targets}:{hover?:{label:string;lon:number;lat:number;x:number;y:number};targets?:any}){
+ if(!hover)return null;
+ const target=targets?.targets?.find((t:any)=>Math.abs(t.lon-hover.lon)<1e-6&&Math.abs(t.lat-hover.lat)<1e-6)
+   ??targets?.targets?.find((t:any)=>hover.label.includes(t.name));
+ const record=target?roverArchive.measurements.find((r:any)=>r.name===target.name):undefined;
+ const kind=hover.label.startsWith('HAB')?'Habitat':hover.label.startsWith('CREW')?'Crew position':hover.label.includes('INSPECT')?'Inspected point':'Science stop';
+ return <div className="hover-card" style={{left:hover.x,top:hover.y}} role="tooltip">
+  <span className="trust-kicker">{kind}</span><b>{hover.label}</b>
+  {target&&<small>{target.outcrop} · sampled sol {target.sol}</small>}
+  {record&&<div className="hover-chem"><span>MgO <b>{record.MgO_wt_percent.toFixed(1)}</b> wt%</span><span>SO₃ <b>{record.SO3_wt_percent.toFixed(1)}</b> wt%</span></div>}
+  <small className="hover-coord">{hover.lat.toFixed(4)}° N · {hover.lon.toFixed(4)}° E · click to inspect</small>
+ </div>;
+}

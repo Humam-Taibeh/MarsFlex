@@ -1,6 +1,7 @@
 import * as C from 'cesium';
 
 export type Point = {lon:number;lat:number};
+export type Hover = {label:string;lon:number;lat:number;x:number;y:number};
 export type WalkController = {pause:()=>void;resume:()=>void;seek:(s:number)=>void;setSpeed:(x:number)=>void;stop:()=>void;readonly playing:boolean};
 export type Grid = {shape:number[];transform:number[];radius_m:number;aoi_lonlat:number[];elevation_range_m:number[]};
 export type Surface = {grid:Grid;data:string;rendering_frame:string};
@@ -35,6 +36,8 @@ export class MarsScene {
   layerSerial=0;
   routeSerial=0;
   terrainFine!:C.Primitive;
+  fx!:HTMLCanvasElement;fxRaf=0;fxStations:{w:C.Cartesian3;color:string;s?:C.Cartesian2}[]=[];fxRoute:C.Cartesian3[]=[];fxRouteScreen:C.Cartesian2[]=[];
+  hover?:C.ScreenSpaceEventHandler;onHover?:(h?:Hover)=>void;lastPick=0;lastInput=0;spinRaf=0;moving=false;pointerDown=false;fxCleared=false;
   terrainCoarse!:C.Primitive;
   lodFine=false;
   lowTimer=0;
@@ -104,6 +107,11 @@ export class MarsScene {
       const point={lon:(p.x/this.cos+this.cx)/this.grid.radius_m*180/Math.PI,lat:(p.y+this.cy)/this.grid.radius_m*180/Math.PI};
       if(this.index(point)!==null)onPick(point);
     },C.ScreenSpaceEventType.LEFT_CLICK);
+    this.setupFx(element);
+    this.hover=new C.ScreenSpaceEventHandler(this.viewer.canvas);
+    this.hover.setInputAction((e:{endPosition:C.Cartesian2})=>this.pickHover(e.endPosition),C.ScreenSpaceEventType.MOUSE_MOVE);
+    for(const ev of ['pointerdown','wheel','touchstart'])this.viewer.canvas.addEventListener(ev,()=>{this.lastInput=performance.now();},{passive:true});
+    this.viewer.canvas.addEventListener('pointerdown',()=>{this.pointerDown=true;this.onHover?.(undefined);});addEventListener('pointerup',()=>{this.pointerDown=false;});
     this.home(false,false);
     this.viewer.creditDisplay.addStaticCredit(new C.Credit('Globe: USGS / NASA Viking MDIM 2.1',true));
     this.globeLoading=this.initGlobe().catch(()=>{this.globeReady=false;});
@@ -125,7 +133,7 @@ export class MarsScene {
   }
   private reduced(){return typeof matchMedia==='function'&&matchMedia('(prefers-reduced-motion: reduce)').matches;}
   private setGlobeVisible(on:boolean){
-    this.globeMode=on;const g=this.viewer.scene.globe;if(g)g.show=on;
+    this.globeMode=on;this.spin(on);const g=this.viewer.scene.globe;if(g)g.show=on;
     this.syncTerrainVisibility();this.rover.show=!on;if(this.viewer.scene.skyAtmosphere)this.viewer.scene.skyAtmosphere.show=on;this.viewer.entities.show=!on;if(this.globeData)this.globeData.show=on;
     const ctl=this.viewer.scene.screenSpaceCameraController;ctl.minimumZoomDistance=on?400000:80;ctl.maximumZoomDistance=on?4e7:45000;ctl.enableTilt=on?true:!this.is2D;
     this.viewer.scene.requestRender();
@@ -265,8 +273,8 @@ export class MarsScene {
   private motion(){
     const v=this.viewer,cap=this.scaleCap(),low=Math.max(.55,cap*.72);
     if(Math.abs(v.resolutionScale-low)>1e-3)v.resolutionScale=low;
-    window.clearTimeout(this.lowTimer);
-    this.lowTimer=window.setTimeout(()=>{v.resolutionScale=this.scaleCap();v.scene.requestRender();},340);
+    this.moving=true;window.clearTimeout(this.lowTimer);
+    this.lowTimer=window.setTimeout(()=>{this.moving=false;v.resolutionScale=this.scaleCap();v.scene.requestRender();},340);
   }
   /** Procedural star field (deterministic), used as the scene sky box. */
   private starfield(){
@@ -345,6 +353,61 @@ export class MarsScene {
     }
     if(serial!==this.layerSerial)return;this.material.uniforms.image=canvas;this.viewer.scene.requestRender();
   }
+  /** 2D effects canvas over the map: pulsing station halos and a light "comet" running along the route.
+   *  It is redrawn at ~30 fps with plain 2D drawing, so WebGL only re-renders when the camera moves. */
+  private setupFx(element:HTMLElement){
+    const cv=document.createElement('canvas');cv.className='mf-fx';cv.setAttribute('aria-hidden','true');element.appendChild(cv);this.fx=cv;
+    this.viewer.scene.postRender.addEventListener(()=>this.projectFx());
+    if(this.reduced())return;
+    let last=0;const loop=(now:number)=>{this.fxRaf=requestAnimationFrame(loop);if(now-last<33||document.hidden)return;last=now;this.drawFx(now);};
+    this.fxRaf=requestAnimationFrame(loop);
+  }
+  private projectFx(){
+    if(this.moving||this.globeMode)return;
+    const sc=this.viewer.scene,tmp=(w:C.Cartesian3)=>C.SceneTransforms.worldToWindowCoordinates(sc,w);
+    for(const s of this.fxStations)s.s=tmp(s.w);
+    this.fxRouteScreen=this.fxRoute.map(tmp).filter((p):p is C.Cartesian2=>!!p);
+  }
+  private drawFx(now:number){
+    const cv=this.fx,dpr=Math.min(devicePixelRatio,2),w=cv.clientWidth,h=cv.clientHeight;
+    if(cv.width!==Math.round(w*dpr)||cv.height!==Math.round(h*dpr)){cv.width=Math.round(w*dpr);cv.height=Math.round(h*dpr);}
+    const g=cv.getContext('2d')!;
+    // ambient effects only while the camera is still, so they never compete with interaction
+    if(this.globeMode||this.walkCtl||this.moving){if(!this.fxCleared){g.setTransform(1,0,0,1,0,0);g.clearRect(0,0,cv.width,cv.height);this.fxCleared=true;}return;}
+    this.fxCleared=false;g.setTransform(dpr,0,0,dpr,0,0);g.clearRect(0,0,w,h);
+    // station halos
+    for(const [i,s] of this.fxStations.entries()){if(!s.s)continue;const k=.5+.5*Math.sin(now/600+i*1.3),r=12+16*k;
+      const grad=g.createRadialGradient(s.s.x,s.s.y,0,s.s.x,s.s.y,r);grad.addColorStop(0,s.color+'00');grad.addColorStop(.55,s.color+'55');grad.addColorStop(1,s.color+'00');
+      g.fillStyle=grad;g.beginPath();g.arc(s.s.x,s.s.y,r,0,6.2832);g.fill();
+      g.strokeStyle=s.color+Math.round((1-k)*160).toString(16).padStart(2,'0');g.lineWidth=1.5;g.beginPath();g.arc(s.s.x,s.s.y,8+22*k,0,6.2832);g.stroke();}
+    // comet along the planned route
+    const pts=this.fxRouteScreen;if(pts.length<2)return;
+    const cum=[0];for(let i=1;i<pts.length;i++)cum.push(cum[i-1]+Math.hypot(pts[i].x-pts[i-1].x,pts[i].y-pts[i-1].y));
+    const L=cum[cum.length-1];if(L<20)return;
+    const at=(d:number)=>{let j=1;while(j<cum.length-1&&cum[j]<d)j++;const u=Math.max(0,Math.min(1,(d-cum[j-1])/((cum[j]-cum[j-1])||1)));return {x:pts[j-1].x+(pts[j].x-pts[j-1].x)*u,y:pts[j-1].y+(pts[j].y-pts[j-1].y)*u};};
+    const head=((now/7000)%1)*L,tail=Math.min(L*.12,160),steps=24;
+    g.lineCap='round';
+    for(let s=0;s<steps;s++){const d0=head-tail*(1-s/steps),d1=head-tail*(1-(s+1)/steps);if(d1<0)continue;const a=at(Math.max(0,d0)),b=at(d1);
+      g.strokeStyle=`rgba(190,235,255,${(s/steps)*.85})`;g.lineWidth=1+3.5*(s/steps);g.beginPath();g.moveTo(a.x,a.y);g.lineTo(b.x,b.y);g.stroke();}
+    const p=at(head),glow=g.createRadialGradient(p.x,p.y,0,p.x,p.y,14);glow.addColorStop(0,'rgba(255,255,255,1)');glow.addColorStop(.35,'rgba(160,225,255,.75)');glow.addColorStop(1,'rgba(120,200,255,0)');
+    g.fillStyle=glow;g.beginPath();g.arc(p.x,p.y,14,0,6.2832);g.fill();
+  }
+  /** Hover over a marker: report its label and screen position (throttled GPU pick). */
+  private pickHover(pos:C.Cartesian2){
+    const now=performance.now();if(!this.onHover||now-this.lastPick<70||this.globeMode||this.pointerDown||this.moving||this.walkCtl)return;this.lastPick=now;
+    const hit=this.viewer.scene.pick(pos) as any,props=hit?.id?.properties;
+    if(props?.hoverLabel){const t=C.JulianDate.now();this.onHover({label:props.hoverLabel.getValue(t),lon:props.lon.getValue(t),lat:props.lat.getValue(t),x:pos.x,y:pos.y});}
+    else this.onHover(undefined);
+  }
+  /** Slow idle rotation of the planet in Globe view (stops on any input, resumes after 2.5 s). */
+  private spin(on:boolean){
+    cancelAnimationFrame(this.spinRaf);if(!on||this.reduced())return;
+    let last=performance.now();
+    const loop=(now:number)=>{this.spinRaf=requestAnimationFrame(loop);const dt=now-last;last=now;
+      if(document.hidden||now-this.lastInput<2500||this.descending)return;
+      this.viewer.camera.rotate(C.Cartesian3.UNIT_Z,-dt*0.000035);this.viewer.scene.requestRender();};
+    this.spinRaf=requestAnimationFrame(loop);
+  }
   beaconEntities:C.Entity[]=[];beaconRaf=0;
   private glowImage?:HTMLCanvasElement;
   private glow(){if(this.glowImage)return this.glowImage;const s=128,cv=document.createElement('canvas');cv.width=cv.height=s;const g=cv.getContext('2d')!;
@@ -376,6 +439,7 @@ export class MarsScene {
       const entity=this.viewer.entities.add({polyline:{positions:new C.CallbackProperty(()=>full.slice(0,Math.max(2,Math.ceil(full.length*progress.v))),false),width,material,arcType:C.ArcType.NONE}});
       this.routeEntities.push(entity);runs.push({full,progress,delay,entity});
     }
+    this.fxRoute=mission.map(([lon,lat,z])=>this.world({lon,lat},z,9)).filter((p):p is C.Cartesian3=>p!==null);
     const serial=++this.routeSerial;
     if(reduce||!runs.length){for(const r of runs)r.progress.v=1;this.viewer.scene.requestRender();return;}
     const dur=1100;
@@ -397,12 +461,13 @@ export class MarsScene {
     if(selected)entries.push({p:selected,label:'INSPECT',color:'#efbb71'});
     const grouped=new Map<string,typeof entries[number]>();
     for(const x of entries){const nearby=[...grouped.entries()].find(([,v])=>Math.hypot((v.p.lon-x.p.lon)*this.cos,v.p.lat-x.p.lat)*Math.PI/180*this.grid.radius_m<60);const key=nearby?.[0]??`${x.p.lon.toFixed(5)},${x.p.lat.toFixed(5)}`;const existing=grouped.get(key);if(existing){existing.label+=' / '+x.label;existing.color=x.color;}else grouped.set(key,{...x});}
-    for(const x of grouped.values()){const world=this.world(x.p,undefined,9);if(world)this.markerEntities.push(this.viewer.entities.add({position:world,
+    this.fxStations=[];
+    for(const x of grouped.values()){const world=this.world(x.p,undefined,9);if(world)this.fxStations.push({w:world,color:x.color.length===4?'#'+[...x.color.slice(1)].map(ch=>ch+ch).join(''):x.color});if(world)this.markerEntities.push(this.viewer.entities.add({position:world,properties:{hoverLabel:x.label,lon:x.p.lon,lat:x.p.lat},
       point:{pixelSize:11,color:C.Color.fromCssColorString(x.color),outlineWidth:3,outlineColor:C.Color.fromCssColorString('#0a1217'),disableDepthTestDistance:Number.POSITIVE_INFINITY},
       label:{text:x.label,font:'600 12px "Segoe UI Variable","Segoe UI",Inter,system-ui,sans-serif',fillColor:C.Color.WHITE,showBackground:true,
         backgroundColor:C.Color.fromCssColorString('#09131ad9'),backgroundPadding:new C.Cartesian2(9,6),style:C.LabelStyle.FILL,
         pixelOffset:new C.Cartesian2(0,-20),verticalOrigin:C.VerticalOrigin.BOTTOM,horizontalOrigin:C.HorizontalOrigin.CENTER,disableDepthTestDistance:Number.POSITIVE_INFINITY}}));}
     this.viewer.scene.requestRender();
   }
-  destroy(){cancelAnimationFrame(this.beaconRaf);this.stopWalk();window.clearTimeout(this.lowTimer);cancelAnimationFrame(this.anim);this.fadeSerial++;this.routeSerial++;this.click.destroy();this.viewer.destroy();}
+  destroy(){cancelAnimationFrame(this.beaconRaf);cancelAnimationFrame(this.fxRaf);cancelAnimationFrame(this.spinRaf);this.hover?.destroy();this.fx?.remove();this.stopWalk();window.clearTimeout(this.lowTimer);cancelAnimationFrame(this.anim);this.fadeSerial++;this.routeSerial++;this.click.destroy();this.viewer.destroy();}
 }
