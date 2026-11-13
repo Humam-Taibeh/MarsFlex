@@ -323,7 +323,7 @@ export class MarsScene {
     this.viewer.scene.requestRender();
   }
   setRover(records:Point[],show=true){this.rover.removeAll();if(show)for(const p of records){const position=this.world(p);if(position)this.rover.add({position,color:C.Color.fromCssColorString('#ffb36b'),pixelSize:4,outlineWidth:.5,outlineColor:C.Color.BLACK});}this.viewer.scene.requestRender();}
-  async layer(name:string,field?:Uint8Array,freedom=false,opacity=.45){
+  async layer(name:string,field?:Uint8Array,freedom=false,opacity=.45,site?:Uint8Array){
     const serial=++this.layerSerial;
     if(!this.orbital){const image=new Image();image.src='/v1/map/image/orbital';await image.decode();this.orbital=image;}
     const k=Math.min(1,2048/this.orbital.width),canvas=document.createElement('canvas');canvas.width=Math.round(this.orbital.width*k);canvas.height=Math.round(this.orbital.height*k);const ctx=canvas.getContext('2d')!;ctx.imageSmoothingQuality='high';ctx.drawImage(this.orbital,0,0,canvas.width,canvas.height);
@@ -335,7 +335,34 @@ export class MarsScene {
       for(let r=0;r<this.h;r++)for(let c=0;c<this.w;c++){const n=r*this.w+c,v=field[n];const boundary=(c>0&&field[n-1]!==v)||(r>0&&field[n-this.w]!==v);pixels.set([...palette[v],v===0?80:boundary?220:v===1?25:65],n*4);}
       ctx.imageSmoothingEnabled=false;ctx.drawImage(this.texture(pixels),0,0,canvas.width,canvas.height);
     }
+    if(site){
+      // suitability heat ramp: transparent -> deep violet -> Mars orange -> warm white
+      const stops=[[0,[40,20,70]],[.45,[170,50,90]],[.7,[255,120,60]],[1,[255,236,190]]] as [number,number[]][];
+      const ramp=(t:number)=>{let i=1;while(i<stops.length-1&&stops[i][0]<t)i++;const [a,ca]=stops[i-1],[b,cb]=stops[i],u=(t-a)/(b-a||1);return ca.map((v,k)=>v+(cb[k]-v)*u);};
+      const pixels=new Uint8ClampedArray(this.z.length*4);
+      for(let n=0;n<site.length;n++){const v=site[n]/255;if(v<=0){pixels[n*4+3]=95;continue;}const c=ramp(v);pixels[n*4]=c[0];pixels[n*4+1]=c[1];pixels[n*4+2]=c[2];pixels[n*4+3]=70+v*170;}
+      ctx.imageSmoothingEnabled=true;ctx.drawImage(this.texture(pixels),0,0,canvas.width,canvas.height);
+    }
     if(serial!==this.layerSerial)return;this.material.uniforms.image=canvas;this.viewer.scene.requestRender();
+  }
+  beaconEntities:C.Entity[]=[];beaconRaf=0;
+  private glowImage?:HTMLCanvasElement;
+  private glow(){if(this.glowImage)return this.glowImage;const s=128,cv=document.createElement('canvas');cv.width=cv.height=s;const g=cv.getContext('2d')!;
+    const grad=g.createRadialGradient(s/2,s/2,0,s/2,s/2,s/2);grad.addColorStop(0,'rgba(255,240,210,1)');grad.addColorStop(.18,'rgba(255,170,100,.9)');grad.addColorStop(.45,'rgba(255,120,60,.35)');grad.addColorStop(1,'rgba(255,120,60,0)');
+    g.fillStyle=grad;g.fillRect(0,0,s,s);this.glowImage=cv;return cv;}
+  /** Pulsing beacons for recommended sites. */
+  beacons(sites:{lon:number;lat:number;rank:number;score:number}[]=[]){
+    for(const e of this.beaconEntities)this.viewer.entities.remove(e);this.beaconEntities=[];cancelAnimationFrame(this.beaconRaf);
+    const reduce=this.reduced(),t0=performance.now();
+    for(const s of sites){const w=this.world(s,undefined,14);if(!w)continue;const phase=s.rank*.9;
+      this.beaconEntities.push(this.viewer.entities.add({position:w,
+        billboard:{image:this.glow(),scale:new C.CallbackProperty(()=>reduce?.75:.55+.35*(.5+.5*Math.sin((performance.now()-t0)/420+phase)),false) as any,
+          disableDepthTestDistance:Number.POSITIVE_INFINITY},
+        label:{text:`#${s.rank}  ${Math.round(s.score*100)}`,font:'800 13px "Segoe UI",system-ui,sans-serif',fillColor:C.Color.fromCssColorString('#1a0d05'),showBackground:true,
+          backgroundColor:C.Color.fromCssColorString('#ffb27aee'),backgroundPadding:new C.Cartesian2(9,5),pixelOffset:new C.Cartesian2(0,-34),verticalOrigin:C.VerticalOrigin.BOTTOM,
+          disableDepthTestDistance:Number.POSITIVE_INFINITY}}));}
+    if(sites.length&&!reduce){let last=0;const loop=(now:number)=>{if(now-last>33){this.viewer.scene.requestRender();last=now;}this.beaconRaf=requestAnimationFrame(loop);};this.beaconRaf=requestAnimationFrame(loop);}
+    this.viewer.scene.requestRender();
   }
   routes(mission:number[][]=[],home:number[][]=[],detour:number[][]=[]){
     for(const e of this.routeEntities)this.viewer.entities.remove(e);this.routeEntities=[];
@@ -377,5 +404,5 @@ export class MarsScene {
         pixelOffset:new C.Cartesian2(0,-20),verticalOrigin:C.VerticalOrigin.BOTTOM,horizontalOrigin:C.HorizontalOrigin.CENTER,disableDepthTestDistance:Number.POSITIVE_INFINITY}}));}
     this.viewer.scene.requestRender();
   }
-  destroy(){this.stopWalk();window.clearTimeout(this.lowTimer);cancelAnimationFrame(this.anim);this.fadeSerial++;this.routeSerial++;this.click.destroy();this.viewer.destroy();}
+  destroy(){cancelAnimationFrame(this.beaconRaf);this.stopWalk();window.clearTimeout(this.lowTimer);cancelAnimationFrame(this.anim);this.fadeSerial++;this.routeSerial++;this.click.destroy();this.viewer.destroy();}
 }

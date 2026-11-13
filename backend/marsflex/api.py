@@ -594,6 +594,59 @@ def mission_life_support(request: LifeSupportMission):
         COMPUTE_LOCK.release()
 
 
+class SiteWeights(BaseModel):
+    model_config = ConfigDict(extra='forbid', allow_inf_nan=False)
+    traversability: float = Field(default=0.25, ge=0, le=1)
+    reachability: float = Field(default=0.25, ge=0, le=1)
+    science: float = Field(default=0.5, ge=0, le=1)
+
+
+class SiteRequest(BaseModel):
+    model_config = ConfigDict(extra='forbid', allow_inf_nan=False)
+    habitat: Position
+    budget_min: float = Field(default=300, gt=0, le=1440)
+    reserve_min: float = Field(default=72, ge=0, le=1440)
+    dwell_min: float = Field(default=30, ge=0, le=600)
+    weights: SiteWeights = Field(default_factory=SiteWeights)
+    suit_id: Literal['emu_reference'] = 'emu_reference'
+
+
+@app.post('/v1/sites/score')
+def site_score(request: SiteRequest):
+    """Transparent suitability map for a Marswalk destination (planning candidates, not safety certification)."""
+    from marsflex.site_advisor import score, top_sites, SCIENCE_MIX, TARGET_DECAY_M, MIN_SEPARATION_M
+    from marsflex.life_support import SUITS, WalkerModel, SOURCES
+    if not COMPUTE_LOCK.acquire(timeout=45):  # queue briefly instead of failing when two requests overlap
+        raise HTTPException(503, 'A terrain calculation is in progress; retry shortly')
+    try:
+        t = terrain()
+        try:
+            h = t.node(request.habitat.lon, request.habitat.lat)
+            res = score(t, ROOT, h, request.budget_min, request.reserve_min, request.dwell_min,
+                        request.weights.model_dump(), SUITS[request.suit_id], WalkerModel())
+        except ValueError as e:
+            raise HTTPException(422, str(e))
+        q = np.round(np.clip(res['total'], 0, 1) * 255).astype(np.uint8)
+        q[(res['total'] > 0) & (q == 0)] = 1   # keep every candidate visible
+        return {'field': {'encoding': 'gzip+base64', 'dtype': 'uint8', 'order': 'row-major', 'shape': list(q.shape),
+                          'scale': 'score x 255; 0 = not walkable or does not fit',
+                          'data': base64.b64encode(gzip.compress(q.tobytes(), mtime=0)).decode()},
+                'top_sites': top_sites(res, t), 'weights': res['weights'],
+                'candidate_cells': int((res['total'] > 0).sum()),
+                'method': {'traversability': '1 - surface slope / slope gate (20 m CTX)',
+                           'reachability': '1 - max(round-trip time incl. dwell + reserve / budget, round-trip O2 / suit O2, round-trip time / suit EVA time); 0 if > 1',
+                           'science': SCIENCE_MIX, 'target_decay_m': TARGET_DECAY_M, 'min_separation_m': MIN_SEPARATION_M,
+                           'crism': 'max of BD1900_2, D2300, BD2500_2 after the published display P5-P95 stretch (native 36 m pixel)'},
+                'sources': {'terrain': 'NASA MRO / USGS CTX DTM 20 m', 'crism': 'MRO CRISM HRL000040FF summary parameters',
+                            'targets': 'Mars 2020 Initial Reports Vol. 2 (PIXL sampled sites)', 'rover': 'Mars 2020 PDS places', **SOURCES},
+                'limits': ['Ranks planning candidates; it does not identify minerals or certify safety.',
+                           'Science weighting is a declared team choice, shown and adjustable.',
+                           'Boulder-scale hazards below the 20 m grid are not resolved.'],
+                'operational_safety_certified': False}
+    finally:
+        COMPUTE_LOCK.release()
+
+
 @app.get('/v1/mission/metabolic/assumptions')
 def metabolic_assumptions():
     return FileResponse(ROOT/'docs/science/MODEL_ASSUMPTIONS.md',media_type='text/markdown')

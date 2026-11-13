@@ -222,3 +222,12 @@ The credit "Globe: USGS / NASA Viking MDIM 2.1" is shown in the viewer.
   Cooling water and battery capacities: no source found, so they are left empty.
 - **Consistency check:** 0.54 kg O₂ over 7 h corresponds to an average of about 300 W, a plausible EVA metabolic rate.
 - **Not modelled:** Mars gravity, suit mobility beyond the offset, leakage and purge, CO₂ scrubbing, cooling water, battery, thermal load, fatigue.
+
+## Mission Site Advisor (suitability map)
+
+`backend/marsflex/site_advisor.py`, `POST /v1/sites/score`. No new data: it combines the layers already listed above on the 20 m CTX grid.
+Traversability = 1 − slope / 20° gate. Safety margin = 1 − the most limiting of (round trip + 30 min stop + reserve) / time budget,
+round-trip O₂ / reference-suit O₂, and round trip / reference-suit EVA time (0 if any exceeds 1). Science = 45% proximity to a PIXL-sampled
+target (Mars 2020 Initial Reports, e-folding 300 m), 35% CRISM summary-parameter strength (max of BD1900_2, D2300, BD2500_2 after the
+published P5–P95 display stretch), 20% within 500 m of a recorded Perseverance position (Mars 2020 PDS places). Default weights 25/25/50 are a
+declared team choice, shown in the app and adjustable. The advisor ranks planning candidates; it does not identify minerals or certify safety.

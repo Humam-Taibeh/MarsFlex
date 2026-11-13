@@ -23,6 +23,7 @@ Start from the whole planet (**Globe**, Viking MDIM 2.1), descend to Jezero (**3
 
 | Challenge requirement | Where it is met |
 |---|---|
+| Choose where to go | **Mission Site Advisor**: a transparent suitability map (terrain, safety margin including oxygen, science value) with the three best candidates and their reasons |
 | Layered, integrated view of a Martian location and route, from several NASA missions | Jezero Crater: CTX imagery + terrain, HiRISE terrain, CRISM spectral parameters, USGS geologic units, PIXL chemistry, MEDA weather, MSL RAD radiation context, Viking global mosaic |
 | At least three kinds of data | Optical, topographic, spectral, chemical, atmospheric, geologic, radiation (see [DATA_SOURCES](docs/legal/DATA_SOURCES.md)) |
 | Safety first | Time reserve and return-feasibility colouring, slope gates, **oxygen and suit-time ledger with a turn-back point** (NASA EMU as reference suit), radiation context, explicit limits on every number |
