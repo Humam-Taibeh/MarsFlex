@@ -1,0 +1,1624 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+
+<?xml-model href="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1M00.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="https://pds.nasa.gov/pds4/cart/v1/PDS4_CART_1M00_1970.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="https://pds.nasa.gov/pds4/disp/v1/PDS4_DISP_1M00_1510.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="https://pds.nasa.gov/pds4/proc/v1/PDS4_PROC_1M00_1300.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="https://pds.nasa.gov/pds4/geom/v1/PDS4_GEOM_1M00_1970.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="https://pds.nasa.gov/pds4/mission/mro/v1/PDS4_MRO_1M00_1320.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+
+<Product_Observational xmlns="http://pds.nasa.gov/pds4/pds/v1" 
+    xmlns:cart="http://pds.nasa.gov/pds4/cart/v1" 
+    xmlns:disp="http://pds.nasa.gov/pds4/disp/v1" 
+    xmlns:geom="http://pds.nasa.gov/pds4/geom/v1" 
+    xmlns:img="http://pds.nasa.gov/pds4/img/v1" 
+    xmlns:mro="http://pds.nasa.gov/pds4/mission/mro/v1" 
+    xmlns:proc="http://pds.nasa.gov/pds4/proc/v1" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1       https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1M00.xsd      http://pds.nasa.gov/pds4/cart/v1       https://pds.nasa.gov/pds4/cart/v1/PDS4_CART_1M00_1970.xsd      http://pds.nasa.gov/pds4/disp/v1       https://pds.nasa.gov/pds4/disp/v1/PDS4_DISP_1M00_1510.xsd      http://pds.nasa.gov/pds4/proc/v1       https://pds.nasa.gov/pds4/proc/v1/PDS4_PROC_1M00_1300.xsd     http://pds.nasa.gov/pds4/geom/v1       https://pds.nasa.gov/pds4/geom/v1/PDS4_GEOM_1M00_1970.xsd     http://pds.nasa.gov/pds4/mission/mro/v1    https://pds.nasa.gov/pds4/mission/mro/v1/PDS4_MRO_1M00_1320.xsd     ">
+  <Identification_Area>
+    <logical_identifier>urn:nasa:pds:mro_crism_mtrdr:data_mtrdr:hrl000040ff_07_su183j_mtr3</logical_identifier>
+    <version_id>1.0</version_id>
+    <title>hrl000040ff_07_su183j_mtr3 MTRDR SU</title>
+    <information_model_version>1.22.0.0</information_model_version>
+    <product_class>Product_Observational</product_class>
+    <Alias_List>
+      <Alias>
+        <alternate_id>HRL000040FF_07_SU183J_MTR3</alternate_id>
+        <comment>PDS3 PRODUCT_ID</comment>
+      </Alias>
+    </Alias_List>
+    <Modification_History>
+      <Modification_Detail>
+        <modification_date>2024-01-01</modification_date>
+        <version_id>1.0</version_id>
+        <description>PDS4 conversion.</description>
+      </Modification_Detail>
+    </Modification_History>
+  </Identification_Area>
+  <Observation_Area>
+    <Time_Coordinates>
+      <start_date_time>2007-01-29T10:48:10.159Z</start_date_time>
+      <stop_date_time>2007-01-29T10:50:17.893Z</stop_date_time>
+      <solar_longitude unit="deg">174.791242</solar_longitude>
+    </Time_Coordinates>
+    <Investigation_Area>
+      <name>MARS RECONNAISSANCE ORBITER</name>
+      <type>Mission</type>
+      <Internal_Reference>
+        <lid_reference>urn:nasa:pds:context:investigation:mission.mars_reconnaissance_orbiter</lid_reference>
+        <reference_type>data_to_investigation</reference_type>
+      </Internal_Reference>
+    </Investigation_Area>
+    <Observing_System>
+      <Observing_System_Component>
+        <name>MARS RECONNAISSANCE ORBITER</name>
+        <type>Host</type>
+        <Internal_Reference>
+          <lid_reference>urn:nasa:pds:context:instrument_host:spacecraft.mro</lid_reference>
+          <reference_type>is_instrument_host</reference_type>
+        </Internal_Reference>
+      </Observing_System_Component>
+      <Observing_System_Component>
+        <name>COMPACT RECONNAISSANCE IMAGING SPECTROMETER FOR MARS</name>
+        <type>Instrument</type>
+        <Internal_Reference>
+          <lid_reference>urn:nasa:pds:context:instrument:crism.mro</lid_reference>
+          <reference_type>is_instrument</reference_type>
+        </Internal_Reference>
+      </Observing_System_Component>
+    </Observing_System>
+    <Target_Identification>
+      <name>Mars</name>
+      <type>Planet</type>
+      <Internal_Reference>
+        <lid_reference>urn:nasa:pds:context:target:planet.mars</lid_reference>
+        <reference_type>data_to_target</reference_type>
+      </Internal_Reference>
+    </Target_Identification>
+    <Mission_Area>
+      <mro:MRO_Parameters>
+        <mro:product_type>MTRDR</mro:product_type>
+        <mro:product_version_id>3</mro:product_version_id>
+        <mro:orbit_number>2387</mro:orbit_number>
+        <mro:spacecraft_clock_start_count>2/0854534909:03470</mro:spacecraft_clock_start_count>
+        <mro:spacecraft_clock_stop_count>2/0854535036:51585</mro:spacecraft_clock_stop_count>
+        <mro:producer_institution_name>Johns Hopkins University Applied Physics Laboratory</mro:producer_institution_name>
+        <mro:CRISM_Parameters>
+          <mro:observation_type>HRL</mro:observation_type>
+          <mro:observation_id>16#000040FF#</mro:observation_id>
+          <mro:observation_number>16#07#</mro:observation_number>
+          <mro:activity_id>IF183</mro:activity_id>
+          <mro:sensor_id>J</mro:sensor_id>
+        </mro:CRISM_Parameters>
+      </mro:MRO_Parameters>
+    </Mission_Area>
+    <Discipline_Area>
+      <disp:Display_Settings>
+        <Local_Internal_Reference>
+          <local_identifier_reference>R770_image</local_identifier_reference>
+          <local_identifier_reference>RBR_image</local_identifier_reference>
+          <local_identifier_reference>BD530_2_image</local_identifier_reference>
+          <local_identifier_reference>SH600_2_image</local_identifier_reference>
+          <local_identifier_reference>SH770_image</local_identifier_reference>
+          <local_identifier_reference>BD640_2_image</local_identifier_reference>
+          <local_identifier_reference>BD860_2_image</local_identifier_reference>
+          <local_identifier_reference>BD920_2_image</local_identifier_reference>
+          <local_identifier_reference>RPEAK1_image</local_identifier_reference>
+          <local_identifier_reference>BDI1000VIS_image</local_identifier_reference>
+          <local_identifier_reference>R440_image</local_identifier_reference>
+          <local_identifier_reference>IRR1_image</local_identifier_reference>
+          <local_identifier_reference>BDI1000IR_image</local_identifier_reference>
+          <local_identifier_reference>OLINDEX3_image</local_identifier_reference>
+          <local_identifier_reference>R1330_image</local_identifier_reference>
+          <local_identifier_reference>BD1300_image</local_identifier_reference>
+          <local_identifier_reference>LCPINDEX2_image</local_identifier_reference>
+          <local_identifier_reference>HCPINDEX2_image</local_identifier_reference>
+          <local_identifier_reference>VAR_image</local_identifier_reference>
+          <local_identifier_reference>ISLOPE1_image</local_identifier_reference>
+          <local_identifier_reference>BD1400_image</local_identifier_reference>
+          <local_identifier_reference>BD1435_image</local_identifier_reference>
+          <local_identifier_reference>BD1500_2_image</local_identifier_reference>
+          <local_identifier_reference>ICER1_2_image</local_identifier_reference>
+          <local_identifier_reference>BD1750_2_image</local_identifier_reference>
+          <local_identifier_reference>BD1900_2_image</local_identifier_reference>
+          <local_identifier_reference>BD1900R2_image</local_identifier_reference>
+          <local_identifier_reference>BDI2000_image</local_identifier_reference>
+          <local_identifier_reference>BD2100_2_image</local_identifier_reference>
+          <local_identifier_reference>BD2165_image</local_identifier_reference>
+          <local_identifier_reference>BD2190_image</local_identifier_reference>
+          <local_identifier_reference>MIN2200_image</local_identifier_reference>
+          <local_identifier_reference>BD2210_2_image</local_identifier_reference>
+          <local_identifier_reference>D2200_image</local_identifier_reference>
+          <local_identifier_reference>BD2230_image</local_identifier_reference>
+          <local_identifier_reference>BD2250_image</local_identifier_reference>
+          <local_identifier_reference>MIN2250_image</local_identifier_reference>
+          <local_identifier_reference>BD2265_image</local_identifier_reference>
+          <local_identifier_reference>BD2290_image</local_identifier_reference>
+          <local_identifier_reference>D2300_image</local_identifier_reference>
+          <local_identifier_reference>BD2355_image</local_identifier_reference>
+          <local_identifier_reference>SINDEX2_image</local_identifier_reference>
+          <local_identifier_reference>ICER2_2_image</local_identifier_reference>
+          <local_identifier_reference>MIN2295_2480_image</local_identifier_reference>
+          <local_identifier_reference>MIN2345_2537_image</local_identifier_reference>
+          <local_identifier_reference>BD2500_2_image</local_identifier_reference>
+          <local_identifier_reference>BD3000_image</local_identifier_reference>
+          <local_identifier_reference>BD3100_image</local_identifier_reference>
+          <local_identifier_reference>BD3200_image</local_identifier_reference>
+          <local_identifier_reference>BD3400_2_image</local_identifier_reference>
+          <local_identifier_reference>CINDEX2_image</local_identifier_reference>
+          <local_identifier_reference>BD2600_image</local_identifier_reference>
+          <local_identifier_reference>IRR2_image</local_identifier_reference>
+          <local_identifier_reference>IRR3_image</local_identifier_reference>
+          <local_identifier_reference>R530_image</local_identifier_reference>
+          <local_identifier_reference>R600_image</local_identifier_reference>
+          <local_identifier_reference>R1080_image</local_identifier_reference>
+          <local_identifier_reference>R1506_image</local_identifier_reference>
+          <local_identifier_reference>R2529_image</local_identifier_reference>
+          <local_identifier_reference>R3920_image</local_identifier_reference>
+          <local_reference_type>display_settings_to_array</local_reference_type>
+        </Local_Internal_Reference>
+        <disp:Display_Direction>
+          <disp:horizontal_display_axis>Sample</disp:horizontal_display_axis>
+          <disp:horizontal_display_direction>Left to Right</disp:horizontal_display_direction>
+          <disp:vertical_display_axis>Line</disp:vertical_display_axis>
+          <disp:vertical_display_direction>Top to Bottom</disp:vertical_display_direction>
+        </disp:Display_Direction>
+      </disp:Display_Settings>
+      <geom:Geometry>
+        <geom:Geometry_Orbiter>
+          <geom:geometry_start_time_utc>2007-01-29T10:48:10.159Z</geom:geometry_start_time_utc>
+          <geom:geometry_stop_time_utc>2007-01-29T10:50:17.893Z</geom:geometry_stop_time_utc>
+          <geom:Orbiter_Identification>
+            <geom:Geometry_Target_Identification>
+              <geom:name>Mars</geom:name>
+            </geom:Geometry_Target_Identification>
+          </geom:Orbiter_Identification>
+          <geom:Distances>
+            <geom:Distances_Specific>
+              <geom:target_heliocentric_distance unit="km">221055579.116406</geom:target_heliocentric_distance>
+            </geom:Distances_Specific>
+          </geom:Distances>
+          <geom:Surface_Geometry>
+            <geom:Surface_Geometry_Min_Max>
+              <geom:minimum_latitude unit="deg">18.2767400</geom:minimum_latitude>
+              <geom:maximum_latitude unit="deg">18.7324270</geom:maximum_latitude>
+              <geom:minimum_longitude unit="deg">77.27556</geom:minimum_longitude>
+              <geom:maximum_longitude unit="deg">77.561134</geom:maximum_longitude>
+            </geom:Surface_Geometry_Min_Max>
+          </geom:Surface_Geometry>
+        </geom:Geometry_Orbiter>
+      </geom:Geometry>
+      <cart:Cartography>
+        <Local_Internal_Reference>
+          <local_identifier_reference>R770_image</local_identifier_reference>
+          <local_identifier_reference>RBR_image</local_identifier_reference>
+          <local_identifier_reference>BD530_2_image</local_identifier_reference>
+          <local_identifier_reference>SH600_2_image</local_identifier_reference>
+          <local_identifier_reference>SH770_image</local_identifier_reference>
+          <local_identifier_reference>BD640_2_image</local_identifier_reference>
+          <local_identifier_reference>BD860_2_image</local_identifier_reference>
+          <local_identifier_reference>BD920_2_image</local_identifier_reference>
+          <local_identifier_reference>RPEAK1_image</local_identifier_reference>
+          <local_identifier_reference>BDI1000VIS_image</local_identifier_reference>
+          <local_identifier_reference>R440_image</local_identifier_reference>
+          <local_identifier_reference>IRR1_image</local_identifier_reference>
+          <local_identifier_reference>BDI1000IR_image</local_identifier_reference>
+          <local_identifier_reference>OLINDEX3_image</local_identifier_reference>
+          <local_identifier_reference>R1330_image</local_identifier_reference>
+          <local_identifier_reference>BD1300_image</local_identifier_reference>
+          <local_identifier_reference>LCPINDEX2_image</local_identifier_reference>
+          <local_identifier_reference>HCPINDEX2_image</local_identifier_reference>
+          <local_identifier_reference>VAR_image</local_identifier_reference>
+          <local_identifier_reference>ISLOPE1_image</local_identifier_reference>
+          <local_identifier_reference>BD1400_image</local_identifier_reference>
+          <local_identifier_reference>BD1435_image</local_identifier_reference>
+          <local_identifier_reference>BD1500_2_image</local_identifier_reference>
+          <local_identifier_reference>ICER1_2_image</local_identifier_reference>
+          <local_identifier_reference>BD1750_2_image</local_identifier_reference>
+          <local_identifier_reference>BD1900_2_image</local_identifier_reference>
+          <local_identifier_reference>BD1900R2_image</local_identifier_reference>
+          <local_identifier_reference>BDI2000_image</local_identifier_reference>
+          <local_identifier_reference>BD2100_2_image</local_identifier_reference>
+          <local_identifier_reference>BD2165_image</local_identifier_reference>
+          <local_identifier_reference>BD2190_image</local_identifier_reference>
+          <local_identifier_reference>MIN2200_image</local_identifier_reference>
+          <local_identifier_reference>BD2210_2_image</local_identifier_reference>
+          <local_identifier_reference>D2200_image</local_identifier_reference>
+          <local_identifier_reference>BD2230_image</local_identifier_reference>
+          <local_identifier_reference>BD2250_image</local_identifier_reference>
+          <local_identifier_reference>MIN2250_image</local_identifier_reference>
+          <local_identifier_reference>BD2265_image</local_identifier_reference>
+          <local_identifier_reference>BD2290_image</local_identifier_reference>
+          <local_identifier_reference>D2300_image</local_identifier_reference>
+          <local_identifier_reference>BD2355_image</local_identifier_reference>
+          <local_identifier_reference>SINDEX2_image</local_identifier_reference>
+          <local_identifier_reference>ICER2_2_image</local_identifier_reference>
+          <local_identifier_reference>MIN2295_2480_image</local_identifier_reference>
+          <local_identifier_reference>MIN2345_2537_image</local_identifier_reference>
+          <local_identifier_reference>BD2500_2_image</local_identifier_reference>
+          <local_identifier_reference>BD3000_image</local_identifier_reference>
+          <local_identifier_reference>BD3100_image</local_identifier_reference>
+          <local_identifier_reference>BD3200_image</local_identifier_reference>
+          <local_identifier_reference>BD3400_2_image</local_identifier_reference>
+          <local_identifier_reference>CINDEX2_image</local_identifier_reference>
+          <local_identifier_reference>BD2600_image</local_identifier_reference>
+          <local_identifier_reference>IRR2_image</local_identifier_reference>
+          <local_identifier_reference>IRR3_image</local_identifier_reference>
+          <local_identifier_reference>R530_image</local_identifier_reference>
+          <local_identifier_reference>R600_image</local_identifier_reference>
+          <local_identifier_reference>R1080_image</local_identifier_reference>
+          <local_identifier_reference>R1506_image</local_identifier_reference>
+          <local_identifier_reference>R2529_image</local_identifier_reference>
+          <local_identifier_reference>R3920_image</local_identifier_reference>
+          <local_reference_type>cartography_parameters_to_image_object</local_reference_type>
+        </Local_Internal_Reference>
+        <cart:Spatial_Domain>
+          <cart:Bounding_Coordinates>
+            <cart:west_bounding_coordinate unit="deg">77.27556</cart:west_bounding_coordinate>
+            <cart:east_bounding_coordinate unit="deg">77.561134</cart:east_bounding_coordinate>
+            <cart:north_bounding_coordinate unit="deg">18.7324270</cart:north_bounding_coordinate>
+            <cart:south_bounding_coordinate unit="deg">18.2767400</cart:south_bounding_coordinate>
+          </cart:Bounding_Coordinates>
+        </cart:Spatial_Domain>
+        <cart:Spatial_Reference_Information>
+          <cart:Horizontal_Coordinate_System_Definition>
+            <cart:Planar>
+              <cart:Map_Projection>
+                <cart:map_projection_name>Equirectangular</cart:map_projection_name>
+                <cart:Equirectangular>
+                  <cart:latitude_of_projection_origin unit="deg">0</cart:latitude_of_projection_origin>
+                  <cart:standard_parallel_1 unit="deg">15.0000000</cart:standard_parallel_1>
+                  <cart:longitude_of_central_meridian unit="deg">0</cart:longitude_of_central_meridian>
+                </cart:Equirectangular>
+              </cart:Map_Projection>
+              <cart:Planar_Coordinate_Information>
+                <cart:planar_coordinate_encoding_method>Coordinate Pair</cart:planar_coordinate_encoding_method>
+                <cart:Coordinate_Representation>
+                  <cart:pixel_resolution_x unit="m/pixel">36.0</cart:pixel_resolution_x>
+                  <cart:pixel_resolution_y unit="m/pixel">36.0</cart:pixel_resolution_y>
+                  <cart:pixel_scale_x unit="pixel/deg">1645.8647867</cart:pixel_scale_x>
+                  <cart:pixel_scale_y unit="pixel/deg">1645.8647867</cart:pixel_scale_y>
+                </cart:Coordinate_Representation>
+              </cart:Planar_Coordinate_Information>
+              <cart:Geo_Transformation>
+                <cart:upperleft_corner_x unit="m">4422596.1999984</cart:upperleft_corner_x>
+                <cart:upperleft_corner_y unit="m">1109971.5000012</cart:upperleft_corner_y>
+              </cart:Geo_Transformation>
+            </cart:Planar>
+            <cart:Geodetic_Model>
+              <cart:latitude_type>Planetocentric</cart:latitude_type>
+              <cart:a_axis_radius unit="m">3394839.8133163117</cart:a_axis_radius>
+              <cart:b_axis_radius unit="m">3394839.8133163117</cart:b_axis_radius>
+              <cart:c_axis_radius unit="m">3394839.8133163117</cart:c_axis_radius>
+              <cart:longitude_direction>Positive East</cart:longitude_direction>
+            </cart:Geodetic_Model>
+          </cart:Horizontal_Coordinate_System_Definition>
+        </cart:Spatial_Reference_Information>
+      </cart:Cartography>
+      <proc:Processing_Information>
+        <Local_Internal_Reference>
+          <local_identifier_reference>R770_image</local_identifier_reference>
+          <local_identifier_reference>RBR_image</local_identifier_reference>
+          <local_identifier_reference>BD530_2_image</local_identifier_reference>
+          <local_identifier_reference>SH600_2_image</local_identifier_reference>
+          <local_identifier_reference>SH770_image</local_identifier_reference>
+          <local_identifier_reference>BD640_2_image</local_identifier_reference>
+          <local_identifier_reference>BD860_2_image</local_identifier_reference>
+          <local_identifier_reference>BD920_2_image</local_identifier_reference>
+          <local_identifier_reference>RPEAK1_image</local_identifier_reference>
+          <local_identifier_reference>BDI1000VIS_image</local_identifier_reference>
+          <local_identifier_reference>R440_image</local_identifier_reference>
+          <local_identifier_reference>IRR1_image</local_identifier_reference>
+          <local_identifier_reference>BDI1000IR_image</local_identifier_reference>
+          <local_identifier_reference>OLINDEX3_image</local_identifier_reference>
+          <local_identifier_reference>R1330_image</local_identifier_reference>
+          <local_identifier_reference>BD1300_image</local_identifier_reference>
+          <local_identifier_reference>LCPINDEX2_image</local_identifier_reference>
+          <local_identifier_reference>HCPINDEX2_image</local_identifier_reference>
+          <local_identifier_reference>VAR_image</local_identifier_reference>
+          <local_identifier_reference>ISLOPE1_image</local_identifier_reference>
+          <local_identifier_reference>BD1400_image</local_identifier_reference>
+          <local_identifier_reference>BD1435_image</local_identifier_reference>
+          <local_identifier_reference>BD1500_2_image</local_identifier_reference>
+          <local_identifier_reference>ICER1_2_image</local_identifier_reference>
+          <local_identifier_reference>BD1750_2_image</local_identifier_reference>
+          <local_identifier_reference>BD1900_2_image</local_identifier_reference>
+          <local_identifier_reference>BD1900R2_image</local_identifier_reference>
+          <local_identifier_reference>BDI2000_image</local_identifier_reference>
+          <local_identifier_reference>BD2100_2_image</local_identifier_reference>
+          <local_identifier_reference>BD2165_image</local_identifier_reference>
+          <local_identifier_reference>BD2190_image</local_identifier_reference>
+          <local_identifier_reference>MIN2200_image</local_identifier_reference>
+          <local_identifier_reference>BD2210_2_image</local_identifier_reference>
+          <local_identifier_reference>D2200_image</local_identifier_reference>
+          <local_identifier_reference>BD2230_image</local_identifier_reference>
+          <local_identifier_reference>BD2250_image</local_identifier_reference>
+          <local_identifier_reference>MIN2250_image</local_identifier_reference>
+          <local_identifier_reference>BD2265_image</local_identifier_reference>
+          <local_identifier_reference>BD2290_image</local_identifier_reference>
+          <local_identifier_reference>D2300_image</local_identifier_reference>
+          <local_identifier_reference>BD2355_image</local_identifier_reference>
+          <local_identifier_reference>SINDEX2_image</local_identifier_reference>
+          <local_identifier_reference>ICER2_2_image</local_identifier_reference>
+          <local_identifier_reference>MIN2295_2480_image</local_identifier_reference>
+          <local_identifier_reference>MIN2345_2537_image</local_identifier_reference>
+          <local_identifier_reference>BD2500_2_image</local_identifier_reference>
+          <local_identifier_reference>BD3000_image</local_identifier_reference>
+          <local_identifier_reference>BD3100_image</local_identifier_reference>
+          <local_identifier_reference>BD3200_image</local_identifier_reference>
+          <local_identifier_reference>BD3400_2_image</local_identifier_reference>
+          <local_identifier_reference>CINDEX2_image</local_identifier_reference>
+          <local_identifier_reference>BD2600_image</local_identifier_reference>
+          <local_identifier_reference>IRR2_image</local_identifier_reference>
+          <local_identifier_reference>IRR3_image</local_identifier_reference>
+          <local_identifier_reference>R530_image</local_identifier_reference>
+          <local_identifier_reference>R600_image</local_identifier_reference>
+          <local_identifier_reference>R1080_image</local_identifier_reference>
+          <local_identifier_reference>R1506_image</local_identifier_reference>
+          <local_identifier_reference>R2529_image</local_identifier_reference>
+          <local_identifier_reference>R3920_image</local_identifier_reference>
+          <local_reference_type>processing_information_to_data_object</local_reference_type>
+        </Local_Internal_Reference>
+        <proc:Process>
+          <proc:Software>
+            <proc:Software_Program>
+              <proc:name>mtrdr_pipeline</proc:name>
+              <proc:program_version>1.0</proc:program_version>
+              <proc:program_stop_date_time>2017-07-17T15:06:13Z</proc:program_stop_date_time>
+            </proc:Software_Program>
+          </proc:Software>
+        </proc:Process>
+      </proc:Processing_Information>
+    </Discipline_Area>
+  </Observation_Area>
+  <Reference_List>
+    <Internal_Reference>
+      <lid_reference>urn:nasa:pds:mro_crism_mtrdr:document:crism_dpsis</lid_reference>
+      <reference_type>data_to_document</reference_type>
+    </Internal_Reference>
+    <Source_Product_Internal>
+      <lidvid_reference>urn:nasa:pds:mro_crism_mtrdr:data_mtrdr:hrl000040ff_07_if183j_mtr3::1.0</lidvid_reference>
+      <reference_type>data_to_calibrated_source_product</reference_type>
+      <comment>CRISM MTRDR product used as a source to calculate this one.</comment>
+    </Source_Product_Internal>
+  </Reference_List>
+  <File_Area_Observational>
+    <File>
+      <file_name>hrl000040ff_07_su183j_mtr3.img</file_name>
+      <creation_date_time>2017-07-17T15:06:13Z</creation_date_time>
+      <comment>
+                This Map-Projected Targeted RDR label describes a multiple-band
+                image file containing spectral summary parameters calculated
+                from calibrated and corrected spectral data.
+            </comment>
+    </File>
+    <Array_2D_Image>
+      <name>R770</name>
+      <local_identifier>R770_image</local_identifier>
+      <offset unit="byte">0</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>RBR</name>
+      <local_identifier>RBR_image</local_identifier>
+      <offset unit="byte">1366820</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>BD530_2</name>
+      <local_identifier>BD530_2_image</local_identifier>
+      <offset unit="byte">2733640</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>SH600_2</name>
+      <local_identifier>SH600_2_image</local_identifier>
+      <offset unit="byte">4100460</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>SH770</name>
+      <local_identifier>SH770_image</local_identifier>
+      <offset unit="byte">5467280</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>BD640_2</name>
+      <local_identifier>BD640_2_image</local_identifier>
+      <offset unit="byte">6834100</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>BD860_2</name>
+      <local_identifier>BD860_2_image</local_identifier>
+      <offset unit="byte">8200920</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>BD920_2</name>
+      <local_identifier>BD920_2_image</local_identifier>
+      <offset unit="byte">9567740</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>RPEAK1</name>
+      <local_identifier>RPEAK1_image</local_identifier>
+      <offset unit="byte">10934560</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>BDI1000VIS</name>
+      <local_identifier>BDI1000VIS_image</local_identifier>
+      <offset unit="byte">12301380</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>R440</name>
+      <local_identifier>R440_image</local_identifier>
+      <offset unit="byte">13668200</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>IRR1</name>
+      <local_identifier>IRR1_image</local_identifier>
+      <offset unit="byte">15035020</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>BDI1000IR</name>
+      <local_identifier>BDI1000IR_image</local_identifier>
+      <offset unit="byte">16401840</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>OLINDEX3</name>
+      <local_identifier>OLINDEX3_image</local_identifier>
+      <offset unit="byte">17768660</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>R1330</name>
+      <local_identifier>R1330_image</local_identifier>
+      <offset unit="byte">19135480</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>BD1300</name>
+      <local_identifier>BD1300_image</local_identifier>
+      <offset unit="byte">20502300</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>LCPINDEX2</name>
+      <local_identifier>LCPINDEX2_image</local_identifier>
+      <offset unit="byte">21869120</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>HCPINDEX2</name>
+      <local_identifier>HCPINDEX2_image</local_identifier>
+      <offset unit="byte">23235940</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>VAR</name>
+      <local_identifier>VAR_image</local_identifier>
+      <offset unit="byte">24602760</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>ISLOPE1</name>
+      <local_identifier>ISLOPE1_image</local_identifier>
+      <offset unit="byte">25969580</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>BD1400</name>
+      <local_identifier>BD1400_image</local_identifier>
+      <offset unit="byte">27336400</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>BD1435</name>
+      <local_identifier>BD1435_image</local_identifier>
+      <offset unit="byte">28703220</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>BD1500_2</name>
+      <local_identifier>BD1500_2_image</local_identifier>
+      <offset unit="byte">30070040</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>ICER1_2</name>
+      <local_identifier>ICER1_2_image</local_identifier>
+      <offset unit="byte">31436860</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>BD1750_2</name>
+      <local_identifier>BD1750_2_image</local_identifier>
+      <offset unit="byte">32803680</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>BD1900_2</name>
+      <local_identifier>BD1900_2_image</local_identifier>
+      <offset unit="byte">34170500</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>BD1900R2</name>
+      <local_identifier>BD1900R2_image</local_identifier>
+      <offset unit="byte">35537320</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>BDI2000</name>
+      <local_identifier>BDI2000_image</local_identifier>
+      <offset unit="byte">36904140</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>BD2100_2</name>
+      <local_identifier>BD2100_2_image</local_identifier>
+      <offset unit="byte">38270960</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>BD2165</name>
+      <local_identifier>BD2165_image</local_identifier>
+      <offset unit="byte">39637780</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>BD2190</name>
+      <local_identifier>BD2190_image</local_identifier>
+      <offset unit="byte">41004600</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>MIN2200</name>
+      <local_identifier>MIN2200_image</local_identifier>
+      <offset unit="byte">42371420</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>BD2210_2</name>
+      <local_identifier>BD2210_2_image</local_identifier>
+      <offset unit="byte">43738240</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>D2200</name>
+      <local_identifier>D2200_image</local_identifier>
+      <offset unit="byte">45105060</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>BD2230</name>
+      <local_identifier>BD2230_image</local_identifier>
+      <offset unit="byte">46471880</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>BD2250</name>
+      <local_identifier>BD2250_image</local_identifier>
+      <offset unit="byte">47838700</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>MIN2250</name>
+      <local_identifier>MIN2250_image</local_identifier>
+      <offset unit="byte">49205520</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>BD2265</name>
+      <local_identifier>BD2265_image</local_identifier>
+      <offset unit="byte">50572340</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>BD2290</name>
+      <local_identifier>BD2290_image</local_identifier>
+      <offset unit="byte">51939160</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>D2300</name>
+      <local_identifier>D2300_image</local_identifier>
+      <offset unit="byte">53305980</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>BD2355</name>
+      <local_identifier>BD2355_image</local_identifier>
+      <offset unit="byte">54672800</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>SINDEX2</name>
+      <local_identifier>SINDEX2_image</local_identifier>
+      <offset unit="byte">56039620</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>ICER2_2</name>
+      <local_identifier>ICER2_2_image</local_identifier>
+      <offset unit="byte">57406440</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>MIN2295_2480</name>
+      <local_identifier>MIN2295_2480_image</local_identifier>
+      <offset unit="byte">58773260</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>MIN2345_2537</name>
+      <local_identifier>MIN2345_2537_image</local_identifier>
+      <offset unit="byte">60140080</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>BD2500_2</name>
+      <local_identifier>BD2500_2_image</local_identifier>
+      <offset unit="byte">61506900</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>BD3000</name>
+      <local_identifier>BD3000_image</local_identifier>
+      <offset unit="byte">62873720</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>BD3100</name>
+      <local_identifier>BD3100_image</local_identifier>
+      <offset unit="byte">64240540</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>BD3200</name>
+      <local_identifier>BD3200_image</local_identifier>
+      <offset unit="byte">65607360</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>BD3400_2</name>
+      <local_identifier>BD3400_2_image</local_identifier>
+      <offset unit="byte">66974180</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>CINDEX2</name>
+      <local_identifier>CINDEX2_image</local_identifier>
+      <offset unit="byte">68341000</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>BD2600</name>
+      <local_identifier>BD2600_image</local_identifier>
+      <offset unit="byte">69707820</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>IRR2</name>
+      <local_identifier>IRR2_image</local_identifier>
+      <offset unit="byte">71074640</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>IRR3</name>
+      <local_identifier>IRR3_image</local_identifier>
+      <offset unit="byte">72441460</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>R530</name>
+      <local_identifier>R530_image</local_identifier>
+      <offset unit="byte">73808280</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>R600</name>
+      <local_identifier>R600_image</local_identifier>
+      <offset unit="byte">75175100</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>R1080</name>
+      <local_identifier>R1080_image</local_identifier>
+      <offset unit="byte">76541920</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>R1506</name>
+      <local_identifier>R1506_image</local_identifier>
+      <offset unit="byte">77908740</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>R2529</name>
+      <local_identifier>R2529_image</local_identifier>
+      <offset unit="byte">79275560</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+    <Array_2D_Image>
+      <name>R3920</name>
+      <local_identifier>R3920_image</local_identifier>
+      <offset unit="byte">80642380</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>751</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>455</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+  </File_Area_Observational>
+  <File_Area_Observational_Supplemental>
+    <File>
+      <file_name>hrl000040ff_07_su183j_mtr3.hdr</file_name>
+    </File>
+    <Stream_Text>
+      <offset unit="byte">0</offset>
+      <parsing_standard_id>7-Bit ASCII Text</parsing_standard_id>
+      <description>
+                The ENVI header is a separate ASCII file that includes basic image
+                data file characteristics and allows the image data to be loaded
+                directly into the ENVI image processing software available bands
+                list.
+            </description>
+      <record_delimiter>Carriage-Return Line-Feed</record_delimiter>
+    </Stream_Text>
+  </File_Area_Observational_Supplemental>
+  <File_Area_Observational_Supplemental>
+    <File>
+      <file_name>hrl000040ff_07_su183j_mtr3.lbl</file_name>
+    </File>
+    <Stream_Text>
+      <offset unit="byte">0</offset>
+      <parsing_standard_id>PDS3</parsing_standard_id>
+      <description>PDS3 label</description>
+      <record_delimiter>Carriage-Return Line-Feed</record_delimiter>
+    </Stream_Text>
+  </File_Area_Observational_Supplemental>
+</Product_Observational>

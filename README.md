@@ -1,0 +1,10 @@
+MarsFlex plans Jezero scenario walks with terrain routes, optional visits and traceable orbital/rover context. [S1–S4]
+Source keys: docs/science/SOURCES_EN.md; full delivery state: HANDOFF.md.
+1. Install 64-bit Python 3.12 and keep internet available for the first dependency installation. [S13]
+2. Extract the entire ZIP to a writable folder; keep frontend/dist and data beside launch.py. [S13]
+3. On Windows double-click Start_MarsFlex.cmd; on Linux run python3 launch.py in that folder. [S13]
+4. Open http://127.0.0.1:8000, wait for the mission result, then select Test Shuyak detour. [S2,S13]
+Keep the launch window open; Ctrl+C stops the local server. [S13]
+Green denotes time-budget feasibility under assumptions; operational safety calibration is NOT FOUND. [S1]
+HiRISE supports only a local comparison; MEDA is archived rover-local context. [S5,S6,S12]
+Original code: Apache-2.0; external terms: docs/submission/EXTERNAL_RESOURCES.md. [S8]

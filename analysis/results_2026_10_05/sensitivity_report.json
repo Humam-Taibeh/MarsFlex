@@ -1,0 +1,3290 @@
+{
+  "status": "completed_after_explicit_approval",
+  "proposal_sha256": "b768bc936093380bb14c948fdfb7a37c461ac236faf0bcbb42f184843ee097ab",
+  "terrain_sha256": "e157d283da63b59638175eca24a8c8c4224d09d6a2c8c8c27d007f0e02b60436",
+  "grid": {
+    "source_shape": [
+      1512,
+      1596
+    ],
+    "source_crs_wkt": "PROJCS[\"Equirectangular Mars 2000 Sphere IAU\",GEOGCS[\"GCS_Mars_2000_Sphere\",DATUM[\"Mars_2000_(Sphere)\",SPHEROID[\"Mars_2000_Sphere_IAU\",3396190,0]],PRIMEM[\"Reference_Meridian\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]]],PROJECTION[\"Equirectangular\"],PARAMETER[\"standard_parallel_1\",0],PARAMETER[\"central_meridian\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+    "source_bounds_m": [
+      4573663.250853,
+      1079453.140188,
+      4605583.250853,
+      1109693.140188
+    ],
+    "source_nodata": -3.4028226550889045e+38,
+    "source_sha256": "16a1aa66c3f48c1bca252795827db7b417876217aff0f5e1aff18027fab2327b",
+    "aoi_lonlat": [
+      77.32,
+      18.4,
+      77.49,
+      18.53
+    ],
+    "buffer_map_m": 2000,
+    "shape": [
+      586,
+      705
+    ],
+    "transform": [
+      20.0,
+      0.0,
+      4581103.250853,
+      0.0,
+      -20.0,
+      1100373.140188
+    ],
+    "grid_spacing_map_m": 20,
+    "radius_m": 3396190.0,
+    "latitude_type": "planetocentric",
+    "longitude": "positive east",
+    "vertical_reference": "MOLA topography / DeltaGeoid, as named by source product; not radius above sphere",
+    "valid_cells": 413130,
+    "nodata_cells": 0,
+    "elevation_range_m": [
+      -2651.13427734375,
+      -1741.164306640625
+    ],
+    "method": "native-grid crop; no elevation resampling; geodesic edge lengths"
+  },
+  "fixed": {
+    "position": {
+      "lon": 77.397,
+      "lat": 18.485
+    },
+    "habitat": {
+      "lon": 77.415,
+      "lat": 18.466
+    },
+    "remaining_min": 300,
+    "detour_dwell_min": 10,
+    "activities": [
+      {
+        "id": "Swift Run",
+        "lon": 77.40617078,
+        "lat": 18.458931,
+        "type": "required"
+      },
+      {
+        "id": "Hazeltop",
+        "lon": 77.40588851,
+        "lat": 18.45863707,
+        "type": "required"
+      }
+    ]
+  },
+  "axes": {
+    "speed_m_s": {
+      "values": [
+        0.4,
+        0.5,
+        0.6
+      ],
+      "label": "[ASSUMPTION]",
+      "basis": "Design stress test: 80%,100%,120% of the declared0.5m/s baseline; no physiological calibration"
+    },
+    "slope_penalty_multiplier": {
+      "values": [
+        0.75,
+        1.0,
+        1.25
+      ],
+      "label": "[ASSUMPTION]",
+      "basis": "Scale the existing uphill4 and downhill2 together; not independent axes and not published fits"
+    },
+    "slope_gate_deg": {
+      "values": [
+        10,
+        15,
+        20
+      ],
+      "label": "[ASSUMPTION]",
+      "basis": "Apply the same gate to surface slope and directional grade; two stricter cases and the existing20degree baseline, not astronaut limits"
+    },
+    "station_dwell_min": {
+      "values": [
+        10,
+        15,
+        20
+      ],
+      "label": "[ASSUMPTION]",
+      "basis": "Apply to each of the two planned stops;15min is the existing scenario input,10/20 are proposed design perturbations"
+    },
+    "reserve_min": {
+      "values": [
+        60,
+        72,
+        90
+      ],
+      "label": "[ASSUMPTION]",
+      "basis": "Proposed reserve-policy scenarios around the existing72min setting; not certified emergency reserves"
+    }
+  },
+  "combinations": 243,
+  "green_in_all_cells": 0,
+  "green_in_some_cells": 66438,
+  "records": [
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 10,
+        "reserve_min": 60
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 10,
+        "reserve_min": 72
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 10,
+        "reserve_min": 90
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 15,
+        "reserve_min": 60
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 15,
+        "reserve_min": 72
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 15,
+        "reserve_min": 90
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 20,
+        "reserve_min": 60
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 20,
+        "reserve_min": 72
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 20,
+        "reserve_min": 90
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 10,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 20425,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 10,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 17185,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 10,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 12607,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": false
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 15,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 17725,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 15,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 14611,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 15,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 10262,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": false
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 20,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 15110,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 20,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 12138,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 20,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 8264,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": false
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 10,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 23274,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 10,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 19820,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 10,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 15044,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": false
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 15,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 20375,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 15,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 17134,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 15,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 12621,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": false
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 20,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 17668,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 20,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 14551,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 20,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 10332,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": false
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 10,
+        "reserve_min": 60
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 10,
+        "reserve_min": 72
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 10,
+        "reserve_min": 90
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 15,
+        "reserve_min": 60
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 15,
+        "reserve_min": 72
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 15,
+        "reserve_min": 90
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 20,
+        "reserve_min": 60
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 20,
+        "reserve_min": 72
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 20,
+        "reserve_min": 90
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 10,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 18716,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 10,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 15625,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 10,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 11305,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": false
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 15,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 16136,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 15,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 13124,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 15,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 9182,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": false
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 20,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 13642,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 20,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 10874,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 20,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 7278,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": false
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 10,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 21316,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 10,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 18068,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 10,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 13536,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": false
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 15,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 18615,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 15,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 15500,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 15,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 11292,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": false
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 20,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 16017,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 20,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 13081,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 20,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 9112,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": false
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 10,
+        "reserve_min": 60
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 10,
+        "reserve_min": 72
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 10,
+        "reserve_min": 90
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 15,
+        "reserve_min": 60
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 15,
+        "reserve_min": 72
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 15,
+        "reserve_min": 90
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 20,
+        "reserve_min": 60
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 20,
+        "reserve_min": 72
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 20,
+        "reserve_min": 90
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 10,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 17139,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 10,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 14166,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": false
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 10,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 10107,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": false
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 15,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 14646,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 15,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 11846,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": false
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 15,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 8211,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": false
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 20,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 12292,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 20,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 9713,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": false
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 20,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 6352,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": false
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 10,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 19524,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 10,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 16475,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": false
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 10,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 12208,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": false
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 15,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 16971,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 15,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 14006,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": false
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 15,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 10046,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": false
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 20,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 14470,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 20,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 11785,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": false
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 20,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 8048,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": false
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 10,
+        "reserve_min": 60
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 10,
+        "reserve_min": 72
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 10,
+        "reserve_min": 90
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 15,
+        "reserve_min": 60
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 15,
+        "reserve_min": 72
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 15,
+        "reserve_min": 90
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 20,
+        "reserve_min": 60
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 20,
+        "reserve_min": 72
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 20,
+        "reserve_min": 90
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 10,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 37521,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 10,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 31837,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 10,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 24659,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 15,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 32836,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 15,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 27529,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 15,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 21086,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 20,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 28274,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 20,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 23927,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 20,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 17725,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 10,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 42011,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 10,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 36219,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 10,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 28151,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 15,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 37179,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 15,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 31603,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 15,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 23998,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 20,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 32509,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 20,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 27264,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 20,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 20375,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 10,
+        "reserve_min": 60
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 10,
+        "reserve_min": 72
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 10,
+        "reserve_min": 90
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 15,
+        "reserve_min": 60
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 15,
+        "reserve_min": 72
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 15,
+        "reserve_min": 90
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 20,
+        "reserve_min": 60
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 20,
+        "reserve_min": 72
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 20,
+        "reserve_min": 90
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 10,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 34782,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 10,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 29212,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 10,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 22747,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 15,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 29978,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 15,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 25551,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 15,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 19380,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 20,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 26277,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 20,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 22091,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 20,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 16136,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 10,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 39003,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 10,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 33433,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 10,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 25659,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 15,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 34340,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 15,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 29068,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 15,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 22027,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 20,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 29925,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 20,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 24909,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 20,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 18615,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 10,
+        "reserve_min": 60
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 10,
+        "reserve_min": 72
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 10,
+        "reserve_min": 90
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 15,
+        "reserve_min": 60
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 15,
+        "reserve_min": 72
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 15,
+        "reserve_min": 90
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 20,
+        "reserve_min": 60
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 20,
+        "reserve_min": 72
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 20,
+        "reserve_min": 90
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 10,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 32096,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 10,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 27183,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 10,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 21011,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 15,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 27923,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 15,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 23705,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 15,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 17791,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 20,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 24391,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 20,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 20352,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 20,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 14646,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 10,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 36202,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 10,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 30856,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 10,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 23638,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 15,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 31703,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 15,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 26561,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 15,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 20200,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 20,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 27509,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 20,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 22938,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.5,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 20,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 16971,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 10,
+        "reserve_min": 60
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 10,
+        "reserve_min": 72
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 10,
+        "reserve_min": 90
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 15,
+        "reserve_min": 60
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 15,
+        "reserve_min": 72
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 15,
+        "reserve_min": 90
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 20,
+        "reserve_min": 60
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 20,
+        "reserve_min": 72
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 20,
+        "reserve_min": 90
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 10,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 60504,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 10,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 51638,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 10,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 40364,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 15,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 53007,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 15,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 45157,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 15,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 34704,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 20,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 46407,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 20,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 39205,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 20,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 29053,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 10,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 66438,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 10,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 57552,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 10,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 45162,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 15,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 59008,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 15,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 50443,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 15,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 39088,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 20,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 51851,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 20,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 43874,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 20,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 33423,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 10,
+        "reserve_min": 60
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 10,
+        "reserve_min": 72
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 10,
+        "reserve_min": 90
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 15,
+        "reserve_min": 60
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 15,
+        "reserve_min": 72
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 15,
+        "reserve_min": 90
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 20,
+        "reserve_min": 60
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 20,
+        "reserve_min": 72
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 20,
+        "reserve_min": 90
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 10,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 56380,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 10,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 48088,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 10,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 37525,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 15,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 49369,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 15,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 42062,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 15,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 31936,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 20,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 43227,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 20,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 36422,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 20,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 26979,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 10,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 62021,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 10,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 53469,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 10,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 41875,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 15,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 54824,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 15,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 46737,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 15,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 36184,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 20,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 48035,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 20,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 40699,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.0,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 20,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 30778,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 10,
+        "reserve_min": 60
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 10,
+        "reserve_min": 72
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 10,
+        "reserve_min": 90
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 15,
+        "reserve_min": 60
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 15,
+        "reserve_min": 72
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 15,
+        "reserve_min": 90
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 20,
+        "reserve_min": 60
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 20,
+        "reserve_min": 72
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 10,
+        "station_dwell_min": 20,
+        "reserve_min": 90
+      },
+      "status": "required_location_blocked_or_outside_grid",
+      "reason": "Position outside traversable known grid; no silent snapping",
+      "green_cells": 0,
+      "classified_cells": 0
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 10,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 52404,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 10,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 44914,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 10,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 34901,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 15,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 46095,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 15,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 39243,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 15,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 29390,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 20,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 40342,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 20,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 33816,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 20,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 25079,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 10,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 57908,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 10,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 49660,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 10,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 38975,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 15,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 50996,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 15,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 43479,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 15,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 33491,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 20,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 44655,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 20,
+        "reserve_min": 72
+      },
+      "status": "computed",
+      "green_cells": 37860,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 20,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 28375,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    }
+  ],
+  "interpretation": "Green in every tested combination means robustness only within this finite declared grid, not all continuous parameter values or human safety. Green in some combinations means assumption-sensitive. Never evaluated or blocked is not relabeled safe.",
+  "warning": "No changes to live routes, class labels or original colors. Counts are finite-grid sensitivity, not probabilities. Missing/infeasible cases contribute no green cells."
+}

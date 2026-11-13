@@ -1,0 +1,380 @@
+[
+  {
+    "cache_file": "data/derived/meda/sol_0313.json",
+    "variable": "pressure",
+    "unit": "Pa",
+    "label_url": "https://atmos.nmsu.edu/PDS/data/PDS4/Mars2020/mars2020_meda/data_derived_env/sol_0300_0419/sol_0313/WE__0313___________DER_PS__________________P03.xml",
+    "data_url": "https://atmos.nmsu.edu/PDS/data/PDS4/Mars2020/mars2020_meda/data_derived_env/sol_0300_0419/sol_0313/WE__0313___________DER_PS__________________P03.CSV",
+    "lid": "urn:nasa:pds:mars2020_meda:data_derived_env:we__0313___________der_ps__________________p",
+    "version": "3.0",
+    "csv_sha256": "1b445551a89a9fc2910aca0881d1b5671ad1e5b15ac335f3b3e47ea79ff66f99",
+    "xml_sha256": "d809aea4809a6869ea9eb49a7adbe5776e5be3e14e96c3adf7eace10a286781d",
+    "md5_verified": true,
+    "column": "PRESSURE",
+    "column_metadata": {
+      "unit": "pascal",
+      "description": "Pressure"
+    },
+    "start_utc": "2022-01-05T18:55:07.841Z",
+    "stop_utc": "2022-01-06T19:34:41.541Z",
+    "records": 76136,
+    "processing_level": "Derived"
+  },
+  {
+    "cache_file": "data/derived/meda/sol_0313.json",
+    "variable": "air_temperature",
+    "unit": "K",
+    "label_url": "https://atmos.nmsu.edu/PDS/data/PDS4/Mars2020/mars2020_meda/data_calibrated_env/sol_0300_0419/sol_0313/WE__0313___________CAL_ATS_________________P01.xml",
+    "data_url": "https://atmos.nmsu.edu/PDS/data/PDS4/Mars2020/mars2020_meda/data_calibrated_env/sol_0300_0419/sol_0313/WE__0313___________CAL_ATS_________________P01.CSV",
+    "lid": "urn:nasa:pds:mars2020_meda:data_calibrated_env:we__0313___________cal_ats_________________p",
+    "version": "1.0",
+    "csv_sha256": "50cc034f7c5961ff15a1a35ee277572b255386d489462175c503f42eae846f4d",
+    "xml_sha256": "591a723d68a0fdb2a7d6d6301bdfeb685ee5de0dd38f692a3677197d05ffe433",
+    "md5_verified": true,
+    "column": "ATS_LOCAL_TEMP1",
+    "column_metadata": {
+      "unit": "kelvin",
+      "description": "Local air temperature near the unit mounted on the RSM at 50º"
+    },
+    "start_utc": "2022-01-05T18:55:07.841Z",
+    "stop_utc": "2022-01-06T19:34:41.541Z",
+    "records": 76255,
+    "processing_level": "Calibrated"
+  },
+  {
+    "cache_file": "data/derived/meda/sol_0313.json",
+    "variable": "wind",
+    "unit": "m/s",
+    "label_url": "https://atmos.nmsu.edu/PDS/data/PDS4/Mars2020/mars2020_meda/data_derived_env/sol_0300_0419/sol_0313/WE__0313___________DER_WS__________________P02.xml",
+    "data_url": "https://atmos.nmsu.edu/PDS/data/PDS4/Mars2020/mars2020_meda/data_derived_env/sol_0300_0419/sol_0313/WE__0313___________DER_WS__________________P02.CSV",
+    "lid": "urn:nasa:pds:mars2020_meda:data_derived_env:we__0313___________der_ws__________________p",
+    "version": "2.0",
+    "csv_sha256": "2bff0ddc834876447a92dc6e1ab95ea19c9137fec03caf47e1ec579542c6a574",
+    "xml_sha256": "a62579301a6f97bc2596441be49d8e77740996f5e2a42bd54c466d674c0959fc",
+    "md5_verified": true,
+    "column": "HORIZONTAL_WIND_SPEED",
+    "column_metadata": {
+      "unit": "meter/second",
+      "description": "Wind horizontal speed"
+    },
+    "start_utc": "2022-01-05T18:55:07.841Z",
+    "stop_utc": "2022-01-06T19:24:37.536Z",
+    "records": 31617,
+    "processing_level": "Derived"
+  },
+  {
+    "cache_file": "data/derived/meda/sol_0313.json",
+    "variable": "rds",
+    "unit": "W/m²",
+    "label_url": "https://atmos.nmsu.edu/PDS/data/PDS4/Mars2020/mars2020_meda/data_calibrated_env/sol_0300_0419/sol_0313/WE__0313___________CAL_RDS_________________P01.xml",
+    "data_url": "https://atmos.nmsu.edu/PDS/data/PDS4/Mars2020/mars2020_meda/data_calibrated_env/sol_0300_0419/sol_0313/WE__0313___________CAL_RDS_________________P01.CSV",
+    "lid": "urn:nasa:pds:mars2020_meda:data_calibrated_env:we__0313___________cal_rds_________________p",
+    "version": "1.0",
+    "csv_sha256": "7f92e2b8262312b87d1a49b7036bf3615fd89edc2e50193345217256217e79d2",
+    "xml_sha256": "5d2b5403e126198ccc8756a0c7e7825c1ee75d14e95e1ebbb53329581b02a4d3",
+    "md5_verified": true,
+    "column": "RDS_TOP_7",
+    "column_metadata": {
+      "unit": "watt/m2",
+      "description": "Top Mount Photodiode 7 radiance integrated over Field of View"
+    },
+    "start_utc": "2022-01-05T18:55:07.841Z",
+    "stop_utc": "2022-01-06T19:34:41.541Z",
+    "records": 76149,
+    "processing_level": "Calibrated"
+  },
+  {
+    "cache_file": "data/derived/meda/sol_0314.json",
+    "variable": "pressure",
+    "unit": "Pa",
+    "label_url": "https://atmos.nmsu.edu/PDS/data/PDS4/Mars2020/mars2020_meda/data_derived_env/sol_0300_0419/sol_0314/WE__0314___________DER_PS__________________P01.xml",
+    "data_url": "https://atmos.nmsu.edu/PDS/data/PDS4/Mars2020/mars2020_meda/data_derived_env/sol_0300_0419/sol_0314/WE__0314___________DER_PS__________________P01.CSV",
+    "lid": "urn:nasa:pds:mars2020_meda:data_derived_env:we__0314___________der_ps__________________p",
+    "version": "1.0",
+    "csv_sha256": "84d8291301bb9aa04c478af0ee800e56927c5cb3180932bb65c46af3ea0b9e07",
+    "xml_sha256": "a955f34a6ce7029826a9014e7cc32455dd546e143a133e096b060abe62b44b13",
+    "md5_verified": true,
+    "column": "PRESSURE",
+    "column_metadata": {
+      "unit": "pascal",
+      "description": "Pressure"
+    },
+    "start_utc": "2022-01-06T19:34:42.541Z",
+    "stop_utc": "2022-01-07T19:17:58.214Z",
+    "records": 54114,
+    "processing_level": "Derived"
+  },
+  {
+    "cache_file": "data/derived/meda/sol_0314.json",
+    "variable": "air_temperature",
+    "unit": "K",
+    "label_url": "https://atmos.nmsu.edu/PDS/data/PDS4/Mars2020/mars2020_meda/data_calibrated_env/sol_0300_0419/sol_0314/WE__0314___________CAL_ATS_________________P01.xml",
+    "data_url": "https://atmos.nmsu.edu/PDS/data/PDS4/Mars2020/mars2020_meda/data_calibrated_env/sol_0300_0419/sol_0314/WE__0314___________CAL_ATS_________________P01.CSV",
+    "lid": "urn:nasa:pds:mars2020_meda:data_calibrated_env:we__0314___________cal_ats_________________p",
+    "version": "1.0",
+    "csv_sha256": "de0f8d19e29e1386588b4aea8f4ac7ffdd7f26ac841c8c313145063eaf5e2423",
+    "xml_sha256": "037590db60e646f969fd184463cf13acd4fc7c37c5cc51cd94e4508b071f92cb",
+    "md5_verified": true,
+    "column": "ATS_LOCAL_TEMP1",
+    "column_metadata": {
+      "unit": "kelvin",
+      "description": "Local air temperature near the unit mounted on the RSM at 50º"
+    },
+    "start_utc": "2022-01-06T19:34:42.541Z",
+    "stop_utc": "2022-01-07T19:18:29.215Z",
+    "records": 54468,
+    "processing_level": "Calibrated"
+  },
+  {
+    "cache_file": "data/derived/meda/sol_0314.json",
+    "variable": "wind",
+    "unit": "m/s",
+    "label_url": "https://atmos.nmsu.edu/PDS/data/PDS4/Mars2020/mars2020_meda/data_derived_env/sol_0300_0419/sol_0314/WE__0314___________DER_WS__________________P02.xml",
+    "data_url": "https://atmos.nmsu.edu/PDS/data/PDS4/Mars2020/mars2020_meda/data_derived_env/sol_0300_0419/sol_0314/WE__0314___________DER_WS__________________P02.CSV",
+    "lid": "urn:nasa:pds:mars2020_meda:data_derived_env:we__0314___________der_ws__________________p",
+    "version": "2.0",
+    "csv_sha256": "7ca4b17020f1731ba12f02d4f5271f82f1a393f3f441515196977192c79e2a3c",
+    "xml_sha256": "e62558db5b71d42d8ac0e087471c335b1d8eef4126dbf03858d79c668400e756",
+    "md5_verified": true,
+    "column": "HORIZONTAL_WIND_SPEED",
+    "column_metadata": {
+      "unit": "meter/second",
+      "description": "Wind horizontal speed"
+    },
+    "start_utc": "2022-01-06T19:40:21.544Z",
+    "stop_utc": "2022-01-07T19:18:01.214Z",
+    "records": 1141,
+    "processing_level": "Derived"
+  },
+  {
+    "cache_file": "data/derived/meda/sol_0314.json",
+    "variable": "rds",
+    "unit": "W/m²",
+    "label_url": "https://atmos.nmsu.edu/PDS/data/PDS4/Mars2020/mars2020_meda/data_calibrated_env/sol_0300_0419/sol_0314/WE__0314___________CAL_RDS_________________P01.xml",
+    "data_url": "https://atmos.nmsu.edu/PDS/data/PDS4/Mars2020/mars2020_meda/data_calibrated_env/sol_0300_0419/sol_0314/WE__0314___________CAL_RDS_________________P01.CSV",
+    "lid": "urn:nasa:pds:mars2020_meda:data_calibrated_env:we__0314___________cal_rds_________________p",
+    "version": "1.0",
+    "csv_sha256": "9c73464f74d5189b4d42def6e2840e123be0b67caa6a48652f41f3a747d4a438",
+    "xml_sha256": "fcce5c1bb44aae090c228eca5212ff9aa3b88f7fc0f6ce09de6c2183da8643e0",
+    "md5_verified": true,
+    "column": "RDS_TOP_7",
+    "column_metadata": {
+      "unit": "watt/m2",
+      "description": "Top Mount Photodiode 7 radiance integrated over Field of View"
+    },
+    "start_utc": "2022-01-06T19:34:42.541Z",
+    "stop_utc": "2022-01-07T19:18:19.215Z",
+    "records": 54253,
+    "processing_level": "Calibrated"
+  },
+  {
+    "cache_file": "data/derived/meda/sol_0315.json",
+    "variable": "pressure",
+    "unit": "Pa",
+    "label_url": "https://atmos.nmsu.edu/PDS/data/PDS4/Mars2020/mars2020_meda/data_derived_env/sol_0300_0419/sol_0315/WE__0315___________DER_PS__________________P01.xml",
+    "data_url": "https://atmos.nmsu.edu/PDS/data/PDS4/Mars2020/mars2020_meda/data_derived_env/sol_0300_0419/sol_0315/WE__0315___________DER_PS__________________P01.CSV",
+    "lid": "urn:nasa:pds:mars2020_meda:data_derived_env:we__0315___________der_ps__________________p",
+    "version": "1.0",
+    "csv_sha256": "387288b0883ae30aef08c92e55d6e0dbc1b675a51be79949b3132320d7f3d849",
+    "xml_sha256": "6757b244c4e4a209d015c09f48c215b05b53caa69dbf964bf2c84c263bca4117",
+    "md5_verified": true,
+    "column": "PRESSURE",
+    "column_metadata": {
+      "unit": "pascal",
+      "description": "Pressure"
+    },
+    "start_utc": "2022-01-07T20:14:24.241Z",
+    "stop_utc": "2022-01-08T20:53:51.941Z",
+    "records": 62437,
+    "processing_level": "Derived"
+  },
+  {
+    "cache_file": "data/derived/meda/sol_0315.json",
+    "variable": "air_temperature",
+    "unit": "K",
+    "label_url": "https://atmos.nmsu.edu/PDS/data/PDS4/Mars2020/mars2020_meda/data_calibrated_env/sol_0300_0419/sol_0315/WE__0315___________CAL_ATS_________________P01.xml",
+    "data_url": "https://atmos.nmsu.edu/PDS/data/PDS4/Mars2020/mars2020_meda/data_calibrated_env/sol_0300_0419/sol_0315/WE__0315___________CAL_ATS_________________P01.CSV",
+    "lid": "urn:nasa:pds:mars2020_meda:data_calibrated_env:we__0315___________cal_ats_________________p",
+    "version": "1.0",
+    "csv_sha256": "15f43804de1d30f9734e969063de94ab59791c3c256bcf46da0e5cbb5b80979a",
+    "xml_sha256": "54459eaefe3180c2906b5abaff5e7b7795d28f664c6eb63a3d7dcefb79b37494",
+    "md5_verified": true,
+    "column": "ATS_LOCAL_TEMP1",
+    "column_metadata": {
+      "unit": "kelvin",
+      "description": "Local air temperature near the unit mounted on the RSM at 50º"
+    },
+    "start_utc": "2022-01-07T20:14:21.241Z",
+    "stop_utc": "2022-01-08T20:53:51.941Z",
+    "records": 62708,
+    "processing_level": "Calibrated"
+  },
+  {
+    "cache_file": "data/derived/meda/sol_0315.json",
+    "variable": "wind",
+    "unit": "m/s",
+    "label_url": "https://atmos.nmsu.edu/PDS/data/PDS4/Mars2020/mars2020_meda/data_derived_env/sol_0300_0419/sol_0315/WE__0315___________DER_WS__________________P02.xml",
+    "data_url": "https://atmos.nmsu.edu/PDS/data/PDS4/Mars2020/mars2020_meda/data_derived_env/sol_0300_0419/sol_0315/WE__0315___________DER_WS__________________P02.CSV",
+    "lid": "urn:nasa:pds:mars2020_meda:data_derived_env:we__0315___________der_ws__________________p",
+    "version": "2.0",
+    "csv_sha256": "7c3cd43d7e9cbc813b81e38d93a64616aece78af39cf945867c4f8727838db09",
+    "xml_sha256": "6ca0b199cf2d9e078b06bee7061370dab4f40d9283a76ea8e7bad786cf639879",
+    "md5_verified": true,
+    "column": "HORIZONTAL_WIND_SPEED",
+    "column_metadata": {
+      "unit": "meter/second",
+      "description": "Wind horizontal speed"
+    },
+    "start_utc": "2022-01-07T20:14:48.241Z",
+    "stop_utc": "2022-01-08T10:27:22.645Z",
+    "records": 828,
+    "processing_level": "Derived"
+  },
+  {
+    "cache_file": "data/derived/meda/sol_0315.json",
+    "variable": "rds",
+    "unit": "W/m²",
+    "label_url": "https://atmos.nmsu.edu/PDS/data/PDS4/Mars2020/mars2020_meda/data_calibrated_env/sol_0300_0419/sol_0315/WE__0315___________CAL_RDS_________________P01.xml",
+    "data_url": "https://atmos.nmsu.edu/PDS/data/PDS4/Mars2020/mars2020_meda/data_calibrated_env/sol_0300_0419/sol_0315/WE__0315___________CAL_RDS_________________P01.CSV",
+    "lid": "urn:nasa:pds:mars2020_meda:data_calibrated_env:we__0315___________cal_rds_________________p",
+    "version": "1.0",
+    "csv_sha256": "0123092f70b424f9d201dcb44dc43981662b1485957dbde85988284c4262f8b2",
+    "xml_sha256": "7e82c504e69f7247577d14a6f37df78ee498b5b57b5e46dc636831fd1d3557d8",
+    "md5_verified": true,
+    "column": "RDS_TOP_7",
+    "column_metadata": {
+      "unit": "watt/m2",
+      "description": "Top Mount Photodiode 7 radiance integrated over Field of View"
+    },
+    "start_utc": "2022-01-07T20:14:30.241Z",
+    "stop_utc": "2022-01-08T20:53:51.941Z",
+    "records": 62479,
+    "processing_level": "Calibrated"
+  },
+  {
+    "cache_file": "data/derived/meda/sol_1858.json",
+    "variable": "pressure",
+    "unit": "Pa",
+    "label_url": "https://atmos.nmsu.edu/PDS/data/PDS4/Mars2020/mars2020_meda/data_derived_env/sol_1740_1859/sol_1858/WE__1858___________DER_PS__________________P01.xml",
+    "data_url": "https://atmos.nmsu.edu/PDS/data/PDS4/Mars2020/mars2020_meda/data_derived_env/sol_1740_1859/sol_1858/WE__1858___________DER_PS__________________P01.CSV",
+    "lid": "urn:nasa:pds:mars2020_meda:data_derived_env:we__1858___________der_ps__________________p",
+    "version": "1.0",
+    "csv_sha256": "1984ed95c5e9d97c9490698dd90c1e511b5e769e1d14757d436b4391bc997749",
+    "xml_sha256": "58b66a002f3aa5c9351cb83f7afefb9b109d3a4817e0619058ec6172a8154c4d",
+    "md5_verified": true,
+    "column": "PRESSURE",
+    "column_metadata": {
+      "unit": "pascal",
+      "description": "Pressure"
+    },
+    "start_utc": "2026-05-12T06:17:40.026Z",
+    "stop_utc": "2026-05-13T06:57:13.732Z",
+    "records": 51783,
+    "processing_level": "Derived"
+  },
+  {
+    "cache_file": "data/derived/meda/sol_1858.json",
+    "variable": "air_temperature",
+    "unit": "K",
+    "label_url": "https://atmos.nmsu.edu/PDS/data/PDS4/Mars2020/mars2020_meda/data_calibrated_env/sol_1740_1859/sol_1858/WE__1858___________CAL_ATS_________________P01.xml",
+    "data_url": "https://atmos.nmsu.edu/PDS/data/PDS4/Mars2020/mars2020_meda/data_calibrated_env/sol_1740_1859/sol_1858/WE__1858___________CAL_ATS_________________P01.CSV",
+    "lid": "urn:nasa:pds:mars2020_meda:data_calibrated_env:we__1858___________cal_ats_________________p",
+    "version": "1.0",
+    "csv_sha256": "70a6b5eb9f2affa1cad20742e96c429877563d2a8592cb8e0294dcf5cfb71c77",
+    "xml_sha256": "46d58057eaec1c9e752bbe87cca7cb2bae4f330cb090c13a112c662b7bc42d8f",
+    "md5_verified": true,
+    "column": "ATS_LOCAL_TEMP1",
+    "column_metadata": {
+      "unit": "kelvin",
+      "description": "Local air temperature near the unit mounted on the RSM at 50º"
+    },
+    "start_utc": "2026-05-12T06:17:40.026Z",
+    "stop_utc": "2026-05-13T06:57:13.732Z",
+    "records": 52163,
+    "processing_level": "Calibrated"
+  },
+  {
+    "cache_file": "data/derived/meda/sol_1858.json",
+    "variable": "rds",
+    "unit": "W/m²",
+    "label_url": "https://atmos.nmsu.edu/PDS/data/PDS4/Mars2020/mars2020_meda/data_calibrated_env/sol_1740_1859/sol_1858/WE__1858___________CAL_RDS_________________P01.xml",
+    "data_url": "https://atmos.nmsu.edu/PDS/data/PDS4/Mars2020/mars2020_meda/data_calibrated_env/sol_1740_1859/sol_1858/WE__1858___________CAL_RDS_________________P01.CSV",
+    "lid": "urn:nasa:pds:mars2020_meda:data_calibrated_env:we__1858___________cal_rds_________________p",
+    "version": "1.0",
+    "csv_sha256": "9da5a4526b0272753ed67f0fb70fda0b4ee5bc639d96f0b1eb4db2af38695af5",
+    "xml_sha256": "1482f5df5de15a67d72d2b4f814b56cb25ebd88cec05ed799d2530ac612e0e74",
+    "md5_verified": true,
+    "column": "RDS_TOP_7",
+    "column_metadata": {
+      "unit": "watt/m2",
+      "description": "Top Mount Photodiode 7 radiance integrated over Field of View"
+    },
+    "start_utc": "2026-05-12T06:17:40.026Z",
+    "stop_utc": "2026-05-13T06:57:13.732Z",
+    "records": 51783,
+    "processing_level": "Calibrated"
+  },
+  {
+    "cache_file": "data/derived/meda/sol_1859.json",
+    "variable": "pressure",
+    "unit": "Pa",
+    "label_url": "https://atmos.nmsu.edu/PDS/data/PDS4/Mars2020/mars2020_meda/data_derived_env/sol_1740_1859/sol_1859/WE__1859___________DER_PS__________________P01.xml",
+    "data_url": "https://atmos.nmsu.edu/PDS/data/PDS4/Mars2020/mars2020_meda/data_derived_env/sol_1740_1859/sol_1859/WE__1859___________DER_PS__________________P01.CSV",
+    "lid": "urn:nasa:pds:mars2020_meda:data_derived_env:we__1859___________der_ps__________________p",
+    "version": "1.0",
+    "csv_sha256": "aa4a5f5e2ba098f842270e8fce2ff32e97295e4a66532eba2a2fb72fb84b5da4",
+    "xml_sha256": "bb332d3d2ceed3371a58f9efe7da5490aedc39e9ffa4574ffe4288a6c57e4c56",
+    "md5_verified": true,
+    "column": "PRESSURE",
+    "column_metadata": {
+      "unit": "pascal",
+      "description": "Pressure"
+    },
+    "start_utc": "2026-05-13T06:57:14.732Z",
+    "stop_utc": "2026-05-14T07:36:49.438Z",
+    "records": 48086,
+    "processing_level": "Derived"
+  },
+  {
+    "cache_file": "data/derived/meda/sol_1859.json",
+    "variable": "air_temperature",
+    "unit": "K",
+    "label_url": "https://atmos.nmsu.edu/PDS/data/PDS4/Mars2020/mars2020_meda/data_calibrated_env/sol_1740_1859/sol_1859/WE__1859___________CAL_ATS_________________P01.xml",
+    "data_url": "https://atmos.nmsu.edu/PDS/data/PDS4/Mars2020/mars2020_meda/data_calibrated_env/sol_1740_1859/sol_1859/WE__1859___________CAL_ATS_________________P01.CSV",
+    "lid": "urn:nasa:pds:mars2020_meda:data_calibrated_env:we__1859___________cal_ats_________________p",
+    "version": "1.0",
+    "csv_sha256": "c508a944c13b9c922b9167e3ea18745a303a77870fdfbc7bacb90d1e39871276",
+    "xml_sha256": "8a85bbcf9af21b15194304c16a468bc735c8d356adbe7913e76e47f58e6fb85e",
+    "md5_verified": true,
+    "column": "ATS_LOCAL_TEMP1",
+    "column_metadata": {
+      "unit": "kelvin",
+      "description": "Local air temperature near the unit mounted on the RSM at 50º"
+    },
+    "start_utc": "2026-05-13T06:57:14.732Z",
+    "stop_utc": "2026-05-14T07:36:49.438Z",
+    "records": 48510,
+    "processing_level": "Calibrated"
+  },
+  {
+    "cache_file": "data/derived/meda/sol_1859.json",
+    "variable": "rds",
+    "unit": "W/m²",
+    "label_url": "https://atmos.nmsu.edu/PDS/data/PDS4/Mars2020/mars2020_meda/data_calibrated_env/sol_1740_1859/sol_1859/WE__1859___________CAL_RDS_________________P01.xml",
+    "data_url": "https://atmos.nmsu.edu/PDS/data/PDS4/Mars2020/mars2020_meda/data_calibrated_env/sol_1740_1859/sol_1859/WE__1859___________CAL_RDS_________________P01.CSV",
+    "lid": "urn:nasa:pds:mars2020_meda:data_calibrated_env:we__1859___________cal_rds_________________p",
+    "version": "1.0",
+    "csv_sha256": "5976e823448dccc9488c7899b9d7f4ecbea3551f3cfd0a8cf03f218d2170c65e",
+    "xml_sha256": "c05ba090809a397919f37fbcc0f182db3761c18465f5f1a3636e59a5643e4b69",
+    "md5_verified": true,
+    "column": "RDS_TOP_7",
+    "column_metadata": {
+      "unit": "watt/m2",
+      "description": "Top Mount Photodiode 7 radiance integrated over Field of View"
+    },
+    "start_utc": "2026-05-13T06:57:14.732Z",
+    "stop_utc": "2026-05-14T07:36:49.438Z",
+    "records": 48077,
+    "processing_level": "Calibrated"
+  }
+]

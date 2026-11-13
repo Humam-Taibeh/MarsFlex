@@ -1,0 +1,7 @@
+{
+  "url": "https://stac.astrogeology.usgs.gov/api/search?collections=mo_themis_controlled_mosaics&bbox=77.32%2C18.4%2C77.49%2C18.53&limit=100",
+  "retrieved_utc": "2026-09-25T13:54:55.838498+00:00",
+  "bytes": 12611,
+  "sha256": "fb21233fbc57816817927344e782bc8781753da028dcf672447c558b1cb8b79b",
+  "last_modified": null
+}

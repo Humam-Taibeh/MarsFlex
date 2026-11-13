@@ -1,0 +1,25 @@
+{
+  "status": "PENDING_USER_APPROVAL_DO_NOT_RUN",
+  "purpose": "Finite-grid sensitivity analysis, not a calibrated probability or safety envelope",
+  "baseline_source": "terrain.py Model; default mission in frontend/src/main.tsx",
+  "axes": {
+    "speed_m_s": {"values": [0.4, 0.5, 0.6], "label": "[ASSUMPTION]", "basis": "Design stress test: 80%,100%,120% of the declared0.5m/s baseline; no physiological calibration"},
+    "slope_penalty_multiplier": {"values": [0.75, 1.0, 1.25], "label": "[ASSUMPTION]", "basis": "Scale the existing uphill4 and downhill2 together; not independent axes and not published fits"},
+    "slope_gate_deg": {"values": [10, 15, 20], "label": "[ASSUMPTION]", "basis": "Apply the same gate to surface slope and directional grade; two stricter cases and the existing20degree baseline, not astronaut limits"},
+    "station_dwell_min": {"values": [10, 15, 20], "label": "[ASSUMPTION]", "basis": "Apply to each of the two planned stops;15min is the existing scenario input,10/20 are proposed design perturbations"},
+    "reserve_min": {"values": [60, 72, 90], "label": "[ASSUMPTION]", "basis": "Proposed reserve-policy scenarios around the existing72min setting; not certified emergency reserves"}
+  },
+  "fixed": {
+    "position": {"lon": 77.397, "lat": 18.485},
+    "habitat": {"lon": 77.415, "lat": 18.466},
+    "remaining_min": 300,
+    "detour_dwell_min": 10,
+    "activities": [
+      {"id": "Swift Run", "lon": 77.40617078, "lat": 18.458931, "type": "required"},
+      {"id": "Hazeltop", "lon": 77.40588851, "lat": 18.45863707, "type": "required"}
+    ]
+  },
+  "combination_policy": "Full Cartesian product:243 combinations;27 terrain graphs,9 dwell/reserve combinations per graph. No averaging of colors. No outcome generated before approval.",
+  "sources_for_calibrated_ranges": "NOT FOUND",
+  "interpretation": "Green in every tested combination means robustness only within this finite declared grid, not all continuous parameter values or human safety. Green in some combinations means assumption-sensitive. Never evaluated or blocked is not relabeled safe."
+}

@@ -1,0 +1,60 @@
+{
+  "geology_features": 61,
+  "contact_features": 90,
+  "unit_labels": {
+    "11": "Upper etched unit",
+    "8": "Eolian bedform unit",
+    "4": "Lower etched unit",
+    "12": "Crater rim unit",
+    "9": "Smooth unit, undivided",
+    "1": "Jezero fan 2 unit",
+    "7": "Nili Planum 1 unit",
+    "2": "Jezero fan 1 unit",
+    "3": "Jezero floor unit"
+  },
+  "geology_overlap_cells": 0,
+  "crism_native_grid": [
+    751,
+    455
+  ],
+  "crism_map_spacing_m": 36,
+  "crism_bounds_lonlat": [
+    77.27524508112782,
+    18.27643553120014,
+    77.56144760876032,
+    18.732730608464028
+  ],
+  "crism_native_valid_aoi_cells": 56824,
+  "candidates": [
+    {
+      "node": 81970,
+      "native_row": 342,
+      "native_col": 119,
+      "lon": 77.35041255816537,
+      "lat": 18.524633319565382,
+      "label": "Spectral candidate 1",
+      "patch_median_BD2500_2": 0.02229452133178711,
+      "note": "Selected by upper 3x3-patch BD2500_2 within AOI. Not mineral confirmation or global science utility."
+    },
+    {
+      "node": 117198,
+      "native_row": 370,
+      "native_col": 107,
+      "lon": 77.3428643596344,
+      "lat": 18.507620986458342,
+      "label": "Spectral candidate 2",
+      "patch_median_BD2500_2": 0.021241843700408936,
+      "note": "Selected by upper 3x3-patch BD2500_2 within AOI. Not mineral confirmation or global science utility."
+    },
+    {
+      "node": 270896,
+      "native_row": 491,
+      "native_col": 111,
+      "lon": 77.34538042581138,
+      "lat": 18.434103404102906,
+      "label": "Spectral candidate 3",
+      "patch_median_BD2500_2": 0.02022320032119751,
+      "note": "Selected by upper 3x3-patch BD2500_2 within AOI. Not mineral confirmation or global science utility."
+    }
+  ]
+}

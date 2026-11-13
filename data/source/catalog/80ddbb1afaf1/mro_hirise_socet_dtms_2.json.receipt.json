@@ -1,0 +1,7 @@
+{
+  "url": "https://g6goyz4w56.execute-api.us-west-2.amazonaws.com/prod/search?collections=mro_hirise_socet_dtms&bbox=77.32%2C18.4%2C77.49%2C18.53&limit=100&next=2006-09-29T00%3A00%3A00Z%2CDTEEC_002387_1985_003798_1985_A01%2Cmro_hirise_socet_dtms",
+  "retrieved_utc": "2026-09-25T13:55:06.712536+00:00",
+  "bytes": 199,
+  "sha256": "be5cadf616dd78b3565d2033e2fcba736b2e415d55aba4155c58aaf4f63eec5d",
+  "last_modified": null
+}

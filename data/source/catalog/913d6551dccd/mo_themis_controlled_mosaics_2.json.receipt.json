@@ -1,0 +1,7 @@
+{
+  "url": "https://g6goyz4w56.execute-api.us-west-2.amazonaws.com/prod/search?collections=mo_themis_controlled_mosaics&bbox=77.32%2C18.4%2C77.49%2C18.53&limit=100&next=2021-10-01T00%3A00%3A00Z%2Cmc13_syrtis_major_dir%2Cmo_themis_controlled_mosaics",
+  "retrieved_utc": "2026-09-25T13:55:06.838088+00:00",
+  "bytes": 199,
+  "sha256": "34a5b3aa4129a74097fba557ad46424297c880d0c6924f9f3bd8836fa4bacbde",
+  "last_modified": null
+}

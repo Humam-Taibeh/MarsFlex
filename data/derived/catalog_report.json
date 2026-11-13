@@ -1,0 +1,63 @@
+{
+  "aoi_lonlat": [
+    77.32,
+    18.4,
+    77.49,
+    18.53
+  ],
+  "catalog_products": 145,
+  "collections": [
+    {
+      "collection": "mro_hirise_socet_dtms",
+      "products": 4,
+      "pagination_complete": true,
+      "footprint_coverage_fraction_angular_area": 0.7726565567022997,
+      "scope": "Catalog footprints only; does not measure valid raster pixels or metric area.",
+      "quality_flag_counts": {
+        "source_wkt_not_parseable": 4,
+        "raster_vertical_reference_and_valid_pixels_not_yet_verified": 4
+      }
+    },
+    {
+      "collection": "mro_ctx_controlled_usgs_dtms",
+      "products": 36,
+      "pagination_complete": true,
+      "footprint_coverage_fraction_angular_area": 0.9999999999999999,
+      "scope": "Catalog footprints only; does not measure valid raster pixels or metric area.",
+      "quality_flag_counts": {
+        "raster_vertical_reference_and_valid_pixels_not_yet_verified": 36
+      }
+    },
+    {
+      "collection": "mro_hirise_uncontrolled_observations",
+      "products": 103,
+      "pagination_complete": true,
+      "footprint_coverage_fraction_angular_area": 0.9999999999999999,
+      "scope": "Catalog footprints only; does not measure valid raster pixels or metric area.",
+      "quality_flag_counts": {
+        "uncontrolled_image_registration_required": 103,
+        "source_wkt_not_parseable": 62
+      }
+    },
+    {
+      "collection": "mo_themis_controlled_mosaics",
+      "products": 2,
+      "pagination_complete": true,
+      "footprint_coverage_fraction_angular_area": 1.0,
+      "scope": "Catalog footprints only; does not measure valid raster pixels or metric area.",
+      "quality_flag_counts": {
+        "source_bbox_disagrees_with_geometry_use_geometry_bounds": 2,
+        "source_time_interval_reversed": 2,
+        "qualitative_ir_mosaic_not_temperature_or_weather": 2
+      }
+    }
+  ],
+  "places_source_rows": 666,
+  "places_rover_records": 577,
+  "places_in_aoi": 339,
+  "places_sol_range_in_aoi": [
+    13,
+    1131
+  ],
+  "downloaded_vs_catalogued": "STAC items are metadata and links. PLACES CSV is ingested. No STAC raster automatically enters routing."
+}

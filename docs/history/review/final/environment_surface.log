@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "meda_sol": 1859,
+  "meda_disclaimer_visible": true,
+  "section_native_samples": 401,
+  "maximum_CSV_vs_source_difference_m": 0,
+  "errors": []
+}

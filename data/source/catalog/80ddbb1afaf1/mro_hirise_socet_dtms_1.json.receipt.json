@@ -1,0 +1,7 @@
+{
+  "url": "https://stac.astrogeology.usgs.gov/api/search?collections=mro_hirise_socet_dtms&bbox=77.32%2C18.4%2C77.49%2C18.53&limit=100",
+  "retrieved_utc": "2026-09-25T13:54:56.376715+00:00",
+  "bytes": 40396,
+  "sha256": "a4c1925a8620e112d7e76f4f20efc70f44dd5ceaa465d727f3d90929e53cf7f7",
+  "last_modified": null
+}

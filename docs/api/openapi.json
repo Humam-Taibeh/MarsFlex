@@ -1,0 +1,954 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "MarsFlex scientific data and mission API",
+    "description": "Mars planetocentric coordinates. Research planning only; time model uncalibrated.",
+    "version": "0.7.0"
+  },
+  "paths": {
+    "/v1/health": {
+      "get": {
+        "summary": "Health",
+        "operationId": "health_v1_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/catalog": {
+      "get": {
+        "summary": "Catalog",
+        "operationId": "catalog_v1_catalog_get",
+        "parameters": [
+          {
+            "name": "bbox",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Bbox"
+            }
+          },
+          {
+            "name": "collection",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Collection"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "default": 0,
+              "title": "Offset"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 200,
+              "minimum": 1,
+              "default": 50,
+              "title": "Limit"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/coverage": {
+      "get": {
+        "summary": "Coverage",
+        "operationId": "coverage_v1_coverage_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/terrain/reference": {
+      "get": {
+        "summary": "Terrain Reference",
+        "operationId": "terrain_reference_v1_terrain_reference_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/evidence/at": {
+      "get": {
+        "summary": "Evidence At",
+        "operationId": "evidence_at_v1_evidence_at_get",
+        "parameters": [
+          {
+            "name": "lon",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "minimum": 0,
+              "exclusiveMaximum": 360,
+              "title": "Lon"
+            }
+          },
+          {
+            "name": "lat",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "maximum": 90,
+              "minimum": -90,
+              "title": "Lat"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/places": {
+      "get": {
+        "summary": "Places",
+        "operationId": "places_v1_places_get",
+        "parameters": [
+          {
+            "name": "bbox",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Bbox"
+            }
+          },
+          {
+            "name": "sol_from",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "default": 0,
+              "title": "Sol From"
+            }
+          },
+          {
+            "name": "sol_to",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "default": 100000,
+              "title": "Sol To"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "default": 0,
+              "title": "Offset"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 1000,
+              "minimum": 1,
+              "default": 100,
+              "title": "Limit"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/terrain/metadata": {
+      "get": {
+        "summary": "Terrain Metadata",
+        "operationId": "terrain_metadata_v1_terrain_metadata_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/terrain/surface": {
+      "get": {
+        "summary": "Terrain Surface",
+        "operationId": "terrain_surface_v1_terrain_surface_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/layers/geology.png": {
+      "get": {
+        "summary": "Geology Image",
+        "operationId": "geology_image_v1_layers_geology_png_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/mission/evaluate": {
+      "post": {
+        "summary": "Evaluate",
+        "operationId": "evaluate_v1_mission_evaluate_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Mission"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/mission/metabolic": {
+      "post": {
+        "summary": "Evaluate Metabolic",
+        "description": "Experimental level-1 scenario. No live measurements or safety approval.",
+        "operationId": "evaluate_metabolic_v1_mission_metabolic_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MetabolicMission"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/mission/metabolic/assumptions": {
+      "get": {
+        "summary": "Metabolic Assumptions",
+        "operationId": "metabolic_assumptions_v1_mission_metabolic_assumptions_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/map/layers": {
+      "get": {
+        "summary": "Map Layers",
+        "operationId": "map_layers_v1_map_layers_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/map/image/{name}": {
+      "get": {
+        "summary": "Map Image",
+        "operationId": "map_image_v1_map_image__name__get",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Name"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/geomodel/models": {
+      "get": {
+        "summary": "Models",
+        "operationId": "models_v1_geomodel_models_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/geomodel/models/{name}": {
+      "get": {
+        "summary": "Detail",
+        "operationId": "detail_v1_geomodel_models__name__get",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Name"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Activity": {
+        "properties": {
+          "lon": {
+            "type": "number",
+            "exclusiveMaximum": 360.0,
+            "minimum": 0.0,
+            "title": "Lon"
+          },
+          "lat": {
+            "type": "number",
+            "maximum": 90.0,
+            "minimum": -90.0,
+            "title": "Lat"
+          },
+          "id": {
+            "type": "string",
+            "maxLength": 80,
+            "minLength": 1,
+            "title": "Id"
+          },
+          "dwell_min": {
+            "type": "number",
+            "maximum": 1440.0,
+            "minimum": 0.0,
+            "title": "Dwell Min"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "lon",
+          "lat",
+          "id",
+          "dwell_min"
+        ],
+        "title": "Activity"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "MetabolicMission": {
+        "properties": {
+          "position": {
+            "$ref": "#/components/schemas/Position"
+          },
+          "habitat": {
+            "$ref": "#/components/schemas/Position"
+          },
+          "remaining_min": {
+            "type": "number",
+            "maximum": 1440.0,
+            "exclusiveMinimum": 0.0,
+            "title": "Remaining Min"
+          },
+          "time_contingency_min": {
+            "type": "number",
+            "maximum": 1440.0,
+            "minimum": 0.0,
+            "title": "Time Contingency Min",
+            "default": 0
+          },
+          "activities": {
+            "items": {
+              "$ref": "#/components/schemas/Activity"
+            },
+            "type": "array",
+            "maxItems": 6,
+            "title": "Activities"
+          },
+          "parameters": {
+            "$ref": "#/components/schemas/MetabolicParameters"
+          },
+          "resources": {
+            "$ref": "#/components/schemas/MetabolicResources"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "position",
+          "habitat",
+          "remaining_min"
+        ],
+        "title": "MetabolicMission"
+      },
+      "MetabolicParameters": {
+        "properties": {
+          "basal_rate_W": {
+            "type": "number",
+            "maximum": 5000.0,
+            "exclusiveMinimum": 0.0,
+            "title": "Basal Rate W",
+            "default": 150
+          },
+          "walk_rate_W_per_m_s": {
+            "type": "number",
+            "maximum": 10000.0,
+            "minimum": 0.0,
+            "title": "Walk Rate W Per M S",
+            "default": 200
+          },
+          "slope_rate_W_per_deg": {
+            "type": "number",
+            "maximum": 10000.0,
+            "minimum": 0.0,
+            "title": "Slope Rate W Per Deg",
+            "default": 300
+          },
+          "suit_penalty_W": {
+            "type": "number",
+            "maximum": 5000.0,
+            "minimum": 0.0,
+            "title": "Suit Penalty W",
+            "default": 85
+          },
+          "nominal_speed_m_s": {
+            "type": "number",
+            "maximum": 5.0,
+            "exclusiveMinimum": 0.0,
+            "title": "Nominal Speed M S",
+            "default": 0.5
+          },
+          "uphill_speed_weight": {
+            "type": "number",
+            "maximum": 100.0,
+            "minimum": 0.0,
+            "title": "Uphill Speed Weight",
+            "default": 4
+          },
+          "downhill_speed_weight": {
+            "type": "number",
+            "maximum": 100.0,
+            "minimum": 0.0,
+            "title": "Downhill Speed Weight",
+            "default": 2
+          },
+          "soil_speed_factor": {
+            "type": "number",
+            "maximum": 20.0,
+            "minimum": 1.0,
+            "title": "Soil Speed Factor",
+            "default": 1
+          },
+          "joint_torque_Nm": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 1000.0,
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Joint Torque Nm"
+          },
+          "joint_angular_speed_rad_s": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 20.0,
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Joint Angular Speed Rad S"
+          },
+          "joint_efficiency": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 1.0,
+                "exclusiveMinimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Joint Efficiency"
+          },
+          "dwell_power_W": {
+            "type": "number",
+            "maximum": 5000.0,
+            "exclusiveMinimum": 0.0,
+            "title": "Dwell Power W",
+            "default": 150
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "title": "MetabolicParameters"
+      },
+      "MetabolicResources": {
+        "properties": {
+          "oxygen": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ResourceBalance"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "water": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ResourceBalance"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "battery": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ResourceBalance"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "oxygen_energy_kJ_per_kg": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 1000000000.0,
+                "exclusiveMinimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Oxygen Energy Kj Per Kg"
+          },
+          "cooling_water_kg_per_MJ": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 1000.0,
+                "exclusiveMinimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cooling Water Kg Per Mj"
+          },
+          "equipment_power_W": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 100000.0,
+                "exclusiveMinimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Equipment Power W"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "title": "MetabolicResources"
+      },
+      "Mission": {
+        "properties": {
+          "position": {
+            "$ref": "#/components/schemas/Position"
+          },
+          "habitat": {
+            "$ref": "#/components/schemas/Position"
+          },
+          "remaining_min": {
+            "type": "number",
+            "maximum": 1440.0,
+            "exclusiveMinimum": 0.0,
+            "title": "Remaining Min"
+          },
+          "reserve_min": {
+            "type": "number",
+            "maximum": 1440.0,
+            "minimum": 0.0,
+            "title": "Reserve Min"
+          },
+          "activities": {
+            "items": {
+              "$ref": "#/components/schemas/Activity"
+            },
+            "type": "array",
+            "maxItems": 6,
+            "title": "Activities"
+          },
+          "detour": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Position"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "detour_dwell_min": {
+            "type": "number",
+            "maximum": 1440.0,
+            "minimum": 0.0,
+            "title": "Detour Dwell Min",
+            "default": 10
+          },
+          "include_field": {
+            "type": "boolean",
+            "title": "Include Field",
+            "default": false
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "position",
+          "habitat",
+          "remaining_min",
+          "reserve_min"
+        ],
+        "title": "Mission"
+      },
+      "Position": {
+        "properties": {
+          "lon": {
+            "type": "number",
+            "exclusiveMaximum": 360.0,
+            "minimum": 0.0,
+            "title": "Lon"
+          },
+          "lat": {
+            "type": "number",
+            "maximum": 90.0,
+            "minimum": -90.0,
+            "title": "Lat"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "lon",
+          "lat"
+        ],
+        "title": "Position"
+      },
+      "ResourceBalance": {
+        "properties": {
+          "remaining": {
+            "type": "number",
+            "maximum": 10000000.0,
+            "minimum": 0.0,
+            "title": "Remaining"
+          },
+          "reserve": {
+            "type": "number",
+            "maximum": 10000000.0,
+            "minimum": 0.0,
+            "title": "Reserve",
+            "default": 0
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "remaining"
+        ],
+        "title": "ResourceBalance"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      }
+    }
+  }
+}

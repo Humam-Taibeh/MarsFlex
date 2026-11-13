@@ -1,0 +1,46 @@
+{
+  "source_shape": [
+    1512,
+    1596
+  ],
+  "source_crs_wkt": "PROJCS[\"Equirectangular Mars 2000 Sphere IAU\",GEOGCS[\"GCS_Mars_2000_Sphere\",DATUM[\"Mars_2000_(Sphere)\",SPHEROID[\"Mars_2000_Sphere_IAU\",3396190,0]],PRIMEM[\"Reference_Meridian\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]]],PROJECTION[\"Equirectangular\"],PARAMETER[\"standard_parallel_1\",0],PARAMETER[\"central_meridian\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+  "source_bounds_m": [
+    4573663.250853,
+    1079453.140188,
+    4605583.250853,
+    1109693.140188
+  ],
+  "source_nodata": -3.4028226550889045e+38,
+  "source_sha256": "16a1aa66c3f48c1bca252795827db7b417876217aff0f5e1aff18027fab2327b",
+  "aoi_lonlat": [
+    77.32,
+    18.4,
+    77.49,
+    18.53
+  ],
+  "buffer_map_m": 2000,
+  "shape": [
+    586,
+    705
+  ],
+  "transform": [
+    20.0,
+    0.0,
+    4581103.250853,
+    0.0,
+    -20.0,
+    1100373.140188
+  ],
+  "grid_spacing_map_m": 20,
+  "radius_m": 3396190.0,
+  "latitude_type": "planetocentric",
+  "longitude": "positive east",
+  "vertical_reference": "MOLA topography / DeltaGeoid, as named by source product; not radius above sphere",
+  "valid_cells": 413130,
+  "nodata_cells": 0,
+  "elevation_range_m": [
+    -2651.13427734375,
+    -1741.164306640625
+  ],
+  "method": "native-grid crop; no elevation resampling; geodesic edge lengths"
+}

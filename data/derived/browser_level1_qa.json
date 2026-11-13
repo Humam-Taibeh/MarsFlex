@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "checks": [
+    "Missing resources stay unassessed",
+    "Changed assumptions invalidate results and slower soil increases travel time",
+    "Explicit synthetic test resource budgets produce a complete ledger",
+    "Ordered mission includes activity dwell energy",
+    "JSON export includes request, source hash, routes and budgets",
+    "Original v6 expedition remains available"
+  ],
+  "page_errors": [],
+  "resource_test_values": "Synthetic test fixtures ONLY; not NASA suit capacities or UI defaults."
+}

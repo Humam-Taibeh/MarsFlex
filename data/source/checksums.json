@@ -1,0 +1,66 @@
+{
+  "crism_BD1900_2.f32": {
+    "bytes": 1366820,
+    "sha256": "e26e1390bc12b9fb41392a93eda2280aa310da4049ae1f8b79d7d41f2f16b60d"
+  },
+  "crism_BD2500_2.f32": {
+    "bytes": 1366820,
+    "sha256": "8ca3e1bb5a95868f8c0794a3f8b1eafa338fc6d612896109a96464a0f59021d6"
+  },
+  "crism_D2300.f32": {
+    "bytes": 1366820,
+    "sha256": "ed7c876b9f9124cc0127caf9baf1c424d789c552605a112aedd54663f90439df"
+  },
+  "crism_manifest.json": {
+    "bytes": 1578,
+    "sha256": "4b3214eed78f5e8a3b32fd5426fae79db767196b4591d0bcd92becacbd972124"
+  },
+  "ctx_pds3.lbl": {
+    "bytes": 2291,
+    "sha256": "80695163930e29c4ab71953a7e7cf04fd89fd1326047e8a76bc694b1209e2393"
+  },
+  "ctx_trn_20m.tif": {
+    "bytes": 9662387,
+    "sha256": "16a1aa66c3f48c1bca252795827db7b417876217aff0f5e1aff18027fab2327b"
+  },
+  "geology_features_5.json": {
+    "bytes": 907185,
+    "sha256": "df56aba63f1ac5bfc36e082089bbbdcf35565708d2c8bbb731f1289ae3b7eccf"
+  },
+  "geology_features_8.json": {
+    "bytes": 5851417,
+    "sha256": "2244c95e3ee2b925166396be558f3d2f9ec28b541451f932634c2d9ae4c137f3"
+  },
+  "geology_item.json": {
+    "bytes": 9710,
+    "sha256": "253a9ca825e7651b5f1c9da033095659144169e7301bfd65c610575fa3915bd7"
+  },
+  "geology_layer_5.json": {
+    "bytes": 21132,
+    "sha256": "43f0d9be0887b2d6a6154a1ead684e10c92face479c5ea8a8e464d07d2cf0667"
+  },
+  "geology_layer_8.json": {
+    "bytes": 31158,
+    "sha256": "cfc432e810f372b664cdb703bad56eb7df67d8632997a7e9562557de4ce66a67"
+  },
+  "geology_service.json": {
+    "bytes": 7279,
+    "sha256": "1b19b3b0fb058be1cf168106848a5f8bce1301db1fb6b1900a7a68cdaf2d3228"
+  },
+  "hrl000040ff_07_su183j_mtr3.hdr": {
+    "bytes": 1802,
+    "sha256": "089a0bd2443612399a0a8ebb98f6107154d6335f48b341ce30408874486ee2f4"
+  },
+  "hrl000040ff_07_su183j_mtr3.lbl": {
+    "bytes": 8386,
+    "sha256": "7f736cf8f169fff336934903af4df862483d86bbe5a130e3de03c8a588862d1f"
+  },
+  "hrl000040ff_07_su183j_mtr3.xml": {
+    "bytes": 66689,
+    "sha256": "7b05028f89826dd38d8aaa5eee7f5fed1dc88a82b51199f9d41a8a7092b6fd02"
+  },
+  "source_manifest.json": {
+    "bytes": 444,
+    "sha256": "9588db77666440491129b636ed7111e59daecca745ed9e34736d15c3f521e146"
+  }
+}

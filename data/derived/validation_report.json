@@ -1,0 +1,109 @@
+{
+  "model": {
+    "speed_m_s": 0.5,
+    "uphill_weight": 4.0,
+    "downhill_weight": 2.0,
+    "max_grade_deg": 20.0,
+    "max_surface_slope_deg": 20.0
+  },
+  "grid": {
+    "source_shape": [
+      1512,
+      1596
+    ],
+    "source_crs_wkt": "PROJCS[\"Equirectangular Mars 2000 Sphere IAU\",GEOGCS[\"GCS_Mars_2000_Sphere\",DATUM[\"Mars_2000_(Sphere)\",SPHEROID[\"Mars_2000_Sphere_IAU\",3396190,0]],PRIMEM[\"Reference_Meridian\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]]],PROJECTION[\"Equirectangular\"],PARAMETER[\"standard_parallel_1\",0],PARAMETER[\"central_meridian\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+    "source_bounds_m": [
+      4573663.250853,
+      1079453.140188,
+      4605583.250853,
+      1109693.140188
+    ],
+    "source_nodata": -3.4028226550889045e+38,
+    "source_sha256": "16a1aa66c3f48c1bca252795827db7b417876217aff0f5e1aff18027fab2327b",
+    "aoi_lonlat": [
+      77.32,
+      18.4,
+      77.49,
+      18.53
+    ],
+    "buffer_map_m": 2000,
+    "shape": [
+      586,
+      705
+    ],
+    "transform": [
+      20.0,
+      0.0,
+      4581103.250853,
+      0.0,
+      -20.0,
+      1100373.140188
+    ],
+    "grid_spacing_map_m": 20,
+    "radius_m": 3396190.0,
+    "latitude_type": "planetocentric",
+    "longitude": "positive east",
+    "vertical_reference": "MOLA topography / DeltaGeoid, as named by source product; not radius above sphere",
+    "valid_cells": 413130,
+    "nodata_cells": 0,
+    "elevation_range_m": [
+      -2651.13427734375,
+      -1741.164306640625
+    ],
+    "method": "native-grid crop; no elevation resampling; geodesic edge lengths"
+  },
+  "walkable_cells": 404589,
+  "surface_slope_percentiles_deg": {
+    "50": 3.1405534641652633,
+    "90": 12.2741670965544,
+    "95": 16.09640743764388,
+    "99": 22.667350811927,
+    "100": 37.72369423566904
+  },
+  "routes": {
+    "delta_A": {
+      "outbound_minutes": 81.12015678548413,
+      "return_minutes": 76.89348035319246,
+      "outbound_distance_m": 2172.8351723145247,
+      "return_distance_m": 2172.8351723145247,
+      "round_trip_with_15min_task": 173.0136371386766
+    },
+    "margin_B": {
+      "outbound_minutes": 148.74043149445995,
+      "return_minutes": 140.98676938508476,
+      "outbound_distance_m": 3796.8545463962946,
+      "return_distance_m": 3796.8545463962946,
+      "round_trip_with_15min_task": 304.72720087954474
+    }
+  },
+  "freedom_counts": {
+    "180": {
+      "0": 1038,
+      "1": 180870,
+      "2": 12132,
+      "3": 0,
+      "boundary_reachable": false
+    },
+    "240": {
+      "0": 1038,
+      "1": 161434,
+      "2": 31568,
+      "3": 0,
+      "boundary_reachable": false
+    },
+    "300": {
+      "0": 1038,
+      "1": 131093,
+      "2": 46015,
+      "3": 15894,
+      "boundary_reachable": true
+    },
+    "360": {
+      "0": 1038,
+      "1": 90286,
+      "2": 62715,
+      "3": 40001,
+      "boundary_reachable": true
+    }
+  }
+}

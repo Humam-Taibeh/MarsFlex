@@ -1,0 +1,343 @@
+{
+  "passed": true,
+  "tests": 13,
+  "passed_count": 13,
+  "failed_count": 0,
+  "routing_calls": 0,
+  "records": [
+    {
+      "test": "empty_route_has_no_assessment",
+      "passed": true,
+      "actual": {
+        "status": "no_route",
+        "scope": "Planned blue route only; no safety certification."
+      }
+    },
+    {
+      "test": "single_point_has_no_assessment",
+      "passed": true,
+      "actual": {
+        "status": "no_route",
+        "scope": "Planned blue route only; no safety certification."
+      }
+    },
+    {
+      "test": "zero_length_never_claims_full_coverage",
+      "passed": true,
+      "actual": {
+        "status": "assessed",
+        "coverage": {
+          "route_length_m": 0.0,
+          "covered_length_m": 0.0,
+          "uncovered_length_m": 0.0,
+          "covered_percent": null,
+          "status": "no_route_length",
+          "meaning": "Length inside downloaded, fully valid HiRISE-to-CTX comparison cells; not independently validated safe terrain."
+        },
+        "limitation": "Top-level status is assessed for a zero-length two-point route; coverage correctly reports no_route_length. No fix applied."
+      }
+    },
+    {
+      "test": "outside_reference_coverage_is_zero_and_slope_unknown",
+      "passed": true,
+      "actual": {
+        "status": "assessed",
+        "scope": "Planned blue route only; no safety certification. No extrapolation outside loaded coverage.",
+        "loaded_comparison_coverage": {
+          "route_length_m": 18.973131195172858,
+          "covered_length_m": 0.0,
+          "uncovered_length_m": 18.973131195172858,
+          "covered_percent": 0.0,
+          "status": "assessed",
+          "meaning": "Length inside downloaded, fully valid HiRISE-to-CTX comparison cells; not independently validated safe terrain."
+        },
+        "native_analysis_coverage": {
+          "route_length_m": 18.973131195172858,
+          "covered_length_m": 0.0,
+          "uncovered_length_m": 18.973131195172858,
+          "covered_percent": 0.0,
+          "status": "assessed",
+          "meaning": "Length inside downloaded, fully valid HiRISE-to-CTX comparison cells; not independently validated safe terrain."
+        },
+        "native_scale_comparison": {
+          "CTX_20m": {
+            "unique_cells": 0,
+            "max_deg": null,
+            "mean_deg": null,
+            "cells_over_20_deg": 0
+          },
+          "HiRISE_1m": {
+            "unique_cells": 0,
+            "max_deg": null,
+            "mean_deg": null,
+            "cells_over_20_deg": 0
+          }
+        },
+        "matched_20m_coverage": {
+          "route_length_m": 18.973131195172858,
+          "covered_length_m": 0.0,
+          "uncovered_length_m": 18.973131195172858,
+          "covered_percent": 0.0,
+          "status": "assessed",
+          "meaning": "Length inside downloaded, fully valid HiRISE-to-CTX comparison cells; not independently validated safe terrain."
+        },
+        "matched_20m_comparison": {
+          "CTX_20m": {
+            "unique_cells": 0,
+            "max_deg": null,
+            "mean_deg": null,
+            "cells_over_20_deg": 0
+          },
+          "HiRISE_averaged_to_20m": {
+            "unique_cells": 0,
+            "max_deg": null,
+            "mean_deg": null,
+            "cells_over_20_deg": 0
+          }
+        },
+        "method": "Unique cells with positive-length route intersection; finite central-difference stencils; arithmetic cell means. HiRISE area-averaged to CTX20m for matched comparison;40m map baseline, east-west ground distance corrected by latitude. Native1m comparison uses2m baseline. Repeated traversals count in coverage length, not cell counts.",
+        "source": "NASA MRO / USGS TRN CTX and HiRISE DTM; data/derived/hirise_validation.json. Related products, not independent absolute validation."
+      }
+    },
+    {
+      "test": "actual_reference_cell_has_full_coverage_and_matched_values",
+      "passed": true,
+      "actual": {
+        "status": "assessed",
+        "scope": "Planned blue route only; no safety certification. No extrapolation outside loaded coverage.",
+        "loaded_comparison_coverage": {
+          "route_length_m": 11.383353319721946,
+          "covered_length_m": 11.383353319721946,
+          "uncovered_length_m": 0.0,
+          "covered_percent": 100.0,
+          "status": "assessed",
+          "meaning": "Length inside downloaded, fully valid HiRISE-to-CTX comparison cells; not independently validated safe terrain."
+        },
+        "native_analysis_coverage": {
+          "route_length_m": 11.383353319721946,
+          "covered_length_m": 11.383353319721946,
+          "uncovered_length_m": 0.0,
+          "covered_percent": 100.0,
+          "status": "assessed",
+          "meaning": "Length inside downloaded, fully valid HiRISE-to-CTX comparison cells; not independently validated safe terrain."
+        },
+        "native_scale_comparison": {
+          "CTX_20m": {
+            "unique_cells": 1,
+            "max_deg": 0.4594650622066052,
+            "mean_deg": 0.4594650622066052,
+            "cells_over_20_deg": 0
+          },
+          "HiRISE_1m": {
+            "unique_cells": 13,
+            "max_deg": 3.3104049910517777,
+            "mean_deg": 2.630188320642285,
+            "cells_over_20_deg": 0
+          }
+        },
+        "matched_20m_coverage": {
+          "route_length_m": 11.383353319721946,
+          "covered_length_m": 11.383353319721946,
+          "uncovered_length_m": 0.0,
+          "covered_percent": 100.0,
+          "status": "assessed",
+          "meaning": "Length inside downloaded, fully valid HiRISE-to-CTX comparison cells; not independently validated safe terrain."
+        },
+        "matched_20m_comparison": {
+          "CTX_20m": {
+            "unique_cells": 1,
+            "max_deg": 0.4594650622066052,
+            "mean_deg": 0.4594650622066052,
+            "cells_over_20_deg": 0
+          },
+          "HiRISE_averaged_to_20m": {
+            "unique_cells": 1,
+            "max_deg": 0.9428451397966051,
+            "mean_deg": 0.9428451397966051,
+            "cells_over_20_deg": 0
+          }
+        },
+        "method": "Unique cells with positive-length route intersection; finite central-difference stencils; arithmetic cell means. HiRISE area-averaged to CTX20m for matched comparison;40m map baseline, east-west ground distance corrected by latitude. Native1m comparison uses2m baseline. Repeated traversals count in coverage length, not cell counts.",
+        "source": "NASA MRO / USGS TRN CTX and HiRISE DTM; data/derived/hirise_validation.json. Related products, not independent absolute validation."
+      }
+    },
+    {
+      "test": "reverse_direction_preserves_sampled_slope_statistics",
+      "passed": true,
+      "actual": {
+        "forward": {
+          "CTX_20m": {
+            "unique_cells": 1,
+            "max_deg": 0.4594650622066052,
+            "mean_deg": 0.4594650622066052,
+            "cells_over_20_deg": 0
+          },
+          "HiRISE_averaged_to_20m": {
+            "unique_cells": 1,
+            "max_deg": 0.9428451397966051,
+            "mean_deg": 0.9428451397966051,
+            "cells_over_20_deg": 0
+          }
+        },
+        "reverse": {
+          "CTX_20m": {
+            "unique_cells": 1,
+            "max_deg": 0.4594650622066052,
+            "mean_deg": 0.4594650622066052,
+            "cells_over_20_deg": 0
+          },
+          "HiRISE_averaged_to_20m": {
+            "unique_cells": 1,
+            "max_deg": 0.9428451397966051,
+            "mean_deg": 0.9428451397966051,
+            "cells_over_20_deg": 0
+          }
+        }
+      }
+    },
+    {
+      "test": "repeated_traversal_counts_length_twice_but_cells_once",
+      "passed": true,
+      "actual": {
+        "single": {
+          "route_length_m": 11.383353319721946,
+          "covered_length_m": 11.383353319721946,
+          "uncovered_length_m": 0.0,
+          "covered_percent": 100.0,
+          "status": "assessed",
+          "meaning": "Length inside downloaded, fully valid HiRISE-to-CTX comparison cells; not independently validated safe terrain."
+        },
+        "repeated": {
+          "route_length_m": 22.766706639443893,
+          "covered_length_m": 22.766706639443893,
+          "uncovered_length_m": 0.0,
+          "covered_percent": 100.0,
+          "status": "assessed",
+          "meaning": "Length inside downloaded, fully valid HiRISE-to-CTX comparison cells; not independently validated safe terrain."
+        },
+        "unique_cells_unchanged": true
+      }
+    },
+    {
+      "test": "analytical_half_covered_line_is_50_percent",
+      "passed": true,
+      "actual": {
+        "fixture": "synthetic geometry unit test, not Mars data",
+        "route_length_m": 100.0,
+        "covered_length_m": 50.0,
+        "uncovered_length_m": 50.0,
+        "covered_percent": 50.0,
+        "status": "assessed",
+        "meaning": "Length inside downloaded, fully valid HiRISE-to-CTX comparison cells; not independently validated safe terrain."
+      }
+    },
+    {
+      "test": "point_only_cell_contact_is_excluded",
+      "passed": true,
+      "actual": {
+        "fixture": "synthetic geometry unit test",
+        "samples": []
+      }
+    },
+    {
+      "test": "invalid_cell_mask_is_respected",
+      "passed": true,
+      "actual": {
+        "fixture": "synthetic validity-mask test",
+        "values": [
+          1.0
+        ]
+      }
+    },
+    {
+      "test": "archived_real_route_produces_partial_native_and_matched_diagnostics",
+      "passed": true,
+      "actual": {
+        "coordinate_source": "data/derived/api_smoke_results.json / mission / result / mission; archived route, NOT default two-stop route",
+        "status": "assessed",
+        "scope": "Planned blue route only; no safety certification. No extrapolation outside loaded coverage.",
+        "loaded_comparison_coverage": {
+          "route_length_m": 4345.670344629049,
+          "covered_length_m": 410.25237804934073,
+          "uncovered_length_m": 3935.4179665797087,
+          "covered_percent": 9.440485483589075,
+          "status": "assessed",
+          "meaning": "Length inside downloaded, fully valid HiRISE-to-CTX comparison cells; not independently validated safe terrain."
+        },
+        "native_analysis_coverage": {
+          "route_length_m": 4345.670344629049,
+          "covered_length_m": 408.5327540492115,
+          "uncovered_length_m": 3937.1375905798377,
+          "covered_percent": 9.400914511477612,
+          "status": "assessed",
+          "meaning": "Length inside downloaded, fully valid HiRISE-to-CTX comparison cells; not independently validated safe terrain."
+        },
+        "native_scale_comparison": {
+          "CTX_20m": {
+            "unique_cells": 10,
+            "max_deg": 4.644368069207755,
+            "mean_deg": 2.9758061387193084,
+            "cells_over_20_deg": 0
+          },
+          "HiRISE_1m": {
+            "unique_cells": 230,
+            "max_deg": 10.434006292903282,
+            "mean_deg": 3.2524182837326823,
+            "cells_over_20_deg": 0
+          }
+        },
+        "matched_20m_coverage": {
+          "route_length_m": 4345.670344629049,
+          "covered_length_m": 370.2523780493057,
+          "uncovered_length_m": 3975.4179665797437,
+          "covered_percent": 8.520029102228435,
+          "status": "assessed",
+          "meaning": "Length inside downloaded, fully valid HiRISE-to-CTX comparison cells; not independently validated safe terrain."
+        },
+        "matched_20m_comparison": {
+          "CTX_20m": {
+            "unique_cells": 9,
+            "max_deg": 4.644368069207755,
+            "mean_deg": 2.904639252553914,
+            "cells_over_20_deg": 0
+          },
+          "HiRISE_averaged_to_20m": {
+            "unique_cells": 9,
+            "max_deg": 3.7421450351980967,
+            "mean_deg": 2.289598800119003,
+            "cells_over_20_deg": 0
+          }
+        },
+        "method": "Unique cells with positive-length route intersection; finite central-difference stencils; arithmetic cell means. HiRISE area-averaged to CTX20m for matched comparison;40m map baseline, east-west ground distance corrected by latitude. Native1m comparison uses2m baseline. Repeated traversals count in coverage length, not cell counts.",
+        "source": "NASA MRO / USGS TRN CTX and HiRISE DTM; data/derived/hirise_validation.json. Related products, not independent absolute validation."
+      }
+    },
+    {
+      "test": "endpoint_equals_direct_analysis_without_routing",
+      "passed": true,
+      "actual": {
+        "http_status": 200,
+        "matches_direct_function": true
+      }
+    },
+    {
+      "test": "endpoint_rejects_empty_outside_and_extra_fields",
+      "passed": true,
+      "actual": {
+        "empty_outside_extra_field_statuses": [
+          422,
+          422,
+          422
+        ]
+      }
+    }
+  ],
+  "protected_diagnostic_sha256": "a0e6cfa80f7cd618d56024b4d1d17c26c2e5175320e8235bc99a0e7c99854177",
+  "scope": "Actual read-only route_trust/endpoint tests on loaded reference data and archived coordinates plus explicitly synthetic geometry tests. Does not rerun Delta or any sensitivity case.",
+  "unretested_prior_cases": [
+    "delta_transect",
+    "v010_default_two_stops",
+    "v010_three_stops"
+  ],
+  "limitation": "Zero-length two-point route returns top-level assessed although coverage is no_route_length; left unchanged as requested."
+}

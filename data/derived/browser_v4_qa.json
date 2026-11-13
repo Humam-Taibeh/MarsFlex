@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "checks": [
+    "automatic real-data mission calculation",
+    "distance profile linked to map cursor",
+    "export of constraints and computed evidence",
+    "detour calculation and path",
+    "native CRISM evidence overlay",
+    "geological units and contacts",
+    "source inventory",
+    "native HiRISE image viewer",
+    "changed constraints invalidate results and recalculate",
+    "terrain picking"
+  ],
+  "page_errors": [],
+  "viewport": [
+    1600,
+    1000
+  ]
+}

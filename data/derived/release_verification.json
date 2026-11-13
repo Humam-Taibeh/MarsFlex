@@ -1,0 +1,74 @@
+{
+  "classification_cells_compared": 413130,
+  "classification_differences": 0,
+  "baseline_worker_min": 173.01363694667816,
+  "baseline_independent_edge_sum_plus_dwell_min": 173.01363713867664,
+  "source_native_science_lookups": "pass, including outside coverage and source NoData",
+  "static_html_integrity": "pass; no external loads or missing referenced controls",
+  "browser_ui_test": "not completed; local-file navigation blocked in available browser",
+  "science_samples": [
+    {
+      "geology": {
+        "name": "Jezero fan 2 unit",
+        "symbol": "NHjf2",
+        "source": "USGS Sun & Stack 2020, SIM 3464 feature service",
+        "scale": "1:75000",
+        "scope": "Published service says viewing purposes only. Context display and map-label lookup only; no movement or science-score penalties. Authoritative GIS confirmation pending."
+      },
+      "crism": {
+        "product_id": "HRL000040FF_07_SU183J_MTR3",
+        "source_url": "https://pds-geosciences.wustl.edu/mro/mro-m-crism-5-rdr-mptargeted-v1/mrocr_4001/mtrdr/2007/2007_029/hrl000040ff/hrl000040ff_07_su183j_mtr3.img",
+        "native_row": 342,
+        "native_col": 119,
+        "values": {
+          "BD1900_2": 0.016252636909484863,
+          "D2300": 0.028454482555389404,
+          "BD2500_2": 0.025152087211608887
+        },
+        "note": "Dimensionless summary parameters; not abundance, probability, or mineral confirmation."
+      }
+    },
+    {
+      "geology": {
+        "name": "Upper etched unit",
+        "symbol": "Nue",
+        "source": "USGS Sun & Stack 2020, SIM 3464 feature service",
+        "scale": "1:75000",
+        "scope": "Published service says viewing purposes only. Context display and map-label lookup only; no movement or science-score penalties. Authoritative GIS confirmation pending."
+      },
+      "crism": {
+        "product_id": "HRL000040FF_07_SU183J_MTR3",
+        "source_url": "https://pds-geosciences.wustl.edu/mro/mro-m-crism-5-rdr-mptargeted-v1/mrocr_4001/mtrdr/2007/2007_029/hrl000040ff/hrl000040ff_07_su183j_mtr3.img",
+        "native_row": 370,
+        "native_col": 107,
+        "values": {
+          "BD1900_2": 0.013360023498535156,
+          "D2300": 0.025663673877716064,
+          "BD2500_2": 0.021241843700408936
+        },
+        "note": "Dimensionless summary parameters; not abundance, probability, or mineral confirmation."
+      }
+    },
+    {
+      "geology": {
+        "name": "Upper etched unit",
+        "symbol": "Nue",
+        "source": "USGS Sun & Stack 2020, SIM 3464 feature service",
+        "scale": "1:75000",
+        "scope": "Published service says viewing purposes only. Context display and map-label lookup only; no movement or science-score penalties. Authoritative GIS confirmation pending."
+      },
+      "crism": {
+        "product_id": "HRL000040FF_07_SU183J_MTR3",
+        "source_url": "https://pds-geosciences.wustl.edu/mro/mro-m-crism-5-rdr-mptargeted-v1/mrocr_4001/mtrdr/2007/2007_029/hrl000040ff/hrl000040ff_07_su183j_mtr3.img",
+        "native_row": 491,
+        "native_col": 111,
+        "values": {
+          "BD1900_2": 0.01657658815383911,
+          "D2300": 0.02275770902633667,
+          "BD2500_2": 0.01851046085357666
+        },
+        "note": "Dimensionless summary parameters; not abundance, probability, or mineral confirmation."
+      }
+    }
+  ]
+}

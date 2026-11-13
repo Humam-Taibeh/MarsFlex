@@ -1,0 +1,30 @@
+{
+  "aoi_cells": 194040,
+  "aoi_area_km2": 73.62013369556963,
+  "ctx_valid_aoi_cells": 194040,
+  "crism_valid_aoi_cells_on_ctx_grid": 190941,
+  "hirise_catalog_footprint_aoi_cells": 150000,
+  "joint_available_cells": 150000,
+  "joint_area_km2": 56.9105931224626,
+  "joint_cells_within_500m_of_localized_rover_record": 31148,
+  "largest_components": [
+    {
+      "component": 1,
+      "cells": 150000,
+      "area_km2": 56.9105931224626
+    }
+  ],
+  "bits": {
+    "1": "valid CTX elevation",
+    "2": "valid containing native CRISM summary pixel",
+    "4": "HiRISE DTM catalog footprint ONLY, not valid-pixel proof",
+    "8": "within 500m of sparse tactical rover localization (design context distance)"
+  },
+  "limits": [
+    "Availability does not prove science value or traversability.",
+    "CRISM lookup preserves native 36m information; a 20m coverage grid adds no spectral detail.",
+    "HiRISE footprint coverage is not the TRN mosaic valid-data mask.",
+    "500m proximity is context, not observation footprint or independent validation.",
+    "Scientific corridor selection remains pending spectra and target evidence review."
+  ]
+}

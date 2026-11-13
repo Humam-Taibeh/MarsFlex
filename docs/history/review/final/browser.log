@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "first_screen_no_physiology": true,
+  "advanced_controls_hidden": true,
+  "trust_matches_audit": {
+    "CTX_20m": {
+      "unique_cells": 19,
+      "max_deg": 18.656204354833203,
+      "mean_deg": 11.962989898485773,
+      "cells_over_20_deg": 0
+    },
+    "HiRISE_averaged_to_20m": {
+      "unique_cells": 19,
+      "max_deg": 25.44197874431341,
+      "mean_deg": 12.190750764544394,
+      "cells_over_20_deg": 1
+    }
+  },
+  "detour": {
+    "class": "green",
+    "mission_margin_min": 55.411738131041346
+  },
+  "original_blue_route_unchanged": true,
+  "stale_confidence_cleared": true,
+  "errors": []
+}

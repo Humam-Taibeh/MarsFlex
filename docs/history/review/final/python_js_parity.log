@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/workspace/scratch/f753d5dbd6ab/final_release/MarsFlex/verify_release.py", line 49, in <module>
+    if __name__=='__main__':verify()
+                            ^^^^^^^^
+  File "/workspace/scratch/f753d5dbd6ab/final_release/MarsFlex/verify_release.py", line 24, in verify
+    assert set(re.findall(r"el\('([^']+)'\)",app))<=set(parser.ids),'Missing app controls'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Missing app controls

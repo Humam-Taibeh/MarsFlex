@@ -1,0 +1,167 @@
+{
+  "method": "Central differences, float64, Mars sphere radius3396190m, longitude spacing corrected by cos(latitude). Native slopes use 2-cell baseline (40m CTX /2m HiRISE); matched slopes use HiRISE area-averaged20m and40m baseline. Only finite complete stencils. Select unique raster cells with positive-length intersection with route clipped to valid loaded reference footprint; point-only contacts excluded. Arithmetic mean of unique cells, not length-weighted. Coverage weights repeated traversal by geodesic edge length. No extrapolation.",
+  "routes": {
+    "delta_transect": {
+      "loaded_comparison_coverage": {
+        "route_length_m": 4019.7137875635835,
+        "covered_length_m": 497.91011110885944,
+        "uncovered_length_m": 3521.803676454724,
+        "covered_percent": 12.386705557229515,
+        "status": "assessed",
+        "meaning": "Length inside downloaded, fully valid HiRISE-to-CTX comparison cells; not independently validated safe terrain."
+      },
+      "native_analysis_coverage": {
+        "route_length_m": 4019.7137875635835,
+        "covered_length_m": 496.3794317195684,
+        "uncovered_length_m": 3523.334355844015,
+        "covered_percent": 12.348626244368317,
+        "status": "assessed",
+        "meaning": "Length inside downloaded, fully valid HiRISE-to-CTX comparison cells; not independently validated safe terrain."
+      },
+      "native_scale_comparison": {
+        "CTX_20m": {
+          "unique_cells": 17,
+          "max_deg": 3.3593173442992814,
+          "mean_deg": 2.24574227848345,
+          "cells_over_20_deg": 0
+        },
+        "HiRISE_1m": {
+          "unique_cells": 618,
+          "max_deg": 11.564134849263167,
+          "mean_deg": 3.165411810720569,
+          "cells_over_20_deg": 0
+        }
+      },
+      "matched_20m_coverage": {
+        "route_length_m": 4019.7137875635835,
+        "covered_length_m": 442.7835877846321,
+        "uncovered_length_m": 3576.9301997789516,
+        "covered_percent": 11.015301366842108,
+        "status": "assessed",
+        "meaning": "Length inside downloaded, fully valid HiRISE-to-CTX comparison cells; not independently validated safe terrain."
+      },
+      "matched_20m_comparison": {
+        "CTX_20m": {
+          "unique_cells": 15,
+          "max_deg": 3.3593173442992814,
+          "mean_deg": 2.1863550038568795,
+          "cells_over_20_deg": 0
+        },
+        "HiRISE_averaged_to_20m": {
+          "unique_cells": 15,
+          "max_deg": 2.9709322067783175,
+          "mean_deg": 1.9162432783917294,
+          "cells_over_20_deg": 0
+        }
+      }
+    },
+    "v010_default_two_stops": {
+      "loaded_comparison_coverage": {
+        "route_length_m": 2473.13728323718,
+        "covered_length_m": 583.7568840866288,
+        "uncovered_length_m": 1889.380399150551,
+        "covered_percent": 23.6039013298335,
+        "status": "assessed",
+        "meaning": "Length inside downloaded, fully valid HiRISE-to-CTX comparison cells; not independently validated safe terrain."
+      },
+      "native_analysis_coverage": {
+        "route_length_m": 2473.13728323718,
+        "covered_length_m": 583.2179117462612,
+        "uncovered_length_m": 1889.9193714909188,
+        "covered_percent": 23.582108267878517,
+        "status": "assessed",
+        "meaning": "Length inside downloaded, fully valid HiRISE-to-CTX comparison cells; not independently validated safe terrain."
+      },
+      "native_scale_comparison": {
+        "CTX_20m": {
+          "unique_cells": 21,
+          "max_deg": 18.656204354833203,
+          "mean_deg": 11.433920606134862,
+          "cells_over_20_deg": 0
+        },
+        "HiRISE_1m": {
+          "unique_cells": 778,
+          "max_deg": 39.42162827955598,
+          "mean_deg": 12.134792110914441,
+          "cells_over_20_deg": 75
+        }
+      },
+      "matched_20m_coverage": {
+        "route_length_m": 2473.13728323718,
+        "covered_length_m": 528.624811497741,
+        "uncovered_length_m": 1944.5124717394388,
+        "covered_percent": 21.374665089590362,
+        "status": "assessed",
+        "meaning": "Length inside downloaded, fully valid HiRISE-to-CTX comparison cells; not independently validated safe terrain."
+      },
+      "matched_20m_comparison": {
+        "CTX_20m": {
+          "unique_cells": 19,
+          "max_deg": 18.656204354833203,
+          "mean_deg": 11.962989898485773,
+          "cells_over_20_deg": 0
+        },
+        "HiRISE_averaged_to_20m": {
+          "unique_cells": 19,
+          "max_deg": 25.44197874431341,
+          "mean_deg": 12.190750764544394,
+          "cells_over_20_deg": 1
+        }
+      }
+    },
+    "v010_three_stops": {
+      "loaded_comparison_coverage": {
+        "route_length_m": 3544.2518271147032,
+        "covered_length_m": 1399.955443614216,
+        "uncovered_length_m": 2144.2963835004875,
+        "covered_percent": 39.49932205449094,
+        "status": "assessed",
+        "meaning": "Length inside downloaded, fully valid HiRISE-to-CTX comparison cells; not independently validated safe terrain."
+      },
+      "native_analysis_coverage": {
+        "route_length_m": 3544.2518271147032,
+        "covered_length_m": 1396.6598161569318,
+        "uncovered_length_m": 2147.5920109577714,
+        "covered_percent": 39.406336916356246,
+        "status": "assessed",
+        "meaning": "Length inside downloaded, fully valid HiRISE-to-CTX comparison cells; not independently validated safe terrain."
+      },
+      "native_scale_comparison": {
+        "CTX_20m": {
+          "unique_cells": 50,
+          "max_deg": 19.202679678477363,
+          "mean_deg": 8.359651355541445,
+          "cells_over_20_deg": 0
+        },
+        "HiRISE_1m": {
+          "unique_cells": 1734,
+          "max_deg": 48.654710575735265,
+          "mean_deg": 8.46397044386507,
+          "cells_over_20_deg": 104
+        }
+      },
+      "matched_20m_coverage": {
+        "route_length_m": 3544.2518271147032,
+        "covered_length_m": 1234.5569674477629,
+        "uncovered_length_m": 2309.6948596669404,
+        "covered_percent": 34.83265376356703,
+        "status": "assessed",
+        "meaning": "Length inside downloaded, fully valid HiRISE-to-CTX comparison cells; not independently validated safe terrain."
+      },
+      "matched_20m_comparison": {
+        "CTX_20m": {
+          "unique_cells": 44,
+          "max_deg": 19.202679678477363,
+          "mean_deg": 8.608444303720697,
+          "cells_over_20_deg": 0
+        },
+        "HiRISE_averaged_to_20m": {
+          "unique_cells": 44,
+          "max_deg": 25.694989776286995,
+          "mean_deg": 7.703640175782623,
+          "cells_over_20_deg": 1
+        }
+      }
+    }
+  }
+}

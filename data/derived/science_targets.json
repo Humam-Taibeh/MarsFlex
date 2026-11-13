@@ -1,0 +1,99 @@
+{
+  "source": {
+    "url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume2.pdf",
+    "sha256": "914a4baacdbd4dd6f86688b9d4e15dc353a506f9b24874e6f0bf04a799b9f123",
+    "bytes": 104818942,
+    "retrieved_utc": "2026-10-03T07:01:00.756827+00:00",
+    "title": "Mars 2020 Initial Reports \u2014 Volume 2, Delta Front Campaign",
+    "authors": "K. A. Farley and K. M. Stack (editors), Mars 2020 Science Team",
+    "year": 2023,
+    "release": "3.1",
+    "doi": "https://doi.org/10.17189/49zd-2k55",
+    "archive_page": "https://pds-geosciences.wustl.edu/missions/mars2020/returned_sample_science.htm",
+    "credit": "NASA/JPL-Caltech; \u00a9 2023 California Institute of Technology. Government sponsorship acknowledged.",
+    "status": "archived preliminary interpretation; not a new measurement",
+    "coordinate_method": "Manually transcribed from the Latitude (N), Longitude (E) line; visually checked against each PDF page. No metre-scale registration accuracy inferred."
+  },
+  "targets": [
+    {
+      "id": "swift-run",
+      "name": "Swift Run",
+      "outcrop": "Skinner Ridge",
+      "lon": 77.40617078,
+      "lat": 18.458931,
+      "sample_id": "M2020-490-11",
+      "sol": 490,
+      "coring_date": "2022-07-06",
+      "pdf_page": 14,
+      "printed_page": "11-1",
+      "archive_interpretation": "Sandstone with varied detrital grains; the report interprets part of its matrix as Fe-Mg carbonate.",
+      "planning_question": "Do grain sizes and bedding vary between this sandstone and the nearby finer-grained site?",
+      "proposed_observations": [
+        "Photograph bedding with scale and orientation.",
+        "Record exposed grain sizes and distinguish loose material from in-place rock.",
+        "Compare with Hazeltop; do not infer mineral identity from color."
+      ],
+      "proposal_origin": "MarsFlex author-designed comparative investigation; not a NASA EVA task or science-value ranking",
+      "source_page_url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume2.pdf#page=14",
+      "limitations": [
+        "Report coordinates identify historical sampling locations, not guaranteed accessible astronaut workspaces.",
+        "Observations at an existing sample site do not establish that nearby terrain has the same properties.",
+        "The proposed visit is a planning scenario, not permission to alter a cached sample or historical site."
+      ]
+    },
+    {
+      "id": "hazeltop",
+      "name": "Hazeltop",
+      "outcrop": "Wildcat Ridge",
+      "lon": 77.40588851,
+      "lat": 18.45863707,
+      "sample_id": "M2020-509-14",
+      "sol": 509,
+      "coring_date": "2022-07-25",
+      "pdf_page": 58,
+      "printed_page": "14-1",
+      "archive_interpretation": "Fine-grained sedimentary rock interpreted as sulfate-bearing mudstone, with calcium-sulfate-rich veins.",
+      "planning_question": "Are veins and fine-grained textures spatially associated, suggesting alteration after deposition?",
+      "proposed_observations": [
+        "Map visible veins relative to bedding without disturbing the sampled surface.",
+        "Collect scaled close-up photographs of texture changes.",
+        "Compare with Swift Run and the lower-sulfate interpretation at Shuyak."
+      ],
+      "proposal_origin": "MarsFlex author-designed comparative investigation; not a NASA EVA task or science-value ranking",
+      "source_page_url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume2.pdf#page=58",
+      "limitations": [
+        "Report coordinates identify historical sampling locations, not guaranteed accessible astronaut workspaces.",
+        "Observations at an existing sample site do not establish that nearby terrain has the same properties.",
+        "The proposed visit is a planning scenario, not permission to alter a cached sample or historical site."
+      ]
+    },
+    {
+      "id": "shuyak",
+      "name": "Shuyak",
+      "outcrop": "Amalik",
+      "lon": 77.40143171,
+      "lat": 18.45068954,
+      "sample_id": "M2020-575-16",
+      "sol": 575,
+      "coring_date": "2022-10-02",
+      "pdf_page": 100,
+      "printed_page": "16-1",
+      "archive_interpretation": "Fine-grained sedimentary rock interpreted as olivine-bearing mudstone with aqueous alteration and little sulfate evidence.",
+      "planning_question": "Does this site show a different alteration pattern from the sulfate-bearing Hazeltop site?",
+      "proposed_observations": [
+        "Document grain texture and visible veins with scale.",
+        "Compare like-for-like photographs with Hazeltop.",
+        "Treat mineralogical differences as archive interpretations requiring appropriate instrumental follow-up."
+      ],
+      "proposal_origin": "MarsFlex author-designed comparative investigation; not a NASA EVA task or science-value ranking",
+      "source_page_url": "https://pds-geosciences.wustl.edu/m2020/urn-nasa-pds-mars2020_sample_dossier/initial_reports/initial_reports_volume2.pdf#page=100",
+      "limitations": [
+        "Report coordinates identify historical sampling locations, not guaranteed accessible astronaut workspaces.",
+        "Observations at an existing sample site do not establish that nearby terrain has the same properties.",
+        "The proposed visit is a planning scenario, not permission to alter a cached sample or historical site."
+      ]
+    }
+  ],
+  "selection_policy": "Three deliberately selected historical sites for a texture/alteration comparison. Not an exhaustive inventory or science-value ranking.",
+  "report_note": "Swift Run page header says 495; the sample designation and sealing-sol fields both say 490. The latter are retained explicitly."
+}

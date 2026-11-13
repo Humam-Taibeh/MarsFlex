@@ -1,0 +1,209 @@
+{
+  "original_ensemble_generation": {
+    "python": "3.12.14",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "rasterio": "1.5.1",
+    "matplotlib": "3.10.8",
+    "fastapi": "0.141.1"
+  },
+  "current_read_only_verification": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "requirements_sha256": "1ad58a70cf915f9896a6962f28fb84783fc882c1c42bd1b312c899e370c95005",
+    "requirements_all_matched": true,
+    "pins": [
+      {
+        "package": "numpy",
+        "required": "2.3.5",
+        "installed": "2.3.5",
+        "matches": true
+      },
+      {
+        "package": "scipy",
+        "required": "1.16.3",
+        "installed": "1.16.3",
+        "matches": true
+      },
+      {
+        "package": "rasterio",
+        "required": "1.5.1",
+        "installed": "1.5.1",
+        "matches": true
+      },
+      {
+        "package": "pyproj",
+        "required": "3.8.0",
+        "installed": "3.8.0",
+        "matches": true
+      },
+      {
+        "package": "Pillow",
+        "required": "12.3.0",
+        "installed": "12.3.0",
+        "matches": true
+      },
+      {
+        "package": "pytest",
+        "required": "9.1.1",
+        "installed": "9.1.1",
+        "matches": true
+      },
+      {
+        "package": "shapely",
+        "required": "2.1.2",
+        "installed": "2.1.2",
+        "matches": true
+      },
+      {
+        "package": "fastapi",
+        "required": "0.141.1",
+        "installed": "0.141.1",
+        "matches": true
+      },
+      {
+        "package": "uvicorn",
+        "required": "0.54.0",
+        "installed": "0.54.0",
+        "matches": true
+      },
+      {
+        "package": "httpx",
+        "required": "0.28.1",
+        "installed": "0.28.1",
+        "matches": true
+      },
+      {
+        "package": "tifffile",
+        "required": "2026.9.20",
+        "installed": "2026.9.20",
+        "matches": true
+      },
+      {
+        "package": "pydantic",
+        "required": "2.13.5",
+        "installed": "2.13.5",
+        "matches": true
+      },
+      {
+        "package": "pydantic-core",
+        "required": "2.46.5",
+        "installed": "2.46.5",
+        "matches": true
+      },
+      {
+        "package": "starlette",
+        "required": "1.7.0",
+        "installed": "1.7.0",
+        "matches": true
+      },
+      {
+        "package": "anyio",
+        "required": "4.15.1",
+        "installed": "4.15.1",
+        "matches": true
+      },
+      {
+        "package": "affine",
+        "required": "3.0.1",
+        "installed": "3.0.1",
+        "matches": true
+      },
+      {
+        "package": "attrs",
+        "required": "26.1.0",
+        "installed": "26.1.0",
+        "matches": true
+      },
+      {
+        "package": "click",
+        "required": "8.5.0",
+        "installed": "8.5.0",
+        "matches": true
+      },
+      {
+        "package": "certifi",
+        "required": "2026.7.22",
+        "installed": "2026.7.22",
+        "matches": true
+      },
+      {
+        "package": "h11",
+        "required": "0.16.0",
+        "installed": "0.16.0",
+        "matches": true
+      },
+      {
+        "package": "httpcore",
+        "required": "1.0.9",
+        "installed": "1.0.9",
+        "matches": true
+      },
+      {
+        "package": "idna",
+        "required": "3.20",
+        "installed": "3.20",
+        "matches": true
+      },
+      {
+        "package": "typing-extensions",
+        "required": "4.16.0",
+        "installed": "4.16.0",
+        "matches": true
+      },
+      {
+        "package": "typing-inspection",
+        "required": "0.4.4",
+        "installed": "0.4.4",
+        "matches": true
+      },
+      {
+        "package": "annotated-types",
+        "required": "0.8.0",
+        "installed": "0.8.0",
+        "matches": true
+      },
+      {
+        "package": "annotated-doc",
+        "required": "0.0.5",
+        "installed": "0.0.5",
+        "matches": true
+      },
+      {
+        "package": "packaging",
+        "required": "26.3",
+        "installed": "26.3",
+        "matches": true
+      },
+      {
+        "package": "pyparsing",
+        "required": "3.3.3",
+        "installed": "3.3.3",
+        "matches": true
+      },
+      {
+        "package": "iniconfig",
+        "required": "2.3.0",
+        "installed": "2.3.0",
+        "matches": true
+      },
+      {
+        "package": "pluggy",
+        "required": "1.6.0",
+        "installed": "1.6.0",
+        "matches": true
+      },
+      {
+        "package": "pygments",
+        "required": "2.21.0",
+        "installed": "2.21.0",
+        "matches": true
+      }
+    ],
+    "plotting_dependency": {
+      "matplotlib": "3.10.8",
+      "in_requirements_tested": false
+    },
+    "differences_in_stored_values_or_reductions": [],
+    "scope": "Rechecks saved arrays, counts and set identities only; no cross-version rerouting or physiological calculation."
+  }
+}

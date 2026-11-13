@@ -1,0 +1,60 @@
+{
+  "source_url": "https://pds-geosciences.wustl.edu/mro/mro-m-crism-5-rdr-mptargeted-v1/mrocr_4001/mtrdr/2007/2007_029/hrl000040ff/hrl000040ff_07_su183j_mtr3.img",
+  "product_id": "HRL000040FF_07_SU183J_MTR3",
+  "source_total_bytes": 82009200,
+  "shape": [
+    751,
+    455
+  ],
+  "map_spacing_m": 36,
+  "no_data": 65535,
+  "bands": [
+    {
+      "name": "BD1900_2",
+      "band_index_zero_based": 25,
+      "byte_range": [
+        34170500,
+        35537319
+      ],
+      "bytes": 1366820,
+      "sha256": "e26e1390bc12b9fb41392a93eda2280aa310da4049ae1f8b79d7d41f2f16b60d",
+      "valid_pixels": 220978,
+      "range": [
+        -0.051627516746520996,
+        0.11819839477539062
+      ]
+    },
+    {
+      "name": "D2300",
+      "band_index_zero_based": 39,
+      "byte_range": [
+        53305980,
+        54672799
+      ],
+      "bytes": 1366820,
+      "sha256": "ed7c876b9f9124cc0127caf9baf1c424d789c552605a112aedd54663f90439df",
+      "valid_pixels": 220978,
+      "range": [
+        -0.04343712329864502,
+        0.037738263607025146
+      ]
+    },
+    {
+      "name": "BD2500_2",
+      "band_index_zero_based": 45,
+      "byte_range": [
+        61506900,
+        62873719
+      ],
+      "bytes": 1366820,
+      "sha256": "8ca3e1bb5a95868f8c0794a3f8b1eafa338fc6d612896109a96464a0f59021d6",
+      "valid_pixels": 220978,
+      "range": [
+        -0.04297304153442383,
+        0.04857957363128662
+      ]
+    }
+  ],
+  "note": "Only listed complete native bands downloaded using verified byte ranges; not the full 60-band cube.",
+  "retrieved_utc": "2026-09-25T08:06:29Z"
+}

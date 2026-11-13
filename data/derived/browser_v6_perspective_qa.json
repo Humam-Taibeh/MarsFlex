@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "checks": [
+    "Perspective orbit",
+    "1x and 3x controls",
+    "Section clipping",
+    "401 exported samples match original raster"
+  ],
+  "errors": []
+}

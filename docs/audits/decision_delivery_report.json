@@ -1,0 +1,90 @@
+{
+  "base": "v0.10.0 plus prior text audit",
+  "modified_this_update": [
+    "api.py",
+    "frontend/src/main.tsx",
+    "frontend/src/style.css",
+    "frontend/src/workspace.tsx"
+  ],
+  "new_application_files": [
+    "route_trust.py",
+    "frontend/src/DecisionView.tsx",
+    "frontend/src/rover_measurements.json",
+    "analysis/sensitivity_proposal.json",
+    "analysis/run_sensitivity.py"
+  ],
+  "carried_forward_prior_text_audit": [
+    "frontend/src/ScienceBrief.tsx",
+    "frontend/src/GeoStudio.tsx"
+  ],
+  "documentation": [
+    "ONE_PAGE_EN.md",
+    "ONE_PAGE_EN.pdf",
+    "VIDEO_30_SECONDS_EN.md",
+    "SEVEN_SLIDES_EN.md",
+    "SOURCES_EN.md",
+    "SENSITIVITY_PROPOSAL_AR.md",
+    "MarsFlex_v0.10.0_Audit.md",
+    "route_audit_results.json",
+    "decision_regression.json",
+    "presentation_checks.json"
+  ],
+  "build": "passed",
+  "existing_tests": "37 passed;1 upstream deprecation warning",
+  "regression": {
+    "passed": true,
+    "distance_m": 4019.7137875635854,
+    "travel_min": 143.4349420073279,
+    "complete_original_api_response_exactly_equal": true,
+    "all_original_api_functions_and_classes_ast_identical": true,
+    "protected_sha256": {
+      "terrain.py": "e157d283da63b59638175eca24a8c8c4224d09d6a2c8c8c27d007f0e02b60436",
+      "frontend/src/geoscene.ts": "ed66474ce73cd2aa53a6c43d1a18a85f23afadbde3f8e09b06d9ad99957afbc4"
+    },
+    "new_api_definitions": [
+      "TrustRoute",
+      "route_trust"
+    ],
+    "sensitivity_run": "NOT RUN; awaiting user approval"
+  },
+  "browser": {
+    "passed": true,
+    "first_screen_no_physiology": true,
+    "advanced_controls_hidden": true,
+    "trust_matches_audit": {
+      "CTX_20m": {
+        "unique_cells": 19,
+        "max_deg": 18.656204354833203,
+        "mean_deg": 11.962989898485773,
+        "cells_over_20_deg": 0
+      },
+      "HiRISE_averaged_to_20m": {
+        "unique_cells": 19,
+        "max_deg": 25.44197874431341,
+        "mean_deg": 12.190750764544394,
+        "cells_over_20_deg": 1
+      }
+    },
+    "detour": {
+      "class": "green",
+      "mission_margin_min": 55.411738131041346
+    },
+    "original_blue_route_unchanged": true,
+    "stale_confidence_cleared": true,
+    "errors": []
+  },
+  "sensitivity": {
+    "status": "not_executed_pending_user_approval",
+    "proposal_sha256": "b768bc936093380bb14c948fdfb7a37c461ac236faf0bcbb42f184843ee097ab",
+    "script_syntax": "AST parse only; no import or execution",
+    "output": "NOT GENERATED"
+  },
+  "backup": "MarsFlex_PreDecision_UI_Backup.zip",
+  "protected_files_not_in_patch": [
+    "terrain.py",
+    "frontend/src/geoscene.ts",
+    "frontend/src/scene.ts",
+    "geo_models.py",
+    "meda_archive.py"
+  ]
+}

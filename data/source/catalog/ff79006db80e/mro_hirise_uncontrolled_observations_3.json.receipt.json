@@ -1,0 +1,7 @@
+{
+  "url": "https://g6goyz4w56.execute-api.us-west-2.amazonaws.com/prod/search?collections=mro_hirise_uncontrolled_observations&next=2006-12-16T06%3A27%3A32.443000Z%2CPSP_001820_1985_COLOR%2Cmro_hirise_uncontrolled_observations&bbox=77.32%2C18.4%2C77.49%2C18.53&limit=100",
+  "retrieved_utc": "2026-09-25T13:55:16.413600+00:00",
+  "bytes": 201,
+  "sha256": "ef88f33b799e64e56db2407bb7c404f830c7a335eefb28caaa3237fdc3031459",
+  "last_modified": null
+}

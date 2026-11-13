@@ -1,0 +1,7 @@
+{
+  "url": "https://stac.astrogeology.usgs.gov/api/search?collections=mro_hirise_uncontrolled_observations&bbox=77.32%2C18.4%2C77.49%2C18.53&limit=100",
+  "retrieved_utc": "2026-09-25T13:54:57.377873+00:00",
+  "bytes": 774122,
+  "sha256": "50748be91db396d47b17568a48a6881354fdd42f3b8e702b8fb44e258ebbb1ec",
+  "last_modified": null
+}

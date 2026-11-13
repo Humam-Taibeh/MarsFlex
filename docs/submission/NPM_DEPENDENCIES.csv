@@ -1,0 +1,190 @@
+name,version,scope,source,license,license_files,lock_path
+@babel/code-frame,7.29.7,dev/build,https://github.com/babel/babel.git,MIT,docs/dependency_licenses/npm/node_modules/@babel/code-frame/LICENSE,node_modules/@babel/code-frame
+@babel/compat-data,7.29.7,dev/build,https://github.com/babel/babel.git,MIT,docs/dependency_licenses/npm/node_modules/@babel/compat-data/LICENSE,node_modules/@babel/compat-data
+@babel/core,7.29.7,dev/build,https://github.com/babel/babel.git,MIT,docs/dependency_licenses/npm/node_modules/@babel/core/LICENSE,node_modules/@babel/core
+@babel/generator,7.29.8,dev/build,https://github.com/babel/babel.git,MIT,docs/dependency_licenses/npm/node_modules/@babel/generator/LICENSE,node_modules/@babel/generator
+@babel/helper-compilation-targets,7.29.7,dev/build,https://github.com/babel/babel.git,MIT,docs/dependency_licenses/npm/node_modules/@babel/helper-compilation-targets/LICENSE,node_modules/@babel/helper-compilation-targets
+@babel/helper-globals,7.29.7,dev/build,https://github.com/babel/babel.git,MIT,docs/dependency_licenses/npm/node_modules/@babel/helper-globals/LICENSE,node_modules/@babel/helper-globals
+@babel/helper-module-imports,7.29.7,dev/build,https://github.com/babel/babel.git,MIT,docs/dependency_licenses/npm/node_modules/@babel/helper-module-imports/LICENSE,node_modules/@babel/helper-module-imports
+@babel/helper-module-transforms,7.29.7,dev/build,https://github.com/babel/babel.git,MIT,docs/dependency_licenses/npm/node_modules/@babel/helper-module-transforms/LICENSE,node_modules/@babel/helper-module-transforms
+@babel/helper-plugin-utils,7.29.7,dev/build,https://github.com/babel/babel.git,MIT,docs/dependency_licenses/npm/node_modules/@babel/helper-plugin-utils/LICENSE,node_modules/@babel/helper-plugin-utils
+@babel/helper-string-parser,7.29.7,dev/build,https://github.com/babel/babel.git,MIT,docs/dependency_licenses/npm/node_modules/@babel/helper-string-parser/LICENSE,node_modules/@babel/helper-string-parser
+@babel/helper-validator-identifier,7.29.7,dev/build,https://github.com/babel/babel.git,MIT,docs/dependency_licenses/npm/node_modules/@babel/helper-validator-identifier/LICENSE,node_modules/@babel/helper-validator-identifier
+@babel/helper-validator-option,7.29.7,dev/build,https://github.com/babel/babel.git,MIT,docs/dependency_licenses/npm/node_modules/@babel/helper-validator-option/LICENSE,node_modules/@babel/helper-validator-option
+@babel/helpers,7.29.7,dev/build,https://github.com/babel/babel.git,MIT,docs/dependency_licenses/npm/node_modules/@babel/helpers/LICENSE,node_modules/@babel/helpers
+@babel/parser,7.29.9,dev/build,https://github.com/babel/babel.git,MIT,docs/dependency_licenses/npm/node_modules/@babel/parser/LICENSE,node_modules/@babel/parser
+@babel/plugin-transform-react-jsx-self,7.29.7,dev/build,https://github.com/babel/babel.git,MIT,docs/dependency_licenses/npm/node_modules/@babel/plugin-transform-react-jsx-self/LICENSE,node_modules/@babel/plugin-transform-react-jsx-self
+@babel/plugin-transform-react-jsx-source,7.29.7,dev/build,https://github.com/babel/babel.git,MIT,docs/dependency_licenses/npm/node_modules/@babel/plugin-transform-react-jsx-source/LICENSE,node_modules/@babel/plugin-transform-react-jsx-source
+@babel/template,7.29.7,dev/build,https://github.com/babel/babel.git,MIT,docs/dependency_licenses/npm/node_modules/@babel/template/LICENSE,node_modules/@babel/template
+@babel/traverse,7.29.8,dev/build,https://github.com/babel/babel.git,MIT,docs/dependency_licenses/npm/node_modules/@babel/traverse/LICENSE,node_modules/@babel/traverse
+@babel/types,7.29.8,dev/build,https://github.com/babel/babel.git,MIT,docs/dependency_licenses/npm/node_modules/@babel/types/LICENSE,node_modules/@babel/types
+@cesium/engine,26.3.0,frontend distribution,git+https://github.com/CesiumGS/cesium.git,Apache-2.0,docs/dependency_licenses/npm/node_modules/@cesium/engine/LICENSE.md,node_modules/@cesium/engine
+@cesium/wasm-splats,0.1.0-alpha.2,frontend distribution,https://github.com/CesiumGS/cesium-wasm-utils,Apache-2.0,NOT FOUND (optional package may not be installed on Linux),node_modules/@cesium/wasm-splats
+@cesium/widgets,16.2.0,frontend distribution,git+https://github.com/CesiumGS/cesium.git,Apache-2.0,docs/dependency_licenses/npm/node_modules/@cesium/widgets/LICENSE.md,node_modules/@cesium/widgets
+@dimforge/rapier3d-compat,0.12.0,dev/build,https://github.com/dimforge/rapier.js,Apache-2.0,docs/dependency_licenses/npm/node_modules/@dimforge/rapier3d-compat/LICENSE,node_modules/@dimforge/rapier3d-compat
+@esbuild/aix-ppc64,0.25.12,dev/build,https://registry.npmjs.org/@esbuild/aix-ppc64/-/aix-ppc64-0.25.12.tgz,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/@esbuild/aix-ppc64
+@esbuild/android-arm,0.25.12,dev/build,https://registry.npmjs.org/@esbuild/android-arm/-/android-arm-0.25.12.tgz,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/@esbuild/android-arm
+@esbuild/android-arm64,0.25.12,dev/build,https://registry.npmjs.org/@esbuild/android-arm64/-/android-arm64-0.25.12.tgz,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/@esbuild/android-arm64
+@esbuild/android-x64,0.25.12,dev/build,https://registry.npmjs.org/@esbuild/android-x64/-/android-x64-0.25.12.tgz,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/@esbuild/android-x64
+@esbuild/darwin-arm64,0.25.12,dev/build,https://registry.npmjs.org/@esbuild/darwin-arm64/-/darwin-arm64-0.25.12.tgz,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/@esbuild/darwin-arm64
+@esbuild/darwin-x64,0.25.12,dev/build,https://registry.npmjs.org/@esbuild/darwin-x64/-/darwin-x64-0.25.12.tgz,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/@esbuild/darwin-x64
+@esbuild/freebsd-arm64,0.25.12,dev/build,https://registry.npmjs.org/@esbuild/freebsd-arm64/-/freebsd-arm64-0.25.12.tgz,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/@esbuild/freebsd-arm64
+@esbuild/freebsd-x64,0.25.12,dev/build,https://registry.npmjs.org/@esbuild/freebsd-x64/-/freebsd-x64-0.25.12.tgz,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/@esbuild/freebsd-x64
+@esbuild/linux-arm,0.25.12,dev/build,https://registry.npmjs.org/@esbuild/linux-arm/-/linux-arm-0.25.12.tgz,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/@esbuild/linux-arm
+@esbuild/linux-arm64,0.25.12,dev/build,https://registry.npmjs.org/@esbuild/linux-arm64/-/linux-arm64-0.25.12.tgz,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/@esbuild/linux-arm64
+@esbuild/linux-ia32,0.25.12,dev/build,https://registry.npmjs.org/@esbuild/linux-ia32/-/linux-ia32-0.25.12.tgz,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/@esbuild/linux-ia32
+@esbuild/linux-loong64,0.25.12,dev/build,https://registry.npmjs.org/@esbuild/linux-loong64/-/linux-loong64-0.25.12.tgz,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/@esbuild/linux-loong64
+@esbuild/linux-mips64el,0.25.12,dev/build,https://registry.npmjs.org/@esbuild/linux-mips64el/-/linux-mips64el-0.25.12.tgz,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/@esbuild/linux-mips64el
+@esbuild/linux-ppc64,0.25.12,dev/build,https://registry.npmjs.org/@esbuild/linux-ppc64/-/linux-ppc64-0.25.12.tgz,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/@esbuild/linux-ppc64
+@esbuild/linux-riscv64,0.25.12,dev/build,https://registry.npmjs.org/@esbuild/linux-riscv64/-/linux-riscv64-0.25.12.tgz,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/@esbuild/linux-riscv64
+@esbuild/linux-s390x,0.25.12,dev/build,https://registry.npmjs.org/@esbuild/linux-s390x/-/linux-s390x-0.25.12.tgz,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/@esbuild/linux-s390x
+@esbuild/linux-x64,0.25.12,dev/build,git+https://github.com/evanw/esbuild.git,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/@esbuild/linux-x64
+@esbuild/netbsd-arm64,0.25.12,dev/build,https://registry.npmjs.org/@esbuild/netbsd-arm64/-/netbsd-arm64-0.25.12.tgz,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/@esbuild/netbsd-arm64
+@esbuild/netbsd-x64,0.25.12,dev/build,https://registry.npmjs.org/@esbuild/netbsd-x64/-/netbsd-x64-0.25.12.tgz,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/@esbuild/netbsd-x64
+@esbuild/openbsd-arm64,0.25.12,dev/build,https://registry.npmjs.org/@esbuild/openbsd-arm64/-/openbsd-arm64-0.25.12.tgz,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/@esbuild/openbsd-arm64
+@esbuild/openbsd-x64,0.25.12,dev/build,https://registry.npmjs.org/@esbuild/openbsd-x64/-/openbsd-x64-0.25.12.tgz,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/@esbuild/openbsd-x64
+@esbuild/openharmony-arm64,0.25.12,dev/build,https://registry.npmjs.org/@esbuild/openharmony-arm64/-/openharmony-arm64-0.25.12.tgz,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/@esbuild/openharmony-arm64
+@esbuild/sunos-x64,0.25.12,dev/build,https://registry.npmjs.org/@esbuild/sunos-x64/-/sunos-x64-0.25.12.tgz,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/@esbuild/sunos-x64
+@esbuild/win32-arm64,0.25.12,dev/build,https://registry.npmjs.org/@esbuild/win32-arm64/-/win32-arm64-0.25.12.tgz,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/@esbuild/win32-arm64
+@esbuild/win32-ia32,0.25.12,dev/build,https://registry.npmjs.org/@esbuild/win32-ia32/-/win32-ia32-0.25.12.tgz,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/@esbuild/win32-ia32
+@esbuild/win32-x64,0.25.12,dev/build,https://registry.npmjs.org/@esbuild/win32-x64/-/win32-x64-0.25.12.tgz,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/@esbuild/win32-x64
+@jridgewell/gen-mapping,0.3.13,dev/build,git+https://github.com/jridgewell/sourcemaps.git,MIT,docs/dependency_licenses/npm/node_modules/@jridgewell/gen-mapping/LICENSE,node_modules/@jridgewell/gen-mapping
+@jridgewell/remapping,2.3.5,dev/build,git+https://github.com/jridgewell/sourcemaps.git,MIT,docs/dependency_licenses/npm/node_modules/@jridgewell/remapping/LICENSE,node_modules/@jridgewell/remapping
+@jridgewell/resolve-uri,3.1.2,dev/build,https://github.com/jridgewell/resolve-uri,MIT,docs/dependency_licenses/npm/node_modules/@jridgewell/resolve-uri/LICENSE,node_modules/@jridgewell/resolve-uri
+@jridgewell/sourcemap-codec,1.6.0,dev/build,git+https://github.com/jridgewell/sourcemaps.git,MIT,docs/dependency_licenses/npm/node_modules/@jridgewell/sourcemap-codec/LICENSE,node_modules/@jridgewell/sourcemap-codec
+@jridgewell/trace-mapping,0.3.31,dev/build,git+https://github.com/jridgewell/sourcemaps.git,MIT,docs/dependency_licenses/npm/node_modules/@jridgewell/trace-mapping/LICENSE,node_modules/@jridgewell/trace-mapping
+@napi-rs/lzma-linux-x64-gnu,1.5.1,dev/build,git+https://github.com/Brooooooklyn/lzma.git,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/@napi-rs/lzma-linux-x64-gnu
+@nodelib/fs.scandir,2.1.5,dev/build,https://github.com/nodelib/nodelib/tree/master/packages/fs/fs.scandir,MIT,docs/dependency_licenses/npm/node_modules/@nodelib/fs.scandir/LICENSE,node_modules/@nodelib/fs.scandir
+@nodelib/fs.stat,2.0.5,dev/build,https://github.com/nodelib/nodelib/tree/master/packages/fs/fs.stat,MIT,docs/dependency_licenses/npm/node_modules/@nodelib/fs.stat/LICENSE,node_modules/@nodelib/fs.stat
+@nodelib/fs.walk,1.2.8,dev/build,https://github.com/nodelib/nodelib/tree/master/packages/fs/fs.walk,MIT,docs/dependency_licenses/npm/node_modules/@nodelib/fs.walk/LICENSE,node_modules/@nodelib/fs.walk
+@rolldown/pluginutils,1.0.0-beta.27,dev/build,git+https://github.com/rolldown/rolldown.git,MIT,docs/dependency_licenses/npm/node_modules/@rolldown/pluginutils/LICENSE,node_modules/@rolldown/pluginutils
+@rollup/rollup-android-arm-eabi,4.63.5,dev/build,https://registry.npmjs.org/@rollup/rollup-android-arm-eabi/-/rollup-android-arm-eabi-4.63.5.tgz,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/@rollup/rollup-android-arm-eabi
+@rollup/rollup-android-arm64,4.63.5,dev/build,https://registry.npmjs.org/@rollup/rollup-android-arm64/-/rollup-android-arm64-4.63.5.tgz,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/@rollup/rollup-android-arm64
+@rollup/rollup-darwin-arm64,4.63.5,dev/build,https://registry.npmjs.org/@rollup/rollup-darwin-arm64/-/rollup-darwin-arm64-4.63.5.tgz,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/@rollup/rollup-darwin-arm64
+@rollup/rollup-darwin-x64,4.63.5,dev/build,https://registry.npmjs.org/@rollup/rollup-darwin-x64/-/rollup-darwin-x64-4.63.5.tgz,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/@rollup/rollup-darwin-x64
+@rollup/rollup-freebsd-arm64,4.63.5,dev/build,https://registry.npmjs.org/@rollup/rollup-freebsd-arm64/-/rollup-freebsd-arm64-4.63.5.tgz,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/@rollup/rollup-freebsd-arm64
+@rollup/rollup-freebsd-x64,4.63.5,dev/build,https://registry.npmjs.org/@rollup/rollup-freebsd-x64/-/rollup-freebsd-x64-4.63.5.tgz,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/@rollup/rollup-freebsd-x64
+@rollup/rollup-linux-arm-gnueabihf,4.63.5,dev/build,https://registry.npmjs.org/@rollup/rollup-linux-arm-gnueabihf/-/rollup-linux-arm-gnueabihf-4.63.5.tgz,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/@rollup/rollup-linux-arm-gnueabihf
+@rollup/rollup-linux-arm-musleabihf,4.63.5,dev/build,https://registry.npmjs.org/@rollup/rollup-linux-arm-musleabihf/-/rollup-linux-arm-musleabihf-4.63.5.tgz,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/@rollup/rollup-linux-arm-musleabihf
+@rollup/rollup-linux-arm64-gnu,4.63.5,dev/build,https://registry.npmjs.org/@rollup/rollup-linux-arm64-gnu/-/rollup-linux-arm64-gnu-4.63.5.tgz,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/@rollup/rollup-linux-arm64-gnu
+@rollup/rollup-linux-arm64-musl,4.63.5,dev/build,https://registry.npmjs.org/@rollup/rollup-linux-arm64-musl/-/rollup-linux-arm64-musl-4.63.5.tgz,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/@rollup/rollup-linux-arm64-musl
+@rollup/rollup-linux-loong64-gnu,4.63.5,dev/build,https://registry.npmjs.org/@rollup/rollup-linux-loong64-gnu/-/rollup-linux-loong64-gnu-4.63.5.tgz,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/@rollup/rollup-linux-loong64-gnu
+@rollup/rollup-linux-loong64-musl,4.63.5,dev/build,https://registry.npmjs.org/@rollup/rollup-linux-loong64-musl/-/rollup-linux-loong64-musl-4.63.5.tgz,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/@rollup/rollup-linux-loong64-musl
+@rollup/rollup-linux-ppc64-gnu,4.63.5,dev/build,https://registry.npmjs.org/@rollup/rollup-linux-ppc64-gnu/-/rollup-linux-ppc64-gnu-4.63.5.tgz,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/@rollup/rollup-linux-ppc64-gnu
+@rollup/rollup-linux-ppc64-musl,4.63.5,dev/build,https://registry.npmjs.org/@rollup/rollup-linux-ppc64-musl/-/rollup-linux-ppc64-musl-4.63.5.tgz,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/@rollup/rollup-linux-ppc64-musl
+@rollup/rollup-linux-riscv64-gnu,4.63.5,dev/build,https://registry.npmjs.org/@rollup/rollup-linux-riscv64-gnu/-/rollup-linux-riscv64-gnu-4.63.5.tgz,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/@rollup/rollup-linux-riscv64-gnu
+@rollup/rollup-linux-riscv64-musl,4.63.5,dev/build,https://registry.npmjs.org/@rollup/rollup-linux-riscv64-musl/-/rollup-linux-riscv64-musl-4.63.5.tgz,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/@rollup/rollup-linux-riscv64-musl
+@rollup/rollup-linux-s390x-gnu,4.63.5,dev/build,https://registry.npmjs.org/@rollup/rollup-linux-s390x-gnu/-/rollup-linux-s390x-gnu-4.63.5.tgz,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/@rollup/rollup-linux-s390x-gnu
+@rollup/rollup-linux-x64-gnu,4.63.5,dev/build,git+https://github.com/rollup/rollup.git,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/@rollup/rollup-linux-x64-gnu
+@rollup/rollup-linux-x64-musl,4.63.5,dev/build,git+https://github.com/rollup/rollup.git,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/@rollup/rollup-linux-x64-musl
+@rollup/rollup-openbsd-x64,4.63.5,dev/build,https://registry.npmjs.org/@rollup/rollup-openbsd-x64/-/rollup-openbsd-x64-4.63.5.tgz,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/@rollup/rollup-openbsd-x64
+@rollup/rollup-openharmony-arm64,4.63.5,dev/build,https://registry.npmjs.org/@rollup/rollup-openharmony-arm64/-/rollup-openharmony-arm64-4.63.5.tgz,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/@rollup/rollup-openharmony-arm64
+@rollup/rollup-win32-arm64-msvc,4.63.5,dev/build,https://registry.npmjs.org/@rollup/rollup-win32-arm64-msvc/-/rollup-win32-arm64-msvc-4.63.5.tgz,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/@rollup/rollup-win32-arm64-msvc
+@rollup/rollup-win32-ia32-msvc,4.63.5,dev/build,https://registry.npmjs.org/@rollup/rollup-win32-ia32-msvc/-/rollup-win32-ia32-msvc-4.63.5.tgz,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/@rollup/rollup-win32-ia32-msvc
+@rollup/rollup-win32-x64-gnu,4.63.5,dev/build,https://registry.npmjs.org/@rollup/rollup-win32-x64-gnu/-/rollup-win32-x64-gnu-4.63.5.tgz,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/@rollup/rollup-win32-x64-gnu
+@rollup/rollup-win32-x64-msvc,4.63.5,dev/build,https://registry.npmjs.org/@rollup/rollup-win32-x64-msvc/-/rollup-win32-x64-msvc-4.63.5.tgz,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/@rollup/rollup-win32-x64-msvc
+@spz-loader/core,0.3.1,frontend distribution,https://github.com/drumath2237/spz-loader,Apache-2.0,docs/dependency_licenses/npm/node_modules/@spz-loader/core/LICENSE.txt,node_modules/@spz-loader/core
+@tweenjs/tween.js,25.0.0,frontend distribution,https://github.com/tweenjs/tween.js.git,MIT,docs/dependency_licenses/npm/node_modules/@tweenjs/tween.js/LICENSE,node_modules/@tweenjs/tween.js
+@types/babel__core,7.20.5,dev/build,https://github.com/DefinitelyTyped/DefinitelyTyped.git,MIT,docs/dependency_licenses/npm/node_modules/@types/babel__core/LICENSE,node_modules/@types/babel__core
+@types/babel__generator,7.27.0,dev/build,https://github.com/DefinitelyTyped/DefinitelyTyped.git,MIT,docs/dependency_licenses/npm/node_modules/@types/babel__generator/LICENSE,node_modules/@types/babel__generator
+@types/babel__template,7.4.4,dev/build,https://github.com/DefinitelyTyped/DefinitelyTyped.git,MIT,docs/dependency_licenses/npm/node_modules/@types/babel__template/LICENSE,node_modules/@types/babel__template
+@types/babel__traverse,7.28.0,dev/build,https://github.com/DefinitelyTyped/DefinitelyTyped.git,MIT,docs/dependency_licenses/npm/node_modules/@types/babel__traverse/LICENSE,node_modules/@types/babel__traverse
+@types/estree,1.0.9,dev/build,https://github.com/DefinitelyTyped/DefinitelyTyped.git,MIT,docs/dependency_licenses/npm/node_modules/@types/estree/LICENSE,node_modules/@types/estree
+@types/react,19.3.0,dev/build,https://github.com/DefinitelyTyped/DefinitelyTyped.git,MIT,docs/dependency_licenses/npm/node_modules/@types/react/LICENSE,node_modules/@types/react
+@types/react-dom,19.3.0,dev/build,https://github.com/DefinitelyTyped/DefinitelyTyped.git,MIT,docs/dependency_licenses/npm/node_modules/@types/react-dom/LICENSE,node_modules/@types/react-dom
+@types/stats.js,0.17.4,dev/build,https://github.com/DefinitelyTyped/DefinitelyTyped.git,MIT,docs/dependency_licenses/npm/node_modules/@types/stats.js/LICENSE,node_modules/@types/stats.js
+@types/three,0.186.0,dev/build,https://github.com/DefinitelyTyped/DefinitelyTyped.git,MIT,docs/dependency_licenses/npm/node_modules/@types/three/LICENSE,node_modules/@types/three
+@tweenjs/tween.js,23.1.3,dev/build,https://github.com/tweenjs/tween.js.git,MIT,docs/dependency_licenses/npm/node_modules/@types/three/node_modules/@tweenjs/tween.js/LICENSE,node_modules/@types/three/node_modules/@tweenjs/tween.js
+meshoptimizer,1.1.1,dev/build,https://github.com/zeux/meshoptimizer,MIT,docs/dependency_licenses/npm/node_modules/@types/three/node_modules/meshoptimizer/LICENSE.md,node_modules/@types/three/node_modules/meshoptimizer
+@types/trusted-types,2.0.7,frontend distribution,https://github.com/DefinitelyTyped/DefinitelyTyped.git,MIT,docs/dependency_licenses/npm/node_modules/@types/trusted-types/LICENSE,node_modules/@types/trusted-types
+@types/webxr,0.5.24,dev/build,https://github.com/DefinitelyTyped/DefinitelyTyped.git,MIT,docs/dependency_licenses/npm/node_modules/@types/webxr/LICENSE,node_modules/@types/webxr
+@vitejs/plugin-react,4.7.0,dev/build,git+https://github.com/vitejs/vite-plugin-react.git,MIT,docs/dependency_licenses/npm/node_modules/@vitejs/plugin-react/LICENSE,node_modules/@vitejs/plugin-react
+@zip.js/zip.js,2.18.2,frontend distribution,git+https://github.com/gildas-lormeau/zip.js.git,BSD-3-Clause,docs/dependency_licenses/npm/node_modules/@zip.js/zip.js/LICENSE,node_modules/@zip.js/zip.js
+anymatch,3.1.3,dev/build,https://github.com/micromatch/anymatch,ISC,docs/dependency_licenses/npm/node_modules/anymatch/LICENSE,node_modules/anymatch
+picomatch,2.3.2,dev/build,micromatch/picomatch,MIT,docs/dependency_licenses/npm/node_modules/anymatch/node_modules/picomatch/LICENSE,node_modules/anymatch/node_modules/picomatch
+autolinker,4.1.5,frontend distribution,git://github.com/gregjacobs/Autolinker.js.git,MIT,docs/dependency_licenses/npm/node_modules/autolinker/LICENSE,node_modules/autolinker
+baseline-browser-mapping,2.11.26,dev/build,git+https://github.com/web-platform-dx/baseline-browser-mapping.git,Apache-2.0,docs/dependency_licenses/npm/node_modules/baseline-browser-mapping/LICENSE.txt,node_modules/baseline-browser-mapping
+binary-extensions,2.3.0,dev/build,sindresorhus/binary-extensions,MIT,docs/dependency_licenses/npm/node_modules/binary-extensions/license,node_modules/binary-extensions
+bitmap-sdf,1.0.4,frontend distribution,git+https://github.com/dfcreative/bitmap-sdf.git,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/bitmap-sdf
+braces,3.0.3,dev/build,micromatch/braces,MIT,docs/dependency_licenses/npm/node_modules/braces/LICENSE,node_modules/braces
+browserslist,4.29.1,dev/build,browserslist/browserslist,MIT,docs/dependency_licenses/npm/node_modules/browserslist/LICENSE,node_modules/browserslist
+caniuse-lite,1.0.30001812,dev/build,browserslist/caniuse-lite,CC-BY-4.0,docs/dependency_licenses/npm/node_modules/caniuse-lite/LICENSE,node_modules/caniuse-lite
+cesium,1.145.0,frontend distribution,https://github.com/CesiumGS/cesium.git,Apache-2.0,docs/dependency_licenses/npm/node_modules/cesium/LICENSE.md,node_modules/cesium
+chokidar,3.6.0,dev/build,git+https://github.com/paulmillr/chokidar.git,MIT,docs/dependency_licenses/npm/node_modules/chokidar/LICENSE,node_modules/chokidar
+commander,2.20.3,frontend distribution,https://github.com/tj/commander.js.git,MIT,docs/dependency_licenses/npm/node_modules/commander/LICENSE,node_modules/commander
+convert-source-map,2.0.0,dev/build,git://github.com/thlorenz/convert-source-map.git,MIT,docs/dependency_licenses/npm/node_modules/convert-source-map/LICENSE,node_modules/convert-source-map
+csstype,3.2.3,dev/build,https://github.com/frenic/csstype,MIT,docs/dependency_licenses/npm/node_modules/csstype/LICENSE,node_modules/csstype
+debug,4.4.3,dev/build,git://github.com/debug-js/debug.git,MIT,docs/dependency_licenses/npm/node_modules/debug/LICENSE,node_modules/debug
+dompurify,3.4.16,frontend distribution,git://github.com/cure53/DOMPurify.git,(MPL-2.0 OR Apache-2.0),docs/dependency_licenses/npm/node_modules/dompurify/LICENSE; docs/dependency_licenses/npm/node_modules/dompurify/LICENSE-MPL,node_modules/dompurify
+draco3d,1.5.7,frontend distribution,git+https://github.com/google/draco.git,Apache-2.0,NOT FOUND (optional package may not be installed on Linux),node_modules/draco3d
+earcut,3.0.2,frontend distribution,git://github.com/mapbox/earcut.git,ISC,docs/dependency_licenses/npm/node_modules/earcut/LICENSE,node_modules/earcut
+electron-to-chromium,1.5.439,dev/build,git+https://github.com/Kilian/electron-to-chromium.git,ISC,docs/dependency_licenses/npm/node_modules/electron-to-chromium/LICENSE,node_modules/electron-to-chromium
+esbuild,0.25.12,dev/build,git+https://github.com/evanw/esbuild.git,MIT,docs/dependency_licenses/npm/node_modules/esbuild/LICENSE.md,node_modules/esbuild
+escalade,3.2.0,dev/build,lukeed/escalade,MIT,docs/dependency_licenses/npm/node_modules/escalade/license,node_modules/escalade
+fast-glob,3.3.3,dev/build,mrmlnc/fast-glob,MIT,docs/dependency_licenses/npm/node_modules/fast-glob/LICENSE,node_modules/fast-glob
+fastq,1.20.3,dev/build,git+https://github.com/mcollina/fastq.git,ISC,docs/dependency_licenses/npm/node_modules/fastq/LICENSE,node_modules/fastq
+fdir,6.5.0,dev/build,git+https://github.com/thecodrr/fdir.git,MIT,docs/dependency_licenses/npm/node_modules/fdir/LICENSE,node_modules/fdir
+fflate,0.8.3,dev/build,https://github.com/101arrowz/fflate,MIT,docs/dependency_licenses/npm/node_modules/fflate/LICENSE,node_modules/fflate
+fill-range,7.1.1,dev/build,jonschlinkert/fill-range,MIT,docs/dependency_licenses/npm/node_modules/fill-range/LICENSE,node_modules/fill-range
+fs-extra,11.4.1,dev/build,git+https://github.com/jprichardson/node-fs-extra.git,MIT,docs/dependency_licenses/npm/node_modules/fs-extra/LICENSE,node_modules/fs-extra
+fsevents,2.3.3,dev/build,https://registry.npmjs.org/fsevents/-/fsevents-2.3.3.tgz,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/fsevents
+gensync,1.0.0-beta.2,dev/build,https://github.com/loganfsmyth/gensync.git,MIT,docs/dependency_licenses/npm/node_modules/gensync/LICENSE,node_modules/gensync
+glob-parent,5.1.2,dev/build,gulpjs/glob-parent,ISC,docs/dependency_licenses/npm/node_modules/glob-parent/LICENSE,node_modules/glob-parent
+graceful-fs,4.2.11,dev/build,https://github.com/isaacs/node-graceful-fs,ISC,docs/dependency_licenses/npm/node_modules/graceful-fs/LICENSE,node_modules/graceful-fs
+grapheme-splitter,1.0.4,frontend distribution,https://github.com/orling/grapheme-splitter.git,MIT,docs/dependency_licenses/npm/node_modules/grapheme-splitter/LICENSE,node_modules/grapheme-splitter
+is-binary-path,2.1.0,dev/build,sindresorhus/is-binary-path,MIT,docs/dependency_licenses/npm/node_modules/is-binary-path/license,node_modules/is-binary-path
+is-extglob,2.1.1,dev/build,jonschlinkert/is-extglob,MIT,docs/dependency_licenses/npm/node_modules/is-extglob/LICENSE,node_modules/is-extglob
+is-glob,4.0.3,dev/build,micromatch/is-glob,MIT,docs/dependency_licenses/npm/node_modules/is-glob/LICENSE,node_modules/is-glob
+is-number,7.0.0,dev/build,jonschlinkert/is-number,MIT,docs/dependency_licenses/npm/node_modules/is-number/LICENSE,node_modules/is-number
+js-tokens,4.0.0,dev/build,lydell/js-tokens,MIT,docs/dependency_licenses/npm/node_modules/js-tokens/LICENSE,node_modules/js-tokens
+jsep,1.4.0,frontend distribution,https://github.com/EricSmekens/jsep.git,MIT,docs/dependency_licenses/npm/node_modules/jsep/LICENSE,node_modules/jsep
+jsesc,3.1.0,dev/build,https://github.com/mathiasbynens/jsesc.git,MIT,docs/dependency_licenses/npm/node_modules/jsesc/LICENSE-MIT.txt,node_modules/jsesc
+json5,2.2.3,dev/build,git+https://github.com/json5/json5.git,MIT,docs/dependency_licenses/npm/node_modules/json5/LICENSE.md,node_modules/json5
+jsonfile,6.2.1,dev/build,git@github.com:jprichardson/node-jsonfile.git,MIT,docs/dependency_licenses/npm/node_modules/jsonfile/LICENSE,node_modules/jsonfile
+kdbush,4.1.0,frontend distribution,git://github.com/mourner/kdbush.git,ISC,docs/dependency_licenses/npm/node_modules/kdbush/LICENSE,node_modules/kdbush
+ktx-parse,1.1.0,frontend distribution,github:donmccurdy/ktx-parse,MIT,docs/dependency_licenses/npm/node_modules/ktx-parse/LICENSE,node_modules/ktx-parse
+lerc,2.0.0,frontend distribution,https://github.com/Esri/lerc.git,Apache-2.0,NOT FOUND (optional package may not be installed on Linux),node_modules/lerc
+long,5.3.2,frontend distribution,https://github.com/dcodeIO/long.js.git,Apache-2.0,docs/dependency_licenses/npm/node_modules/long/LICENSE,node_modules/long
+lru-cache,5.1.1,dev/build,git://github.com/isaacs/node-lru-cache.git,ISC,docs/dependency_licenses/npm/node_modules/lru-cache/LICENSE,node_modules/lru-cache
+merge2,1.4.1,dev/build,git@github.com:teambition/merge2.git,MIT,docs/dependency_licenses/npm/node_modules/merge2/LICENSE,node_modules/merge2
+mersenne-twister,1.1.0,frontend distribution,git://github.com/boo1ean/mersenne-twister.git,MIT,NOT FOUND (optional package may not be installed on Linux),node_modules/mersenne-twister
+meshoptimizer,1.3.0,frontend distribution,https://github.com/zeux/meshoptimizer,MIT,docs/dependency_licenses/npm/node_modules/meshoptimizer/LICENSE.md,node_modules/meshoptimizer
+micromatch,4.0.8,dev/build,micromatch/micromatch,MIT,docs/dependency_licenses/npm/node_modules/micromatch/LICENSE,node_modules/micromatch
+picomatch,2.3.2,dev/build,micromatch/picomatch,MIT,docs/dependency_licenses/npm/node_modules/micromatch/node_modules/picomatch/LICENSE,node_modules/micromatch/node_modules/picomatch
+ms,2.1.3,dev/build,vercel/ms,MIT,docs/dependency_licenses/npm/node_modules/ms/license.md,node_modules/ms
+nanoid,3.3.19,dev/build,ai/nanoid,MIT,docs/dependency_licenses/npm/node_modules/nanoid/LICENSE,node_modules/nanoid
+node-releases,2.0.57,dev/build,https://github.com/chicoxyzzy/node-releases.git,MIT,docs/dependency_licenses/npm/node_modules/node-releases/LICENSE,node_modules/node-releases
+normalize-path,3.0.0,dev/build,jonschlinkert/normalize-path,MIT,docs/dependency_licenses/npm/node_modules/normalize-path/LICENSE,node_modules/normalize-path
+nosleep.js,0.12.0,frontend distribution,https://github.com/richtr/NoSleep.js.git,MIT,docs/dependency_licenses/npm/node_modules/nosleep.js/LICENSE,node_modules/nosleep.js
+p-map,7.0.8,dev/build,sindresorhus/p-map,MIT,docs/dependency_licenses/npm/node_modules/p-map/license,node_modules/p-map
+pako,3.0.2,frontend distribution,nodeca/pako,(MIT AND Zlib),docs/dependency_licenses/npm/node_modules/pako/LICENSE,node_modules/pako
+picocolors,1.1.1,dev/build,alexeyraspopov/picocolors,ISC,docs/dependency_licenses/npm/node_modules/picocolors/LICENSE,node_modules/picocolors
+picomatch,4.0.7,dev/build,micromatch/picomatch,MIT,docs/dependency_licenses/npm/node_modules/picomatch/LICENSE,node_modules/picomatch
+postcss,8.5.28,dev/build,postcss/postcss,MIT,docs/dependency_licenses/npm/node_modules/postcss/LICENSE,node_modules/postcss
+protobufjs,8.8.0,frontend distribution,protobufjs/protobuf.js,BSD-3-Clause,docs/dependency_licenses/npm/node_modules/protobufjs/LICENSE,node_modules/protobufjs
+queue-microtask,1.2.3,dev/build,git://github.com/feross/queue-microtask.git,MIT,docs/dependency_licenses/npm/node_modules/queue-microtask/LICENSE,node_modules/queue-microtask
+quickselect,3.0.0,frontend distribution,github:mourner/quickselect,ISC,docs/dependency_licenses/npm/node_modules/quickselect/LICENSE,node_modules/quickselect
+rbush,4.0.1,frontend distribution,git://github.com/mourner/rbush.git,MIT,docs/dependency_licenses/npm/node_modules/rbush/LICENSE,node_modules/rbush
+react,19.3.0,frontend distribution,https://github.com/react/react.git,MIT,docs/dependency_licenses/npm/node_modules/react/LICENSE,node_modules/react
+react-dom,19.3.0,frontend distribution,https://github.com/react/react.git,MIT,docs/dependency_licenses/npm/node_modules/react-dom/LICENSE,node_modules/react-dom
+react-refresh,0.17.0,dev/build,https://github.com/facebook/react.git,MIT,docs/dependency_licenses/npm/node_modules/react-refresh/LICENSE,node_modules/react-refresh
+readdirp,3.6.0,dev/build,git://github.com/paulmillr/readdirp.git,MIT,docs/dependency_licenses/npm/node_modules/readdirp/LICENSE,node_modules/readdirp
+picomatch,2.3.2,dev/build,micromatch/picomatch,MIT,docs/dependency_licenses/npm/node_modules/readdirp/node_modules/picomatch/LICENSE,node_modules/readdirp/node_modules/picomatch
+reusify,1.1.0,dev/build,git+https://github.com/mcollina/reusify.git,MIT,docs/dependency_licenses/npm/node_modules/reusify/LICENSE,node_modules/reusify
+rollup,4.63.5,dev/build,git+https://github.com/rollup/rollup.git,MIT,docs/dependency_licenses/npm/node_modules/rollup/LICENSE.md,node_modules/rollup
+run-parallel,1.2.0,dev/build,git://github.com/feross/run-parallel.git,MIT,docs/dependency_licenses/npm/node_modules/run-parallel/LICENSE,node_modules/run-parallel
+scheduler,0.28.0,frontend distribution,https://github.com/react/react.git,MIT,docs/dependency_licenses/npm/node_modules/scheduler/LICENSE,node_modules/scheduler
+semver,6.3.1,dev/build,https://github.com/npm/node-semver.git,ISC,docs/dependency_licenses/npm/node_modules/semver/LICENSE,node_modules/semver
+source-map-js,1.2.1,dev/build,7rulnik/source-map-js,BSD-3-Clause,docs/dependency_licenses/npm/node_modules/source-map-js/LICENSE,node_modules/source-map-js
+three,0.186.1,frontend distribution,https://github.com/mrdoob/three.js,MIT,docs/dependency_licenses/npm/node_modules/three/LICENSE,node_modules/three
+tinyglobby,0.2.17,dev/build,git+https://github.com/SuperchupuDev/tinyglobby.git,MIT,docs/dependency_licenses/npm/node_modules/tinyglobby/LICENSE,node_modules/tinyglobby
+to-regex-range,5.0.1,dev/build,micromatch/to-regex-range,MIT,docs/dependency_licenses/npm/node_modules/to-regex-range/LICENSE,node_modules/to-regex-range
+topojson-client,3.1.0,frontend distribution,https://github.com/topojson/topojson-client.git,ISC,docs/dependency_licenses/npm/node_modules/topojson-client/LICENSE,node_modules/topojson-client
+tslib,2.8.1,frontend distribution,https://github.com/Microsoft/tslib.git,0BSD,docs/dependency_licenses/npm/node_modules/tslib/LICENSE.txt,node_modules/tslib
+typescript,5.9.3,dev/build,https://github.com/microsoft/TypeScript.git,Apache-2.0,docs/dependency_licenses/npm/node_modules/typescript/LICENSE.txt,node_modules/typescript
+universalify,2.0.1,dev/build,git+https://github.com/RyanZim/universalify.git,MIT,docs/dependency_licenses/npm/node_modules/universalify/LICENSE,node_modules/universalify
+update-browserslist-db,1.3.3,dev/build,browserslist/update-db,MIT,docs/dependency_licenses/npm/node_modules/update-browserslist-db/LICENSE,node_modules/update-browserslist-db
+urijs,1.19.11,frontend distribution,https://github.com/medialize/URI.js.git,MIT,docs/dependency_licenses/npm/node_modules/urijs/LICENSE.txt,node_modules/urijs
+vite,6.4.3,dev/build,git+https://github.com/vitejs/vite.git,MIT,docs/dependency_licenses/npm/node_modules/vite/LICENSE.md,node_modules/vite
+vite-plugin-static-copy,2.3.2,dev/build,git+https://github.com/sapphi-red/vite-plugin-static-copy.git,MIT,docs/dependency_licenses/npm/node_modules/vite-plugin-static-copy/LICENSE,node_modules/vite-plugin-static-copy
+yallist,3.1.1,dev/build,git+https://github.com/isaacs/yallist.git,ISC,docs/dependency_licenses/npm/node_modules/yallist/LICENSE,node_modules/yallist

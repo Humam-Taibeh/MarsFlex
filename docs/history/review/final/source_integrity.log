@@ -1,0 +1,22 @@
+Stored NPZ keys: green_in_all, green_in_some, green_count, classified_count
+{
+  "passed": true,
+  "protected_files_unchanged": {
+    "terrain.py": "e157d283da63b59638175eca24a8c8c4224d09d6a2c8c8c27d007f0e02b60436",
+    "frontend/src/geoscene.ts": "ed66474ce73cd2aa53a6c43d1a18a85f23afadbde3f8e09b06d9ad99957afbc4",
+    "api.py": "df9b0a8eabff79c624fbd3b09d890ec7f837b9f2a9c2ea6c934763e7228edf14",
+    "geo_models.py": "d0d7ca662d2c37097e9ea36bc8d2104ff58fb84e92c80bf45a0e771e7360282b",
+    "route_trust.py": "a0e6cfa80f7cd618d56024b4d1d17c26c2e5175320e8235bc99a0e7c99854177",
+    "meda_archive.py": "8301eff3e46efc6cb08f1f4afbf05fea9b88d380960855763e960ef75a3955e5",
+    "launch.py": "8a3617cdbeca6809e41843d8dbb3227945840302b7e10e1824f8aa399ec165d0"
+  },
+  "source_and_science_assets_checked": 4479,
+  "source_or_science_assets_changed": [],
+  "robust_core_cells": 6352,
+  "baseline_green_cells": 29068,
+  "optimistic_union_cells": 66438,
+  "sensitivity_npz_unchanged": true,
+  "sensitivity_cases_rerun": 0,
+  "monotonicity_comparisons_from_saved_verification": 513,
+  "monotonicity_violations_from_saved_verification": 0
+}

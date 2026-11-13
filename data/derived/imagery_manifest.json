@@ -1,0 +1,71 @@
+{
+  "ctx": {
+    "url": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/mars2020_trn/CTX/JEZ_ctx_B_soc_008_orthoMosaic_6m_Eqc_latTs0_lon0.tif",
+    "source_sha256": "842b457afee7c2672022b66e3f60be836c6d52e99474015bfd9ced60099b8615",
+    "source_spacing_m": 6,
+    "display_spacing_map_m": 5,
+    "display_shape": [
+      2344,
+      2820
+    ],
+    "display_transform": [
+      5.0,
+      0.0,
+      4581103.250853,
+      0.0,
+      -5.0,
+      1100373.140188
+    ],
+    "source_nodata": 0.0,
+    "source_crs": "PROJCS[\"Equirectangular Mars 2000 Sphere IAU\",GEOGCS[\"GCS_Mars_2000_Sphere\",DATUM[\"Mars_2000_(Sphere)\",SPHEROID[\"Mars_2000_Sphere_IAU\",3396190,0]],PRIMEM[\"Reference_Meridian\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]]],PROJECTION[\"Equirectangular\"],PARAMETER[\"standard_parallel_1\",0],PARAMETER[\"central_meridian\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+    "contrast_percentiles": [
+      1,
+      99
+    ],
+    "contrast_dn": [
+      84.0,
+      205.0
+    ],
+    "interpolation": "bilinear; resampling to 5 m does not add source detail",
+    "valid_fraction": 1.0
+  },
+  "hirise": {
+    "url": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/mars2020_trn/HiRISE/JEZ_hirise_soc_006_orthoMosaic_25cm_Eqc_latTs0_lon0_first.tif",
+    "header_sha256": "973ce17929cd87139932bee5dcb9a6c0341019034dcfd5eb522443711447567b",
+    "source_full_bytes": 7358523457,
+    "patch_sha256": "00ef0b47fc12e4bbc634393620e2f94505d75e302e8cd1e1e837b05a03c275e9",
+    "native_spacing_m": 0.25,
+    "shape": [
+      1024,
+      1024
+    ],
+    "transform": [
+      0.25,
+      0.0,
+      4586844.25,
+      0.0,
+      -0.25,
+      1096769.25
+    ],
+    "bounds_lonlat": [
+      77.38283688746786,
+      18.498841762437706,
+      77.38715576231154,
+      18.503160637281386
+    ],
+    "center": {
+      "lon": 77.385,
+      "lat": 18.501
+    },
+    "contrast_percentiles": [
+      1,
+      99
+    ],
+    "contrast_dn": [
+      95.0,
+      179.0
+    ],
+    "valid_fraction": 1.0,
+    "scope": "One 256 x 256 map-metre patch; visual evidence only; not full AOI coverage or measured obstacle clearance."
+  }
+}

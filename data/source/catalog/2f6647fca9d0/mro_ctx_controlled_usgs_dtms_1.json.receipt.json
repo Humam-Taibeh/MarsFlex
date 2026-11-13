@@ -1,0 +1,7 @@
+{
+  "url": "https://stac.astrogeology.usgs.gov/api/search?collections=mro_ctx_controlled_usgs_dtms&bbox=77.32%2C18.4%2C77.49%2C18.53&limit=100",
+  "retrieved_utc": "2026-09-25T13:54:56.481335+00:00",
+  "bytes": 363414,
+  "sha256": "9fb2e8dd6e128060866d0b0b930aa2f2f9a3584d7a514e6f35a13ed1e0bbf84b",
+  "last_modified": null
+}

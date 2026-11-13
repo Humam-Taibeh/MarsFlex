@@ -1,0 +1,30 @@
+{
+  "position": {
+    "lon": 77.397,
+    "lat": 18.485
+  },
+  "habitat": {
+    "lon": 77.415,
+    "lat": 18.466
+  },
+  "remaining_min": 300,
+  "detour_dwell_min": 10,
+  "activities": [
+    {
+      "id": "Swift Run",
+      "lon": 77.40617078,
+      "lat": 18.458931,
+      "type": "required",
+      "dwell_min": 15
+    },
+    {
+      "id": "Hazeltop",
+      "lon": 77.40588851,
+      "lat": 18.45863707,
+      "type": "required",
+      "dwell_min": 15
+    }
+  ],
+  "reserve_min": 72,
+  "include_field": true
+}

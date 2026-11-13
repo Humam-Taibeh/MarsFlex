@@ -1,0 +1,23 @@
+{
+  "position": {
+    "lon": 77.397,
+    "lat": 18.485
+  },
+  "habitat": {
+    "lon": 77.415,
+    "lat": 18.466
+  },
+  "remaining_min": 300,
+  "detour_dwell_min": 10,
+  "activities": [
+    {
+      "id": "Delta review",
+      "lon": 77.385,
+      "lat": 18.501,
+      "dwell_min": 15,
+      "type": "required"
+    }
+  ],
+  "reserve_min": 72,
+  "include_field": true
+}

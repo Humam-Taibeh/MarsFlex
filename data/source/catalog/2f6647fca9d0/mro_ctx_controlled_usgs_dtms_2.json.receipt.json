@@ -1,0 +1,7 @@
+{
+  "url": "https://g6goyz4w56.execute-api.us-west-2.amazonaws.com/prod/search?collections=mro_ctx_controlled_usgs_dtms&bbox=77.32%2C18.4%2C77.49%2C18.53&limit=100&next=2023-04-18T12%3A00%3A00Z%2CD14_032794_1989_XN_18N282W__D15_033216_1989_XN_18N282W%2Cmro_ctx_controlled_usgs_dtms",
+  "retrieved_utc": "2026-09-25T13:55:06.680140+00:00",
+  "bytes": 200,
+  "sha256": "bb20ae9c7466d1c872f66c524ff784cfad508cb8470692c56423e1c74f6c979a",
+  "last_modified": null
+}

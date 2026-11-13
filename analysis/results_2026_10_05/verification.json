@@ -1,0 +1,406 @@
+{
+  "passed": true,
+  "combinations_verified": 243,
+  "status_counts": {
+    "computed": 162,
+    "required_location_blocked_or_outside_grid": 81
+  },
+  "counts_full_buffered_grid": {
+    "total_cells": 413130,
+    "baseline_green": 29068,
+    "green_in_all_243": 0,
+    "green_in_some_only": 66438,
+    "never_green": 346692,
+    "never_classified": 8787
+  },
+  "counts_AOI_cell_centers": {
+    "total_cells": 194040,
+    "baseline_green": 29068,
+    "green_in_all_243": 0,
+    "green_in_some_only": 66438,
+    "never_green": 127602,
+    "never_classified": 1038
+  },
+  "by_slope_gate": [
+    {
+      "slope_gate_deg": 10,
+      "cases": 81,
+      "computed": 0,
+      "blocked_required_location": 81,
+      "min_green_cells": 0,
+      "max_green_cells": 0
+    },
+    {
+      "slope_gate_deg": 15,
+      "cases": 81,
+      "computed": 81,
+      "blocked_required_location": 0,
+      "min_green_cells": 6352,
+      "max_green_cells": 60504
+    },
+    {
+      "slope_gate_deg": 20,
+      "cases": 81,
+      "computed": 81,
+      "blocked_required_location": 0,
+      "min_green_cells": 8048,
+      "max_green_cells": 66438
+    }
+  ],
+  "endpoint_diagnostics": [
+    {
+      "id": "Crew",
+      "row": 234,
+      "column": 329,
+      "ctx_surface_slope_deg": 3.796213022909067,
+      "blocked_by_surface_gate_deg": []
+    },
+    {
+      "id": "Habitat",
+      "row": 290,
+      "column": 382,
+      "ctx_surface_slope_deg": 4.678472890172726,
+      "blocked_by_surface_gate_deg": []
+    },
+    {
+      "id": "Swift Run",
+      "row": 311,
+      "column": 356,
+      "ctx_surface_slope_deg": 8.494431701563126,
+      "blocked_by_surface_gate_deg": []
+    },
+    {
+      "id": "Hazeltop",
+      "row": 312,
+      "column": 355,
+      "ctx_surface_slope_deg": 10.433947555804256,
+      "blocked_by_surface_gate_deg": [
+        10
+      ]
+    }
+  ],
+  "maximum_green_count_at_any_cell": 162,
+  "boundary_reachable_cases": 138,
+  "delta_regression": {
+    "distance_m": 4019.7137875635854,
+    "travel_min": 143.4349420073279,
+    "exact_expected_values": true,
+    "complete_response_equal_to_original_v010_api": true
+  },
+  "baseline_two_stop": {
+    "parameters": {
+      "speed_m_s": 0.5,
+      "slope_penalty_multiplier": 1.0,
+      "slope_gate_deg": 20,
+      "station_dwell_min": 15,
+      "reserve_min": 72
+    },
+    "green_cells": 29068,
+    "distance_m": 2473.13728323718,
+    "travel_min": 95.61940358186433
+  },
+  "all_preexisting_project_files_unchanged": true,
+  "preexisting_files_checked": 5028,
+  "changed_files": [],
+  "protected_sha256": {
+    "terrain.py": "e157d283da63b59638175eca24a8c8c4224d09d6a2c8c8c27d007f0e02b60436",
+    "frontend/src/geoscene.ts": "ed66474ce73cd2aa53a6c43d1a18a85f23afadbde3f8e09b06d9ad99957afbc4"
+  },
+  "input_sha256": {
+    "data/derived/elevation.npy": "6edea8f6272a342aa4b5e4aaee278801de7bf5f3d3acfe23f43fac753e4e4813",
+    "data/derived/grid.json": "543b37c577c77514ae0162ade5807ec976312289dcc683f5870f925826a848b1",
+    "analysis/run_sensitivity.py": "5604264e4ccb5b313f4fcd0a8f687b589516ddccd0784e260cde5708a5eead37",
+    "analysis/sensitivity_proposal.json": "b768bc936093380bb14c948fdfb7a37c461ac236faf0bcbb42f184843ee097ab"
+  },
+  "notes": [
+    "Counts describe this exact finite parameter grid, not calibrated probabilities or continuous parameter intervals.",
+    "Blocked-endpoint cases remain in the denominator of 243; no required activity was dropped or moved.",
+    "Never-green cells may be blocked, unreachable or over budget; this is not a red-class map.",
+    "No new Python/JavaScript parity comparison was run in this read-only analysis."
+  ],
+  "robust_core_cells": 6352,
+  "robust_core_scope": "all 162 computed cases; gates 15 and 20 degrees; excludes 81 rejected 10-degree cases",
+  "excluded_cases_statement": "10\u00b0 gate rejects required stop Hazeltop (CTX slope 10.43\u00b0); 81 cases not computed",
+  "monotonicity": {
+    "comparisons": 513,
+    "violations": 0,
+    "scope": "adjacent parameter comparisons of saved GREEN CELL COUNTS only",
+    "pixelwise_per_case_check": "NOT RUN: individual masks not stored; no sensitivity case rerun",
+    "per_axis_comparisons": {
+      "speed_m_s": 108,
+      "slope_penalty_multiplier": 108,
+      "slope_gate_deg": 81,
+      "station_dwell_min": 108,
+      "reserve_min": 108
+    }
+  },
+  "extreme_set_identities": {
+    "intersection_equals_smallest_case": true,
+    "union_equals_largest_case": true,
+    "smallest_case": {
+      "parameters": {
+        "speed_m_s": 0.4,
+        "slope_penalty_multiplier": 1.25,
+        "slope_gate_deg": 15,
+        "station_dwell_min": 20,
+        "reserve_min": 90
+      },
+      "status": "computed",
+      "green_cells": 6352,
+      "classified_cells": 386108,
+      "domain_boundary_reachable": false
+    },
+    "largest_case": {
+      "parameters": {
+        "speed_m_s": 0.6,
+        "slope_penalty_multiplier": 0.75,
+        "slope_gate_deg": 20,
+        "station_dwell_min": 10,
+        "reserve_min": 60
+      },
+      "status": "computed",
+      "green_cells": 66438,
+      "classified_cells": 404343,
+      "domain_boundary_reachable": true
+    },
+    "proof": "Intersection is contained in each case and has the same cardinality as the smallest; union contains each case and has the same cardinality as the largest. Therefore each pair is the same finite set. Uses stored aggregate masks and recorded case cardinalities; not reconstructed masks."
+  },
+  "depot_non_green_case": {
+    "row": 290,
+    "column": 382,
+    "green_cases": 161,
+    "classified_cases": 162,
+    "non_green_computed_cases": 1,
+    "parameters": {
+      "speed_m_s": 0.4,
+      "slope_penalty_multiplier": 1.25,
+      "slope_gate_deg": 15,
+      "station_dwell_min": 20,
+      "reserve_min": 90
+    },
+    "identified_by": "aggregate mask + intersection/minimum cardinality identity; no rerun",
+    "exact_non_green_class": "NOT FOUND: per-case labels were not retained"
+  },
+  "revision_execution": {
+    "sensitivity_cases_rerun": 0,
+    "routing_engine_imported_or_called": false,
+    "metabolism_called": false,
+    "application_files_changed": [],
+    "delta_regression_status": "Prior verified values retained; NOT rerun in this revision",
+    "source_npz_sha256": "ec12e8bc3f7a6268e99e6775f37669035b2083ee8739aa9a706c9db3c59523ed",
+    "all_preexisting_files_checked_after_delivery": 5028,
+    "npz_bytes_unchanged": true
+  },
+  "environment_recheck": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "requirements_sha256": "1ad58a70cf915f9896a6962f28fb84783fc882c1c42bd1b312c899e370c95005",
+    "requirements_all_matched": true,
+    "pins": [
+      {
+        "package": "numpy",
+        "required": "2.3.5",
+        "installed": "2.3.5",
+        "matches": true
+      },
+      {
+        "package": "scipy",
+        "required": "1.16.3",
+        "installed": "1.16.3",
+        "matches": true
+      },
+      {
+        "package": "rasterio",
+        "required": "1.5.1",
+        "installed": "1.5.1",
+        "matches": true
+      },
+      {
+        "package": "pyproj",
+        "required": "3.8.0",
+        "installed": "3.8.0",
+        "matches": true
+      },
+      {
+        "package": "Pillow",
+        "required": "12.3.0",
+        "installed": "12.3.0",
+        "matches": true
+      },
+      {
+        "package": "pytest",
+        "required": "9.1.1",
+        "installed": "9.1.1",
+        "matches": true
+      },
+      {
+        "package": "shapely",
+        "required": "2.1.2",
+        "installed": "2.1.2",
+        "matches": true
+      },
+      {
+        "package": "fastapi",
+        "required": "0.141.1",
+        "installed": "0.141.1",
+        "matches": true
+      },
+      {
+        "package": "uvicorn",
+        "required": "0.54.0",
+        "installed": "0.54.0",
+        "matches": true
+      },
+      {
+        "package": "httpx",
+        "required": "0.28.1",
+        "installed": "0.28.1",
+        "matches": true
+      },
+      {
+        "package": "tifffile",
+        "required": "2026.9.20",
+        "installed": "2026.9.20",
+        "matches": true
+      },
+      {
+        "package": "pydantic",
+        "required": "2.13.5",
+        "installed": "2.13.5",
+        "matches": true
+      },
+      {
+        "package": "pydantic-core",
+        "required": "2.46.5",
+        "installed": "2.46.5",
+        "matches": true
+      },
+      {
+        "package": "starlette",
+        "required": "1.7.0",
+        "installed": "1.7.0",
+        "matches": true
+      },
+      {
+        "package": "anyio",
+        "required": "4.15.1",
+        "installed": "4.15.1",
+        "matches": true
+      },
+      {
+        "package": "affine",
+        "required": "3.0.1",
+        "installed": "3.0.1",
+        "matches": true
+      },
+      {
+        "package": "attrs",
+        "required": "26.1.0",
+        "installed": "26.1.0",
+        "matches": true
+      },
+      {
+        "package": "click",
+        "required": "8.5.0",
+        "installed": "8.5.0",
+        "matches": true
+      },
+      {
+        "package": "certifi",
+        "required": "2026.7.22",
+        "installed": "2026.7.22",
+        "matches": true
+      },
+      {
+        "package": "h11",
+        "required": "0.16.0",
+        "installed": "0.16.0",
+        "matches": true
+      },
+      {
+        "package": "httpcore",
+        "required": "1.0.9",
+        "installed": "1.0.9",
+        "matches": true
+      },
+      {
+        "package": "idna",
+        "required": "3.20",
+        "installed": "3.20",
+        "matches": true
+      },
+      {
+        "package": "typing-extensions",
+        "required": "4.16.0",
+        "installed": "4.16.0",
+        "matches": true
+      },
+      {
+        "package": "typing-inspection",
+        "required": "0.4.4",
+        "installed": "0.4.4",
+        "matches": true
+      },
+      {
+        "package": "annotated-types",
+        "required": "0.8.0",
+        "installed": "0.8.0",
+        "matches": true
+      },
+      {
+        "package": "annotated-doc",
+        "required": "0.0.5",
+        "installed": "0.0.5",
+        "matches": true
+      },
+      {
+        "package": "packaging",
+        "required": "26.3",
+        "installed": "26.3",
+        "matches": true
+      },
+      {
+        "package": "pyparsing",
+        "required": "3.3.3",
+        "installed": "3.3.3",
+        "matches": true
+      },
+      {
+        "package": "iniconfig",
+        "required": "2.3.0",
+        "installed": "2.3.0",
+        "matches": true
+      },
+      {
+        "package": "pluggy",
+        "required": "1.6.0",
+        "installed": "1.6.0",
+        "matches": true
+      },
+      {
+        "package": "pygments",
+        "required": "2.21.0",
+        "installed": "2.21.0",
+        "matches": true
+      }
+    ],
+    "plotting_dependency": {
+      "matplotlib": "3.10.8",
+      "in_requirements_tested": false
+    },
+    "differences_in_stored_values_or_reductions": [],
+    "scope": "Rechecks saved arrays, counts and set identities only; no cross-version rerouting or physiological calculation."
+  },
+  "route_trust_tests": {
+    "tests": 13,
+    "passed": 13,
+    "failed": 0,
+    "results_file": "route_trust_tests.json",
+    "routing_calls": 0
+  },
+  "PIXL_evidence_check": {
+    "primary_values": 9,
+    "supplementary_values": 3,
+    "source_PDF_hash_matches": true,
+    "results_file": "PIXL_evidence_nine.json"
+  }
+}
