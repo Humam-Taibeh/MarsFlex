@@ -13,7 +13,8 @@ import math
 import threading
 
 import numpy as np
-from fastapi import FastAPI, HTTPException, Query
+from fastapi import FastAPI, HTTPException, Query, Request
+from fastapi.middleware.gzip import GZipMiddleware
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, ConfigDict, Field
@@ -26,6 +27,19 @@ OUT = ROOT / 'data/derived'
 app = FastAPI(title='MarsFlex scientific data and mission API', version='0.10.0',
               description='Mars planetocentric coordinates. Research planning only; time model uncalibrated.')
 COMPUTE_LOCK = threading.Lock()
+# Compress JSON/JS/CSS (the terrain payload and Cesium bundle are several MB uncompressed).
+app.add_middleware(GZipMiddleware, minimum_size=1024, compresslevel=5)
+
+_CACHEABLE = ('/v1/map/image/', '/v1/terrain/surface', '/v1/layers/', '/assets/', '/cesium/')
+
+
+@app.middleware('http')
+async def cache_static_products(request: Request, call_next):
+    """Derived layers are build products that only change when the data pipeline is re-run."""
+    response = await call_next(request)
+    if request.method == 'GET' and response.status_code == 200 and request.url.path.startswith(_CACHEABLE)             and 'cache-control' not in response.headers:
+        response.headers['Cache-Control'] = 'public, max-age=3600'
+    return response
 
 
 @lru_cache(maxsize=8)
@@ -541,6 +555,13 @@ def map_image(name: str):
 
 from marsflex.geo_models import router as geomodel_router
 app.include_router(geomodel_router)
+
+
+@app.get('/v1/environment/radiation')
+def radiation_context(minutes: float = Query(default=300, ge=0, le=1440)):
+    """Published Mars-surface GCR dose rate scaled to the walk duration. Context only; see limitations."""
+    from marsflex.radiation import walk_dose
+    return walk_dose(minutes)
 
 
 @app.get('/v1/environment/meda')
