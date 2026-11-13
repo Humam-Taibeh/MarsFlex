@@ -13,11 +13,15 @@ safety certification. Details: [docs/science/MODEL_ASSUMPTIONS.md](docs/science/
 
 ![Workbench](docs/images/workbench.png)
 
-Start from the whole planet (**Globe**, Viking MDIM 2.1), descend to Jezero (**3D** relief, drawn 2.2× for display only, or a top-down **2D** map), plan a walk, and read the evidence and radiation context for it.
+Start from the whole planet (**Globe**, Viking MDIM 2.1) and descend to Jezero (**3D** relief drawn 2.2× for display only, or a top-down **2D** map). **Find the best site** (terrain, oxygen and time margin, science value), plan the walk, check **oxygen and suit time** against a NASA reference suit with a turn-back point, see **what the rover saw** at each station, and **walk the route** with a suit-style HUD.
 
-| Globe | 2D map |
+Keyboard: `G` globe · `3` / `2` views · `W` walk the route · `F` find a site · `Space` pause · `Esc` close.
+
+| Globe | Mission Site Advisor |
 |---|---|
-| ![Globe](docs/images/globe.png) | ![2D map](docs/images/map-2d.png) |
+| ![Globe](docs/images/globe.png) | ![Mission Site Advisor](docs/images/site-advisor.png) |
+| **Walk the route** (suit HUD) | 2D map |
+| ![Walk the route](docs/images/walk-the-route.png) | ![2D map](docs/images/map-2d.png) |
 
 ## Challenge requirements at a glance
 

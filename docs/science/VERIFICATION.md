@@ -29,5 +29,6 @@ MarsFlex is a **scenario planner**. This page separates what the test-suite prov
 * **Green does not certify obstacle clearance.** The routing grid is 20 m; boulders and small hazards are unresolved.
 * **Oxygen and suit time are a planning scenario.** Pandolf is an Earth-gravity, unsuited equation; the EMU is an Earth-orbit suit used as a reference; leakage, CO₂, cooling and battery are not modelled.
 * **Radiation is context, not a dose prediction.** One published Gale-crater measurement scaled by time; no suit shielding, no solar particle events.
+* **Published walking model choice.** Pandolf (1977) is used because its form and terrain factors could be verified; the Minetti (2002) gradient polynomial was not adopted because its coefficients could not be verified from an accessible source.
 * **Vertical exaggeration (2.2×) is display only.** Reported elevations, slopes and distances are never scaled.
 * **Sources are not independently validated.** HiRISE and CTX terrain are related products; the comparison is a consistency check, not absolute validation.
