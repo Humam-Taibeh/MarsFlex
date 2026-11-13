@@ -1,5 +1,0 @@
-{
-  "original_release": "v6",
-  "source_files_unchanged": 357,
-  "check": "CRC comparison against delivered v6 ZIP; existing scientific SHA-256 manifests retained"
-}

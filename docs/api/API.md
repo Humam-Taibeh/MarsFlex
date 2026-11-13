@@ -98,7 +98,7 @@ relative relief, not a claimed global ellipsoidal vertical transformation.
 `POST /v1/mission/metabolic` accepts position, habitat, remaining_min,
 optional time_contingency_min, ordered activities, parameters and resources.
 Strict schema and units are in `/docs` and `openapi.json`.
-`GET /v1/mission/metabolic/assumptions` returns MODEL_ASSUMPTIONS.md.
+`GET /v1/mission/metabolic/assumptions` returns docs/science/MODEL_ASSUMPTIONS.md.
 
 The result includes return and ordered mission routes, edge power/speed/energy,
 resource balances, and explicit calibration/search limits. Empty resources produce

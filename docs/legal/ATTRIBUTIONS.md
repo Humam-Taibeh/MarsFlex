@@ -27,7 +27,7 @@ MarsFlex-derived and must not be attributed to NASA as mineral detections.
 
 The new self-contained demo loads no external photograph, logo, font or JS
 library. It uses browser built-ins and original worker/app code. It preserves
-the layout of the user-supplied prototype. `frontend/legacy/prototype_original.html` is the
+the layout of the user-supplied prototype. `frontend/legacy/prototype_original.html` (removed from this repository in the pre-release cleanup; preserved in git commit 1823353) was the
 unaltered reference; its Wikimedia basemap and NASA PIA23239 inset URLs remain
 in that reference only. Their geographic registration and redistribution rights
 have not been independently completed for reuse in the new demo. Do not treat

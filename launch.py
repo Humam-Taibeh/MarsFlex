@@ -13,7 +13,7 @@ def main():
     check=subprocess.run([str(python),'-c','import fastapi,uvicorn,rasterio,numpy,scipy,shapely,pyproj,PIL'],capture_output=True)
     if check.returncode:
         print('Installing the recorded project dependencies. Internet is needed for this first setup.',flush=True)
-        subprocess.run([str(python),'-m','pip','install','-r',str(ROOT/'requirements-tested.txt')],check=True)
+        subprocess.run([str(python),'-m','pip','install','-r',str(ROOT/'backend/requirements-tested.txt')],check=True)
     def open_when_ready():
         for _ in range(120):
             try:
@@ -22,6 +22,6 @@ def main():
             except Exception:time.sleep(.5)
     threading.Thread(target=open_when_ready,daemon=True).start()
     print('MarsFlex is opening at http://127.0.0.1:8000 . Keep this window open. Ctrl+C stops it.',flush=True)
-    try:subprocess.run([str(python),'-m','uvicorn','marsflex.api:app','--host','127.0.0.1','--port','8000'],cwd=ROOT,check=True)
+    try:subprocess.run([str(python),'-m','uvicorn','marsflex.api:app','--app-dir',str(ROOT/'backend'),'--host','127.0.0.1','--port','8000'],cwd=ROOT,check=True)
     except KeyboardInterrupt:pass
 if __name__=='__main__':main()

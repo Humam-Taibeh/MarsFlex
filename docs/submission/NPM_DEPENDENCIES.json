@@ -5,7 +5,7 @@
     "scope": "dev/build",
     "source": "https://github.com/babel/babel.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/@babel/code-frame/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/@babel/code-frame"
   },
   {
@@ -14,7 +14,7 @@
     "scope": "dev/build",
     "source": "https://github.com/babel/babel.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/@babel/compat-data/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/@babel/compat-data"
   },
   {
@@ -23,7 +23,7 @@
     "scope": "dev/build",
     "source": "https://github.com/babel/babel.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/@babel/core/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/@babel/core"
   },
   {
@@ -32,7 +32,7 @@
     "scope": "dev/build",
     "source": "https://github.com/babel/babel.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/@babel/generator/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/@babel/generator"
   },
   {
@@ -41,7 +41,7 @@
     "scope": "dev/build",
     "source": "https://github.com/babel/babel.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/@babel/helper-compilation-targets/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/@babel/helper-compilation-targets"
   },
   {
@@ -50,7 +50,7 @@
     "scope": "dev/build",
     "source": "https://github.com/babel/babel.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/@babel/helper-globals/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/@babel/helper-globals"
   },
   {
@@ -59,7 +59,7 @@
     "scope": "dev/build",
     "source": "https://github.com/babel/babel.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/@babel/helper-module-imports/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/@babel/helper-module-imports"
   },
   {
@@ -68,7 +68,7 @@
     "scope": "dev/build",
     "source": "https://github.com/babel/babel.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/@babel/helper-module-transforms/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/@babel/helper-module-transforms"
   },
   {
@@ -77,7 +77,7 @@
     "scope": "dev/build",
     "source": "https://github.com/babel/babel.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/@babel/helper-plugin-utils/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/@babel/helper-plugin-utils"
   },
   {
@@ -86,7 +86,7 @@
     "scope": "dev/build",
     "source": "https://github.com/babel/babel.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/@babel/helper-string-parser/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/@babel/helper-string-parser"
   },
   {
@@ -95,7 +95,7 @@
     "scope": "dev/build",
     "source": "https://github.com/babel/babel.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/@babel/helper-validator-identifier/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/@babel/helper-validator-identifier"
   },
   {
@@ -104,7 +104,7 @@
     "scope": "dev/build",
     "source": "https://github.com/babel/babel.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/@babel/helper-validator-option/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/@babel/helper-validator-option"
   },
   {
@@ -113,7 +113,7 @@
     "scope": "dev/build",
     "source": "https://github.com/babel/babel.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/@babel/helpers/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/@babel/helpers"
   },
   {
@@ -122,7 +122,7 @@
     "scope": "dev/build",
     "source": "https://github.com/babel/babel.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/@babel/parser/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/@babel/parser"
   },
   {
@@ -131,7 +131,7 @@
     "scope": "dev/build",
     "source": "https://github.com/babel/babel.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/@babel/plugin-transform-react-jsx-self/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/@babel/plugin-transform-react-jsx-self"
   },
   {
@@ -140,7 +140,7 @@
     "scope": "dev/build",
     "source": "https://github.com/babel/babel.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/@babel/plugin-transform-react-jsx-source/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/@babel/plugin-transform-react-jsx-source"
   },
   {
@@ -149,7 +149,7 @@
     "scope": "dev/build",
     "source": "https://github.com/babel/babel.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/@babel/template/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/@babel/template"
   },
   {
@@ -158,7 +158,7 @@
     "scope": "dev/build",
     "source": "https://github.com/babel/babel.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/@babel/traverse/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/@babel/traverse"
   },
   {
@@ -167,7 +167,7 @@
     "scope": "dev/build",
     "source": "https://github.com/babel/babel.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/@babel/types/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/@babel/types"
   },
   {
@@ -176,7 +176,7 @@
     "scope": "frontend distribution",
     "source": "git+https://github.com/CesiumGS/cesium.git",
     "license": "Apache-2.0",
-    "license_files": "docs/dependency_licenses/npm/node_modules/@cesium/engine/LICENSE.md",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/@cesium/engine"
   },
   {
@@ -194,7 +194,7 @@
     "scope": "frontend distribution",
     "source": "git+https://github.com/CesiumGS/cesium.git",
     "license": "Apache-2.0",
-    "license_files": "docs/dependency_licenses/npm/node_modules/@cesium/widgets/LICENSE.md",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/@cesium/widgets"
   },
   {
@@ -203,7 +203,7 @@
     "scope": "dev/build",
     "source": "https://github.com/dimforge/rapier.js",
     "license": "Apache-2.0",
-    "license_files": "docs/dependency_licenses/npm/node_modules/@dimforge/rapier3d-compat/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/@dimforge/rapier3d-compat"
   },
   {
@@ -446,7 +446,7 @@
     "scope": "dev/build",
     "source": "git+https://github.com/jridgewell/sourcemaps.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/@jridgewell/gen-mapping/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/@jridgewell/gen-mapping"
   },
   {
@@ -455,7 +455,7 @@
     "scope": "dev/build",
     "source": "git+https://github.com/jridgewell/sourcemaps.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/@jridgewell/remapping/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/@jridgewell/remapping"
   },
   {
@@ -464,7 +464,7 @@
     "scope": "dev/build",
     "source": "https://github.com/jridgewell/resolve-uri",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/@jridgewell/resolve-uri/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/@jridgewell/resolve-uri"
   },
   {
@@ -473,7 +473,7 @@
     "scope": "dev/build",
     "source": "git+https://github.com/jridgewell/sourcemaps.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/@jridgewell/sourcemap-codec/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/@jridgewell/sourcemap-codec"
   },
   {
@@ -482,7 +482,7 @@
     "scope": "dev/build",
     "source": "git+https://github.com/jridgewell/sourcemaps.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/@jridgewell/trace-mapping/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/@jridgewell/trace-mapping"
   },
   {
@@ -500,7 +500,7 @@
     "scope": "dev/build",
     "source": "https://github.com/nodelib/nodelib/tree/master/packages/fs/fs.scandir",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/@nodelib/fs.scandir/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/@nodelib/fs.scandir"
   },
   {
@@ -509,7 +509,7 @@
     "scope": "dev/build",
     "source": "https://github.com/nodelib/nodelib/tree/master/packages/fs/fs.stat",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/@nodelib/fs.stat/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/@nodelib/fs.stat"
   },
   {
@@ -518,7 +518,7 @@
     "scope": "dev/build",
     "source": "https://github.com/nodelib/nodelib/tree/master/packages/fs/fs.walk",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/@nodelib/fs.walk/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/@nodelib/fs.walk"
   },
   {
@@ -527,7 +527,7 @@
     "scope": "dev/build",
     "source": "git+https://github.com/rolldown/rolldown.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/@rolldown/pluginutils/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/@rolldown/pluginutils"
   },
   {
@@ -761,7 +761,7 @@
     "scope": "frontend distribution",
     "source": "https://github.com/drumath2237/spz-loader",
     "license": "Apache-2.0",
-    "license_files": "docs/dependency_licenses/npm/node_modules/@spz-loader/core/LICENSE.txt",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/@spz-loader/core"
   },
   {
@@ -770,7 +770,7 @@
     "scope": "frontend distribution",
     "source": "https://github.com/tweenjs/tween.js.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/@tweenjs/tween.js/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/@tweenjs/tween.js"
   },
   {
@@ -779,7 +779,7 @@
     "scope": "dev/build",
     "source": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/@types/babel__core/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/@types/babel__core"
   },
   {
@@ -788,7 +788,7 @@
     "scope": "dev/build",
     "source": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/@types/babel__generator/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/@types/babel__generator"
   },
   {
@@ -797,7 +797,7 @@
     "scope": "dev/build",
     "source": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/@types/babel__template/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/@types/babel__template"
   },
   {
@@ -806,7 +806,7 @@
     "scope": "dev/build",
     "source": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/@types/babel__traverse/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/@types/babel__traverse"
   },
   {
@@ -815,7 +815,7 @@
     "scope": "dev/build",
     "source": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/@types/estree/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/@types/estree"
   },
   {
@@ -824,7 +824,7 @@
     "scope": "dev/build",
     "source": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/@types/react/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/@types/react"
   },
   {
@@ -833,7 +833,7 @@
     "scope": "dev/build",
     "source": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/@types/react-dom/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/@types/react-dom"
   },
   {
@@ -842,7 +842,7 @@
     "scope": "dev/build",
     "source": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/@types/stats.js/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/@types/stats.js"
   },
   {
@@ -851,7 +851,7 @@
     "scope": "dev/build",
     "source": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/@types/three/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/@types/three"
   },
   {
@@ -860,7 +860,7 @@
     "scope": "dev/build",
     "source": "https://github.com/tweenjs/tween.js.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/@types/three/node_modules/@tweenjs/tween.js/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/@types/three/node_modules/@tweenjs/tween.js"
   },
   {
@@ -869,7 +869,7 @@
     "scope": "dev/build",
     "source": "https://github.com/zeux/meshoptimizer",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/@types/three/node_modules/meshoptimizer/LICENSE.md",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/@types/three/node_modules/meshoptimizer"
   },
   {
@@ -878,7 +878,7 @@
     "scope": "frontend distribution",
     "source": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/@types/trusted-types/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/@types/trusted-types"
   },
   {
@@ -887,7 +887,7 @@
     "scope": "dev/build",
     "source": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/@types/webxr/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/@types/webxr"
   },
   {
@@ -896,7 +896,7 @@
     "scope": "dev/build",
     "source": "git+https://github.com/vitejs/vite-plugin-react.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/@vitejs/plugin-react/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/@vitejs/plugin-react"
   },
   {
@@ -905,7 +905,7 @@
     "scope": "frontend distribution",
     "source": "git+https://github.com/gildas-lormeau/zip.js.git",
     "license": "BSD-3-Clause",
-    "license_files": "docs/dependency_licenses/npm/node_modules/@zip.js/zip.js/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/@zip.js/zip.js"
   },
   {
@@ -914,7 +914,7 @@
     "scope": "dev/build",
     "source": "https://github.com/micromatch/anymatch",
     "license": "ISC",
-    "license_files": "docs/dependency_licenses/npm/node_modules/anymatch/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/anymatch"
   },
   {
@@ -923,7 +923,7 @@
     "scope": "dev/build",
     "source": "micromatch/picomatch",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/anymatch/node_modules/picomatch/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/anymatch/node_modules/picomatch"
   },
   {
@@ -932,7 +932,7 @@
     "scope": "frontend distribution",
     "source": "git://github.com/gregjacobs/Autolinker.js.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/autolinker/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/autolinker"
   },
   {
@@ -941,7 +941,7 @@
     "scope": "dev/build",
     "source": "git+https://github.com/web-platform-dx/baseline-browser-mapping.git",
     "license": "Apache-2.0",
-    "license_files": "docs/dependency_licenses/npm/node_modules/baseline-browser-mapping/LICENSE.txt",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/baseline-browser-mapping"
   },
   {
@@ -950,7 +950,7 @@
     "scope": "dev/build",
     "source": "sindresorhus/binary-extensions",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/binary-extensions/license",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/binary-extensions"
   },
   {
@@ -968,7 +968,7 @@
     "scope": "dev/build",
     "source": "micromatch/braces",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/braces/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/braces"
   },
   {
@@ -977,7 +977,7 @@
     "scope": "dev/build",
     "source": "browserslist/browserslist",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/browserslist/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/browserslist"
   },
   {
@@ -986,7 +986,7 @@
     "scope": "dev/build",
     "source": "browserslist/caniuse-lite",
     "license": "CC-BY-4.0",
-    "license_files": "docs/dependency_licenses/npm/node_modules/caniuse-lite/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/caniuse-lite"
   },
   {
@@ -995,7 +995,7 @@
     "scope": "frontend distribution",
     "source": "https://github.com/CesiumGS/cesium.git",
     "license": "Apache-2.0",
-    "license_files": "docs/dependency_licenses/npm/node_modules/cesium/LICENSE.md",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/cesium"
   },
   {
@@ -1004,7 +1004,7 @@
     "scope": "dev/build",
     "source": "git+https://github.com/paulmillr/chokidar.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/chokidar/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/chokidar"
   },
   {
@@ -1013,7 +1013,7 @@
     "scope": "frontend distribution",
     "source": "https://github.com/tj/commander.js.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/commander/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/commander"
   },
   {
@@ -1022,7 +1022,7 @@
     "scope": "dev/build",
     "source": "git://github.com/thlorenz/convert-source-map.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/convert-source-map/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/convert-source-map"
   },
   {
@@ -1031,7 +1031,7 @@
     "scope": "dev/build",
     "source": "https://github.com/frenic/csstype",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/csstype/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/csstype"
   },
   {
@@ -1040,7 +1040,7 @@
     "scope": "dev/build",
     "source": "git://github.com/debug-js/debug.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/debug/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/debug"
   },
   {
@@ -1049,7 +1049,7 @@
     "scope": "frontend distribution",
     "source": "git://github.com/cure53/DOMPurify.git",
     "license": "(MPL-2.0 OR Apache-2.0)",
-    "license_files": "docs/dependency_licenses/npm/node_modules/dompurify/LICENSE; docs/dependency_licenses/npm/node_modules/dompurify/LICENSE-MPL",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/dompurify"
   },
   {
@@ -1067,7 +1067,7 @@
     "scope": "frontend distribution",
     "source": "git://github.com/mapbox/earcut.git",
     "license": "ISC",
-    "license_files": "docs/dependency_licenses/npm/node_modules/earcut/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/earcut"
   },
   {
@@ -1076,7 +1076,7 @@
     "scope": "dev/build",
     "source": "git+https://github.com/Kilian/electron-to-chromium.git",
     "license": "ISC",
-    "license_files": "docs/dependency_licenses/npm/node_modules/electron-to-chromium/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/electron-to-chromium"
   },
   {
@@ -1085,7 +1085,7 @@
     "scope": "dev/build",
     "source": "git+https://github.com/evanw/esbuild.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/esbuild/LICENSE.md",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/esbuild"
   },
   {
@@ -1094,7 +1094,7 @@
     "scope": "dev/build",
     "source": "lukeed/escalade",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/escalade/license",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/escalade"
   },
   {
@@ -1103,7 +1103,7 @@
     "scope": "dev/build",
     "source": "mrmlnc/fast-glob",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/fast-glob/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/fast-glob"
   },
   {
@@ -1112,7 +1112,7 @@
     "scope": "dev/build",
     "source": "git+https://github.com/mcollina/fastq.git",
     "license": "ISC",
-    "license_files": "docs/dependency_licenses/npm/node_modules/fastq/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/fastq"
   },
   {
@@ -1121,7 +1121,7 @@
     "scope": "dev/build",
     "source": "git+https://github.com/thecodrr/fdir.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/fdir/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/fdir"
   },
   {
@@ -1130,7 +1130,7 @@
     "scope": "dev/build",
     "source": "https://github.com/101arrowz/fflate",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/fflate/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/fflate"
   },
   {
@@ -1139,7 +1139,7 @@
     "scope": "dev/build",
     "source": "jonschlinkert/fill-range",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/fill-range/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/fill-range"
   },
   {
@@ -1148,7 +1148,7 @@
     "scope": "dev/build",
     "source": "git+https://github.com/jprichardson/node-fs-extra.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/fs-extra/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/fs-extra"
   },
   {
@@ -1166,7 +1166,7 @@
     "scope": "dev/build",
     "source": "https://github.com/loganfsmyth/gensync.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/gensync/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/gensync"
   },
   {
@@ -1175,7 +1175,7 @@
     "scope": "dev/build",
     "source": "gulpjs/glob-parent",
     "license": "ISC",
-    "license_files": "docs/dependency_licenses/npm/node_modules/glob-parent/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/glob-parent"
   },
   {
@@ -1184,7 +1184,7 @@
     "scope": "dev/build",
     "source": "https://github.com/isaacs/node-graceful-fs",
     "license": "ISC",
-    "license_files": "docs/dependency_licenses/npm/node_modules/graceful-fs/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/graceful-fs"
   },
   {
@@ -1193,7 +1193,7 @@
     "scope": "frontend distribution",
     "source": "https://github.com/orling/grapheme-splitter.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/grapheme-splitter/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/grapheme-splitter"
   },
   {
@@ -1202,7 +1202,7 @@
     "scope": "dev/build",
     "source": "sindresorhus/is-binary-path",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/is-binary-path/license",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/is-binary-path"
   },
   {
@@ -1211,7 +1211,7 @@
     "scope": "dev/build",
     "source": "jonschlinkert/is-extglob",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/is-extglob/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/is-extglob"
   },
   {
@@ -1220,7 +1220,7 @@
     "scope": "dev/build",
     "source": "micromatch/is-glob",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/is-glob/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/is-glob"
   },
   {
@@ -1229,7 +1229,7 @@
     "scope": "dev/build",
     "source": "jonschlinkert/is-number",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/is-number/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/is-number"
   },
   {
@@ -1238,7 +1238,7 @@
     "scope": "dev/build",
     "source": "lydell/js-tokens",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/js-tokens/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/js-tokens"
   },
   {
@@ -1247,7 +1247,7 @@
     "scope": "frontend distribution",
     "source": "https://github.com/EricSmekens/jsep.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/jsep/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/jsep"
   },
   {
@@ -1256,7 +1256,7 @@
     "scope": "dev/build",
     "source": "https://github.com/mathiasbynens/jsesc.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/jsesc/LICENSE-MIT.txt",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/jsesc"
   },
   {
@@ -1265,7 +1265,7 @@
     "scope": "dev/build",
     "source": "git+https://github.com/json5/json5.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/json5/LICENSE.md",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/json5"
   },
   {
@@ -1274,7 +1274,7 @@
     "scope": "dev/build",
     "source": "git@github.com:jprichardson/node-jsonfile.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/jsonfile/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/jsonfile"
   },
   {
@@ -1283,7 +1283,7 @@
     "scope": "frontend distribution",
     "source": "git://github.com/mourner/kdbush.git",
     "license": "ISC",
-    "license_files": "docs/dependency_licenses/npm/node_modules/kdbush/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/kdbush"
   },
   {
@@ -1292,7 +1292,7 @@
     "scope": "frontend distribution",
     "source": "github:donmccurdy/ktx-parse",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/ktx-parse/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/ktx-parse"
   },
   {
@@ -1310,7 +1310,7 @@
     "scope": "frontend distribution",
     "source": "https://github.com/dcodeIO/long.js.git",
     "license": "Apache-2.0",
-    "license_files": "docs/dependency_licenses/npm/node_modules/long/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/long"
   },
   {
@@ -1319,7 +1319,7 @@
     "scope": "dev/build",
     "source": "git://github.com/isaacs/node-lru-cache.git",
     "license": "ISC",
-    "license_files": "docs/dependency_licenses/npm/node_modules/lru-cache/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/lru-cache"
   },
   {
@@ -1328,7 +1328,7 @@
     "scope": "dev/build",
     "source": "git@github.com:teambition/merge2.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/merge2/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/merge2"
   },
   {
@@ -1346,7 +1346,7 @@
     "scope": "frontend distribution",
     "source": "https://github.com/zeux/meshoptimizer",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/meshoptimizer/LICENSE.md",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/meshoptimizer"
   },
   {
@@ -1355,7 +1355,7 @@
     "scope": "dev/build",
     "source": "micromatch/micromatch",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/micromatch/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/micromatch"
   },
   {
@@ -1364,7 +1364,7 @@
     "scope": "dev/build",
     "source": "micromatch/picomatch",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/micromatch/node_modules/picomatch/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/micromatch/node_modules/picomatch"
   },
   {
@@ -1373,7 +1373,7 @@
     "scope": "dev/build",
     "source": "vercel/ms",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/ms/license.md",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/ms"
   },
   {
@@ -1382,7 +1382,7 @@
     "scope": "dev/build",
     "source": "ai/nanoid",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/nanoid/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/nanoid"
   },
   {
@@ -1391,7 +1391,7 @@
     "scope": "dev/build",
     "source": "https://github.com/chicoxyzzy/node-releases.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/node-releases/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/node-releases"
   },
   {
@@ -1400,7 +1400,7 @@
     "scope": "dev/build",
     "source": "jonschlinkert/normalize-path",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/normalize-path/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/normalize-path"
   },
   {
@@ -1409,7 +1409,7 @@
     "scope": "frontend distribution",
     "source": "https://github.com/richtr/NoSleep.js.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/nosleep.js/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/nosleep.js"
   },
   {
@@ -1418,7 +1418,7 @@
     "scope": "dev/build",
     "source": "sindresorhus/p-map",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/p-map/license",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/p-map"
   },
   {
@@ -1427,7 +1427,7 @@
     "scope": "frontend distribution",
     "source": "nodeca/pako",
     "license": "(MIT AND Zlib)",
-    "license_files": "docs/dependency_licenses/npm/node_modules/pako/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/pako"
   },
   {
@@ -1436,7 +1436,7 @@
     "scope": "dev/build",
     "source": "alexeyraspopov/picocolors",
     "license": "ISC",
-    "license_files": "docs/dependency_licenses/npm/node_modules/picocolors/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/picocolors"
   },
   {
@@ -1445,7 +1445,7 @@
     "scope": "dev/build",
     "source": "micromatch/picomatch",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/picomatch/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/picomatch"
   },
   {
@@ -1454,7 +1454,7 @@
     "scope": "dev/build",
     "source": "postcss/postcss",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/postcss/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/postcss"
   },
   {
@@ -1463,7 +1463,7 @@
     "scope": "frontend distribution",
     "source": "protobufjs/protobuf.js",
     "license": "BSD-3-Clause",
-    "license_files": "docs/dependency_licenses/npm/node_modules/protobufjs/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/protobufjs"
   },
   {
@@ -1472,7 +1472,7 @@
     "scope": "dev/build",
     "source": "git://github.com/feross/queue-microtask.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/queue-microtask/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/queue-microtask"
   },
   {
@@ -1481,7 +1481,7 @@
     "scope": "frontend distribution",
     "source": "github:mourner/quickselect",
     "license": "ISC",
-    "license_files": "docs/dependency_licenses/npm/node_modules/quickselect/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/quickselect"
   },
   {
@@ -1490,7 +1490,7 @@
     "scope": "frontend distribution",
     "source": "git://github.com/mourner/rbush.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/rbush/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/rbush"
   },
   {
@@ -1499,7 +1499,7 @@
     "scope": "frontend distribution",
     "source": "https://github.com/react/react.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/react/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/react"
   },
   {
@@ -1508,7 +1508,7 @@
     "scope": "frontend distribution",
     "source": "https://github.com/react/react.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/react-dom/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/react-dom"
   },
   {
@@ -1517,7 +1517,7 @@
     "scope": "dev/build",
     "source": "https://github.com/facebook/react.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/react-refresh/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/react-refresh"
   },
   {
@@ -1526,7 +1526,7 @@
     "scope": "dev/build",
     "source": "git://github.com/paulmillr/readdirp.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/readdirp/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/readdirp"
   },
   {
@@ -1535,7 +1535,7 @@
     "scope": "dev/build",
     "source": "micromatch/picomatch",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/readdirp/node_modules/picomatch/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/readdirp/node_modules/picomatch"
   },
   {
@@ -1544,7 +1544,7 @@
     "scope": "dev/build",
     "source": "git+https://github.com/mcollina/reusify.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/reusify/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/reusify"
   },
   {
@@ -1553,7 +1553,7 @@
     "scope": "dev/build",
     "source": "git+https://github.com/rollup/rollup.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/rollup/LICENSE.md",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/rollup"
   },
   {
@@ -1562,7 +1562,7 @@
     "scope": "dev/build",
     "source": "git://github.com/feross/run-parallel.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/run-parallel/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/run-parallel"
   },
   {
@@ -1571,7 +1571,7 @@
     "scope": "frontend distribution",
     "source": "https://github.com/react/react.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/scheduler/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/scheduler"
   },
   {
@@ -1580,7 +1580,7 @@
     "scope": "dev/build",
     "source": "https://github.com/npm/node-semver.git",
     "license": "ISC",
-    "license_files": "docs/dependency_licenses/npm/node_modules/semver/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/semver"
   },
   {
@@ -1589,7 +1589,7 @@
     "scope": "dev/build",
     "source": "7rulnik/source-map-js",
     "license": "BSD-3-Clause",
-    "license_files": "docs/dependency_licenses/npm/node_modules/source-map-js/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/source-map-js"
   },
   {
@@ -1598,7 +1598,7 @@
     "scope": "frontend distribution",
     "source": "https://github.com/mrdoob/three.js",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/three/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/three"
   },
   {
@@ -1607,7 +1607,7 @@
     "scope": "dev/build",
     "source": "git+https://github.com/SuperchupuDev/tinyglobby.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/tinyglobby/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/tinyglobby"
   },
   {
@@ -1616,7 +1616,7 @@
     "scope": "dev/build",
     "source": "micromatch/to-regex-range",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/to-regex-range/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/to-regex-range"
   },
   {
@@ -1625,7 +1625,7 @@
     "scope": "frontend distribution",
     "source": "https://github.com/topojson/topojson-client.git",
     "license": "ISC",
-    "license_files": "docs/dependency_licenses/npm/node_modules/topojson-client/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/topojson-client"
   },
   {
@@ -1634,7 +1634,7 @@
     "scope": "frontend distribution",
     "source": "https://github.com/Microsoft/tslib.git",
     "license": "0BSD",
-    "license_files": "docs/dependency_licenses/npm/node_modules/tslib/LICENSE.txt",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/tslib"
   },
   {
@@ -1643,7 +1643,7 @@
     "scope": "dev/build",
     "source": "https://github.com/microsoft/TypeScript.git",
     "license": "Apache-2.0",
-    "license_files": "docs/dependency_licenses/npm/node_modules/typescript/LICENSE.txt",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/typescript"
   },
   {
@@ -1652,7 +1652,7 @@
     "scope": "dev/build",
     "source": "git+https://github.com/RyanZim/universalify.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/universalify/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/universalify"
   },
   {
@@ -1661,7 +1661,7 @@
     "scope": "dev/build",
     "source": "browserslist/update-db",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/update-browserslist-db/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/update-browserslist-db"
   },
   {
@@ -1670,7 +1670,7 @@
     "scope": "frontend distribution",
     "source": "https://github.com/medialize/URI.js.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/urijs/LICENSE.txt",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/urijs"
   },
   {
@@ -1679,7 +1679,7 @@
     "scope": "dev/build",
     "source": "git+https://github.com/vitejs/vite.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/vite/LICENSE.md",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/vite"
   },
   {
@@ -1688,7 +1688,7 @@
     "scope": "dev/build",
     "source": "git+https://github.com/sapphi-red/vite-plugin-static-copy.git",
     "license": "MIT",
-    "license_files": "docs/dependency_licenses/npm/node_modules/vite-plugin-static-copy/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/vite-plugin-static-copy"
   },
   {
@@ -1697,7 +1697,7 @@
     "scope": "dev/build",
     "source": "git+https://github.com/isaacs/yallist.git",
     "license": "ISC",
-    "license_files": "docs/dependency_licenses/npm/node_modules/yallist/LICENSE",
+    "license_files": "docs/legal/THIRD_PARTY_NOTICES_NPM.md",
     "lock_path": "node_modules/yallist"
   }
 ]

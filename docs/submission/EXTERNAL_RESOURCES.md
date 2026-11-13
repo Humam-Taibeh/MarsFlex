@@ -27,11 +27,11 @@ Review-only tools: pytest, HTTPX and Node (recorded versions in logs), Playwrigh
 
 USGS policy: https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits . JPL image policy: https://www.jpl.nasa.gov/jpl-image-use-policy/ . These policies have third-party exceptions; the JPL image policy is not a license for arbitrary PDS publications. Report-page screenshots in `docs/science/PIXL_source_pages/` are retained as limited evidence extracts for this requested audit, with copyright credit, not advertised as open-source assets. Blanket public redistribution permission was NOT FOUND. The application and final slides use factual numeric transcription and original data-derived renders rather than those page images.
 
-`frontend/legacy/prototype_original.html` retains historical Wikimedia and NASA PIA23239 URL references. Their registration and asset-specific rights were NOT FOUND in this audit; they are not the active frontend basemap. No NASA endorsement or logo is claimed.
+`frontend/legacy/prototype_original.html` (removed from the working tree in the pre-release cleanup; preserved in git commit 1823353) retained historical Wikimedia and NASA PIA23239 URL references. Their registration and asset-specific rights were NOT FOUND in this audit; they are not the active frontend basemap. No NASA endorsement or logo is claimed.
 
 ## Scientific references
 
-The verified PIXL source is in `PIXL_EVIDENCE_NINE.md`. Existing detailed references and rejected assumptions remain in `MODEL_ASSUMPTIONS.md`, `DATA_SOURCES.md`, and `docs/audits/MarsFlex_v0.10.0_Audit.md`. This release does not introduce or validate a new physiology equation. A full text-to-reference URL index is provided in `REFERENCE_URLS.csv`; inclusion means cited in project files, not a fresh scientific verification of every claim.
+The verified PIXL source is in `PIXL_EVIDENCE_NINE.md`. Existing detailed references and rejected assumptions remain in `docs/science/MODEL_ASSUMPTIONS.md` and `docs/legal/DATA_SOURCES.md` (the earlier audit `docs/audits/MarsFlex_v0.10.0_Audit.md` is preserved in git commit 1823353). This release does not introduce or validate a new physiology equation. A full text-to-reference URL index is provided in `REFERENCE_URLS.csv`; inclusion means cited in project files, not a fresh scientific verification of every claim.
 
 ## AI service references
 
