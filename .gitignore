@@ -12,3 +12,6 @@ backend/tests/output/
 .pytest_cache/
 .vscode/
 .DS_Store
+data/source/imagery/*.bin
+!data/source/imagery/hirise_header.bin
+data/source/imagery/[0-9a-f]*.json
