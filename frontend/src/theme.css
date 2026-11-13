@@ -262,3 +262,26 @@ button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{o
 .globe-view .decision-map-title b{opacity:.0}
 
 .walking .view-tools>.walk-btn{display:none}
+
+/* ---- life support card ---- */
+.life-card{display:flex;gap:14px;align-items:center;margin:14px 0 16px;padding:14px;border-radius:14px;border:1px solid var(--mf-line);background:linear-gradient(135deg,#ffffff0a,#ffffff03);position:relative;overflow:hidden;animation:mf-pop .6s var(--mf-ease) backwards}
+.life-card.pending{flex-direction:column;align-items:flex-start;gap:6px}
+.life-card.pending::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 30%,#ffffff12 50%,transparent 70%);animation:mf-shimmer 1.4s infinite}
+.life-card small{font-size:12px;color:var(--mf-muted)}
+.o2-ring{--p:0;--c:var(--mf-teal);flex:none;width:78px;height:78px;border-radius:50%;display:grid;place-items:center;align-content:center;position:relative;
+  background:conic-gradient(var(--c) calc(var(--p)*360deg),#ffffff14 0);box-shadow:0 0 22px color-mix(in srgb,var(--c) 45%,transparent);animation:mf-glow 3s ease-in-out infinite}
+.o2-ring::before{content:"";position:absolute;inset:7px;border-radius:50%;background:#0b151d}
+.o2-ring b,.o2-ring small{position:relative;z-index:1;line-height:1.05;text-align:center}
+.o2-ring b{font-size:19px;font-weight:700;color:var(--mf-text)}
+.o2-ring small{font-size:10px!important;letter-spacing:.06em}
+.life-card.warn .o2-ring{--c:var(--mf-warn)}.life-card.bad .o2-ring{--c:var(--mf-bad)}
+.life-text{display:flex;flex-direction:column;gap:4px;min-width:0}
+.life-text>b{font-size:14px;color:var(--mf-text)}
+.life-text>span:not(.trust-kicker){font-size:12px;line-height:1.45;color:#c4d2d9}
+.life-text summary{font-size:11.5px;color:#ffb98c;cursor:pointer;margin-top:4px}
+.life-text details p{font-size:11.5px;line-height:1.55;color:#c4d2d9}
+.life-text details a{display:block;font-size:11px;color:#ffb98c;margin-top:4px}
+.walk-alert{position:absolute;top:-38px;left:50%;transform:translateX(-50%);padding:7px 14px;border-radius:999px;background:#7a1f18f0;color:#fff;font-size:12px;font-weight:700;letter-spacing:.04em;animation:mf-pulse-red 1.6s infinite}
+@keyframes mf-shimmer{from{transform:translateX(-100%)}to{transform:translateX(100%)}}
+@keyframes mf-glow{0%,100%{filter:brightness(1)}50%{filter:brightness(1.18)}}
+@keyframes mf-pulse-red{0%,100%{box-shadow:0 0 0 0 #f4695b80}50%{box-shadow:0 0 0 10px #f4695b00}}

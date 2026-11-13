@@ -25,9 +25,9 @@ Start from the whole planet (**Globe**, Viking MDIM 2.1), descend to Jezero (**3
 |---|---|
 | Layered, integrated view of a Martian location and route, from several NASA missions | Jezero Crater: CTX imagery + terrain, HiRISE terrain, CRISM spectral parameters, USGS geologic units, PIXL chemistry, MEDA weather, MSL RAD radiation context, Viking global mosaic |
 | At least three kinds of data | Optical, topographic, spectral, chemical, atmospheric, geologic, radiation (see [DATA_SOURCES](docs/legal/DATA_SOURCES.md)) |
-| Safety first | Time reserve and return-feasibility colouring, slope gates, radiation context, explicit limits on every number |
+| Safety first | Time reserve and return-feasibility colouring, slope gates, **oxygen and suit-time ledger with a turn-back point** (NASA EMU as reference suit), radiation context, explicit limits on every number |
 | Route that avoids obstacles | Terrain-aware routing with slope and NoData gates; unresolved boulder-scale hazards are disclosed |
-| Helps plan and carry out a Marswalk | Scenario planner: stops, detour test, time/metabolic budget, evidence for each stop, profile, export |
+| Helps plan and carry out a Marswalk | Scenario planner: stops, detour test, time and oxygen budget, **Walk the route** replay with a suit HUD, evidence for each stop, profile, export |
 | Use NASA data and credit it | Every source is cited in the app and in `docs/`; no data without a stated origin |
 
 Equations are checked by independent re-derivation tests; see [docs/science/VERIFICATION.md](docs/science/VERIFICATION.md) for what is and is not claimed.

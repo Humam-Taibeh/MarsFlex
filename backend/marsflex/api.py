@@ -300,7 +300,7 @@ def evaluate(request: Mission):
     if len({a.id for a in request.activities}) != len(request.activities):
         raise HTTPException(422, 'Activity ids must be unique')
     # One compute job at a time limits peak memory on a small hosting instance.
-    if not COMPUTE_LOCK.acquire(blocking=False):
+    if not COMPUTE_LOCK.acquire(timeout=45):  # queue briefly instead of failing when two requests overlap
         raise HTTPException(503, 'A terrain calculation is in progress; retry shortly')
     try:
         t = terrain()
@@ -439,7 +439,7 @@ class MetabolicMission(BaseModel):
 def evaluate_metabolic(request: MetabolicMission):
     """Experimental level-1 scenario. No live measurements or safety approval."""
     from marsflex.terrain import MetabolicModel, ResourceBudget, ResourceModel, MetabolicRouting, walk_back_limit, assess_resources
-    if not COMPUTE_LOCK.acquire(blocking=False):
+    if not COMPUTE_LOCK.acquire(timeout=45):  # queue briefly instead of failing when two requests overlap
         raise HTTPException(503,'A terrain calculation is in progress; retry shortly')
     try:
         model=MetabolicModel(**request.parameters.model_dump())
@@ -531,6 +531,65 @@ def evaluate_metabolic(request: MetabolicMission):
                 ]}
     except ValueError as e:
         raise HTTPException(422,str(e))
+    finally:
+        COMPUTE_LOCK.release()
+
+
+class LifeSupportMission(BaseModel):
+    model_config = ConfigDict(extra='forbid', allow_inf_nan=False)
+    position: Position
+    habitat: Position
+    activities: list[Activity] = Field(default_factory=list, max_length=6)
+    suit_id: Literal['emu_reference'] = 'emu_reference'
+    body_mass_kg: float = Field(default=75, ge=30, le=200)
+    carried_load_kg: float = Field(default=0, ge=0, le=100)
+    terrain_factor: float = Field(default=1.0, ge=1.0, le=2.5)
+    suit_offset_W: float | None = Field(default=None, ge=0, le=2000)
+
+
+@app.get('/v1/life-support/suits')
+def life_support_suits():
+    from dataclasses import asdict
+    from marsflex.life_support import SUITS, SOURCES, PANDOLF_TERRAIN_FACTORS, WalkerModel
+    return {'suits': [asdict(s) for s in SUITS.values()], 'default_walker': asdict(WalkerModel()),
+            'terrain_factors': PANDOLF_TERRAIN_FACTORS, 'sources': SOURCES}
+
+
+@app.post('/v1/mission/life-support')
+def mission_life_support(request: LifeSupportMission):
+    """Oxygen and reference-suit endurance along the same time-optimal route as /v1/mission/evaluate."""
+    from marsflex.life_support import SUITS, WalkerModel, life_support
+    if len({a.id for a in request.activities}) != len(request.activities):
+        raise HTTPException(422, 'Activity ids must be unique')
+    if not COMPUTE_LOCK.acquire(timeout=45):  # queue briefly instead of failing when two requests overlap
+        raise HTTPException(503, 'A terrain calculation is in progress; retry shortly')
+    try:
+        t = terrain()
+        try:
+            p = t.node(request.position.lon, request.position.lat)
+            h = t.node(request.habitat.lon, request.habitat.lat)
+            targets = [t.node(a.lon, a.lat) for a in request.activities]
+        except ValueError as e:
+            raise HTTPException(422, str(e))
+        kwargs = dict(body_mass_kg=request.body_mass_kg, carried_load_kg=request.carried_load_kg, terrain_factor=request.terrain_factor)
+        if request.suit_offset_W is not None:
+            kwargs['suit_offset_W'] = request.suit_offset_W
+        model = WalkerModel(**kwargs)
+        route, stop_index = [], []
+        for begin, end in zip([p] + targets, targets + [h]):
+            leg, _ = t.route(begin, end)
+            if not leg:
+                return {'status': 'no_route', 'operational_safety_certified': False}
+            route += leg if not route else leg[1:]
+            stop_index.append(len(route) - 1)
+        profile = route_profile(t, route)
+        try:
+            result = life_support(t, profile['samples'], route, stop_index[:-1], [a.dwell_min for a in request.activities],
+                                  h, SUITS[request.suit_id], model)
+        except ValueError as e:
+            raise HTTPException(422, str(e))
+        result['route_samples'] = len(profile['samples'])
+        return result
     finally:
         COMPUTE_LOCK.release()
 

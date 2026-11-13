@@ -204,3 +204,21 @@ The 12.7 GB source GeoTIFF (92160 × 46080, simple cylindrical, Mars 2000 sphere
 area-averages it to `data/derived/mars_globe_viking_6k.jpg` (6144 × 3072) with a JSON receipt (`mars_globe_viking_6k.json`, SHA-256 included).
 The globe is context only: it is a coarse colour image on a sphere, without relief. Routing, slopes and all measurements use the CTX/HiRISE products above.
 The credit "Globe: USGS / NASA Viking MDIM 2.1" is shown in the viewer.
+
+## Life support: oxygen and reference-suit endurance
+
+`backend/marsflex/life_support.py`, `POST /v1/mission/life-support`. Each relation is published; the combination is a planning scenario.
+
+- **Walking power:** Pandolf, K. B., Givoni, B. & Goldman, R. F. (1977), *Predicting energy expenditure with loads while standing or walking
+  very slowly*, Journal of Applied Physiology 43(4), 577–581. M = 1.5W + 2.0(W+L)(L/W)² + η(W+L)(1.5V² + 0.35VG). Terrain factors 1.0 / 1.1 / 1.2 / 1.5.
+  Measured at Earth gravity on unsuited subjects; known to under-predict at high loads and speeds. Downhill grades get no credit.
+  A declared suit offset (the project's existing (799 − 510) kcal/h contrast, 335.87 W) is added; it is not a measured Mars-suit cost.
+- **Oxygen from energy:** energy equivalent of O₂ at STP, 4.69 kcal/L (RER 0.70) to 5.05 kcal/L (RER 1.00), about 4.8 kcal/L for a mixed diet
+  (standard respiratory-quotient tables; Weir 1949, https://doi.org/10.1113/jphysiol.1949.sp004363); O₂ density 1.429 g/L at STP.
+  Go/no-go decisions use the low equivalent (more O₂ per kJ).
+- **Reference suit:** NASA (1992), *Suited for Spacewalking: A Teacher's Guide with Activities*, EP-279 (https://ntrs.nasa.gov/citations/19930004504):
+  ISS/Shuttle EMU primary oxygen 0.54 kg, "enough for a normal seven-hour EVA"; a secondary pack for about 30 minutes of emergency use
+  (reported, never counted for planning). No Mars-suit capacities are published, so the EMU is a reference only.
+  Cooling water and battery capacities: no source found, so they are left empty.
+- **Consistency check:** 0.54 kg O₂ over 7 h corresponds to an average of about 300 W, a plausible EVA metabolic rate.
+- **Not modelled:** Mars gravity, suit mobility beyond the offset, leakage and purge, CO₂ scrubbing, cooling water, battery, thermal load, fatigue.

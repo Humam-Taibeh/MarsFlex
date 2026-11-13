@@ -169,6 +169,16 @@ export class MarsScene {
     const d=Math.hypot((lon-77.4)*Math.cos(C.Math.toRadians(18.4)),lat-18.45);
     if(d<14){this.descending=true;this.toLocal(false);setTimeout(()=>{this.descending=false;},4200);}
   }
+  turnBackEntity?:C.Entity;
+  /** Point of no return on the planned route (from the life-support ledger). */
+  turnBack(p?:Point){
+    if(this.turnBackEntity){this.viewer.entities.remove(this.turnBackEntity);this.turnBackEntity=undefined;}
+    const w=p?this.world(p,undefined,10):null;
+    if(w)this.turnBackEntity=this.viewer.entities.add({position:w,point:{pixelSize:12,color:C.Color.fromCssColorString('#f4695b'),outlineWidth:3,outlineColor:C.Color.WHITE,disableDepthTestDistance:Number.POSITIVE_INFINITY},
+      label:{text:'TURN-BACK POINT',font:'700 11px "Segoe UI",system-ui,sans-serif',fillColor:C.Color.WHITE,showBackground:true,backgroundColor:C.Color.fromCssColorString('#7a1f18e6'),
+        backgroundPadding:new C.Cartesian2(8,5),pixelOffset:new C.Cartesian2(0,-20),verticalOrigin:C.VerticalOrigin.BOTTOM,disableDepthTestDistance:Number.POSITIVE_INFINITY}});
+    this.viewer.scene.requestRender();
+  }
   stopWalk(){this.walkCtl?.stop();}
   /**
    * Fly the camera along a route at walking height. `onTick` receives the fraction of ground distance covered (0..1).

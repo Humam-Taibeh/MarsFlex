@@ -16,6 +16,7 @@ MarsFlex is a **scenario planner**. This page separates what the test-suite prov
 | Mission field (green / yellow / red) and detour cost | Cost at every cell must equal the explicit sum of legs `start→x, detour dwell, x→stop 1, dwell, … → habitat`; colour classes must follow the budget inequalities. |
 | Metabolic power, speed, time, energy | Hand arithmetic for flat, uphill and downhill walks; torque mode replaces (does not add to) the suit offset; the metabolic time model equals the terrain time model on every edge. |
 | Default suit offset | (799 − 510) kcal/h × 4184 J/kcal ÷ 3600 s/h = 335.87 W. |
+| Life support (oxygen and suit time) | `test_life_support.py`: Pandolf (1977) by hand (level, uphill, loaded, downhill clipped); kJ to kg O₂ via 4.69 kcal/L and 1.429 g/L; the EMU rating implies about 300 W; ledger O₂ = mean power × time; dwell at standing power; return feasibility is a prefix of the route and the point of no return is its last sample; a smaller suit moves it earlier. |
 | Radiation context | Linear scaling of the published rate by duration; input validation; sources and limitations always returned. |
 | API consistency on real data | Route length, ascent, descent and travel time recomputed from the returned coordinates; margin = available − reserve − travel − activities. |
 
@@ -25,6 +26,7 @@ MarsFlex is a **scenario planner**. This page separates what the test-suite prov
   (150 W basal, 200 W per m/s, 300 W per degree, suit offset) are declared scenario inputs. The tests check that the arithmetic follows them, not that they
   describe a real astronaut. The 300 W/degree term gives non-physiological power on steep slopes; the application says so wherever it is used.
 * **Green does not certify obstacle clearance.** The routing grid is 20 m; boulders and small hazards are unresolved.
+* **Oxygen and suit time are a planning scenario.** Pandolf is an Earth-gravity, unsuited equation; the EMU is an Earth-orbit suit used as a reference; leakage, CO₂, cooling and battery are not modelled.
 * **Radiation is context, not a dose prediction.** One published Gale-crater measurement scaled by time; no suit shielding, no solar particle events.
 * **Vertical exaggeration (2.2×) is display only.** Reported elevations, slopes and distances are never scaled.
 * **Sources are not independently validated.** HiRISE and CTX terrain are related products; the comparison is a consistency check, not absolute validation.
