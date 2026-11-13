@@ -1,6 +1,7 @@
 import * as C from 'cesium';
 
 export type Point = {lon:number;lat:number};
+export type WalkController = {pause:()=>void;resume:()=>void;seek:(s:number)=>void;setSpeed:(x:number)=>void;stop:()=>void;readonly playing:boolean};
 export type Grid = {shape:number[];transform:number[];radius_m:number;aoi_lonlat:number[];elevation_range_m:number[]};
 export type Surface = {grid:Grid;data:string;rendering_frame:string};
 export function bytes64(text:string){ return Uint8Array.from(atob(text),c=>c.charCodeAt(0)); }
@@ -33,7 +34,13 @@ export class MarsScene {
   mode='inspect';
   layerSerial=0;
   routeSerial=0;
-  terrain!:C.Primitive;
+  terrainFine!:C.Primitive;
+  terrainCoarse!:C.Primitive;
+  lodFine=false;
+  lowTimer=0;
+  descending=false;
+  walkCtl?:WalkController;
+  walker?:C.Entity;
   globeLayer?:C.ImageryLayer;
   globeData?:C.CustomDataSource;
   globeReady=false;
@@ -63,48 +70,33 @@ export class MarsScene {
       sceneModePicker:false,fullscreenButton:false,selectionIndicator:false,infoBox:false,
       requestRenderMode:true,contextOptions:{webgl:{alpha:false,antialias:true}}});
     this.viewer.scene.backgroundColor=C.Color.fromCssColorString('#0a1015');
-    this.viewer.scene.fog.enabled=false;this.viewer.scene.highDynamicRange=false;this.viewer.scene.msaaSamples=4;
+    this.viewer.scene.fog.enabled=false;this.viewer.scene.highDynamicRange=false;
     this.viewer.scene.postProcessStages.fxaa.enabled=false;this.viewer.targetFrameRate=60;
     this.viewer.scene.maximumRenderTimeChange=Infinity;
     this.viewer.camera.percentageChanged=0.02;
+    {const cv=this.viewer.canvas,px=cv.clientWidth*cv.clientHeight*devicePixelRatio*devicePixelRatio;
+      this.viewer.scene.msaaSamples=px>3.2e6?2:4;this.viewer.resolutionScale=this.scaleCap();}
+    this.viewer.camera.changed.addEventListener(()=>this.motion());
+    this.viewer.scene.skyBox=this.starfield();
+    {const atm=new C.SkyAtmosphere(sphere);atm.hueShift=-.52;atm.saturationShift=.12;atm.brightnessShift=-.12;atm.show=false;this.viewer.scene.skyAtmosphere=atm;}
     if(this.viewer.scene.sun)this.viewer.scene.sun.show=false; if(this.viewer.scene.moon)this.viewer.scene.moon.show=false;
     this.viewer.scene.light=new C.DirectionalLight({direction:C.Matrix4.multiplyByPointAsVector(this.frame,new C.Cartesian3(.3,.4,-1),new C.Cartesian3()),intensity:1.7});
     const ctl=this.viewer.scene.screenSpaceCameraController;ctl.minimumZoomDistance=80;ctl.inertiaSpin=.88;ctl.inertiaZoom=.8;ctl.inertiaTranslate=.88;
-    this.viewer.scene.preRender.addEventListener(()=>this.limitPitch());
+    this.viewer.scene.preRender.addEventListener(()=>{this.limitPitch();this.updateLod();this.autoDescend();});
     this.viewer.scene.screenSpaceCameraController.maximumZoomDistance=45000;
     this.viewer.creditDisplay.addStaticCredit(new C.Credit('Terrain: USGS / NASA MRO · Rover: NASA PDS Mars 2020',true));
-    const positions=new Float64Array(this.z.length*3),st=new Float32Array(this.z.length*2);
     this.base=new Uint8ClampedArray(this.z.length*4);
     const [lo,hi]=this.grid.elevation_range_m,span=hi-lo||1;
-    for(let r=0;r<this.h;r++){
-      const y=f-(r+.5)*a-this.cy;
-      for(let col=0;col<this.w;col++){
-        const n=r*this.w+col,z=this.z[n],o=n*3,s=n*2,k=n*4;
-        positions[o]=(c+(col+.5)*a-this.cx)*this.cos;positions[o+1]=y;positions[o+2]=this.zz(z);
-        st[s]=(col+.5)/this.w;st[s+1]=1-(r+.5)/this.h;
-        const q=Math.max(0,Math.min(1,(z-lo)/span));
-        this.base[k]=105+q*95;this.base[k+1]=96+q*79;this.base[k+2]=82+q*58;this.base[k+3]=255;
-      }
-    }
-    const indexBuffer=new Uint32Array((this.h-1)*(this.w-1)*6);let count=0;
-    for(let r=0;r<this.h-1;r++)for(let col=0;col<this.w-1;col++){
-      const n=r*this.w+col,z=this.z;
-      if(Number.isFinite(z[n])&&Number.isFinite(z[n+1])&&Number.isFinite(z[n+this.w])&&Number.isFinite(z[n+this.w+1])){
-        indexBuffer[count++]=n;indexBuffer[count++]=n+this.w;indexBuffer[count++]=n+1;
-        indexBuffer[count++]=n+1;indexBuffer[count++]=n+this.w;indexBuffer[count++]=n+this.w+1;
-      }
-    }
-    const indices=indexBuffer.subarray(0,count);
-    let geometry=new C.Geometry({attributes:Object.assign(new C.GeometryAttributes(),{position:new C.GeometryAttribute({componentDatatype:C.ComponentDatatype.DOUBLE,componentsPerAttribute:3,values:positions}),
-      st:new C.GeometryAttribute({componentDatatype:C.ComponentDatatype.FLOAT,componentsPerAttribute:2,values:st})}),
-      indices,primitiveType:C.PrimitiveType.TRIANGLES,boundingSphere:C.BoundingSphere.fromVertices(positions)});
-    geometry=C.GeometryPipeline.computeNormal(geometry);
+    for(let n=0;n<this.z.length;n++){const q=Math.max(0,Math.min(1,(this.z[n]-lo)/span)),k=n*4;
+      this.base[k]=105+q*95;this.base[k+1]=96+q*79;this.base[k+2]=82+q*58;this.base[k+3]=255;}
     this.material=C.Material.fromType('Image',{image:this.texture(this.base)});
-    this.terrain=this.viewer.scene.primitives.add(new C.Primitive({geometryInstances:new C.GeometryInstance({geometry,modelMatrix:this.frame,id:'ctx-terrain'}),
+    const make=(stride:number,id:string)=>this.viewer.scene.primitives.add(new C.Primitive({geometryInstances:new C.GeometryInstance({geometry:this.mesh(stride),modelMatrix:this.frame,id}),
       appearance:new C.MaterialAppearance({material:this.material,translucent:false,faceForward:true}),asynchronous:false}));
+    this.terrainCoarse=make(2,'ctx-terrain-lod1');this.terrainFine=make(1,'ctx-terrain');this.terrainFine.show=false;
     this.rover=this.viewer.scene.primitives.add(new C.PointPrimitiveCollection());
     this.click=new C.ScreenSpaceEventHandler(this.viewer.canvas);
     this.click.setInputAction((e:{position:C.Cartesian2})=>{
+      if(this.globeMode){const hit=this.viewer.scene.pick(e.position);if((hit as any)?.id?.id==='jezero-pin')this.toLocal(false);return;}
       if(!this.viewer.scene.pickPositionSupported)return;
       const hit=this.viewer.scene.pickPosition(e.position);
       if(!C.defined(hit))return;
@@ -124,9 +116,9 @@ export class MarsScene {
     globe.baseColor=C.Color.fromCssColorString('#140e0b');globe.showWaterEffect=false;
     this.viewer.scene.globe=globe;this.globeLayer=globe.imageryLayers.addImageryProvider(provider);
     this.globeData=new C.CustomDataSource('globe-overview');this.globeData.show=false;void this.viewer.dataSources.add(this.globeData);
-    this.globeData.entities.add({position:C.Cartesian3.fromDegrees(77.45,18.44,0,sphere),
+    this.globeData.entities.add({id:'jezero-pin',position:C.Cartesian3.fromDegrees(77.45,18.44,0,sphere),
       point:{pixelSize:13,color:C.Color.fromCssColorString('#ff8a4c'),outlineWidth:3,outlineColor:C.Color.fromCssColorString('#0a1217'),disableDepthTestDistance:Number.POSITIVE_INFINITY},
-      label:{text:'Jezero Crater · Perseverance landing region',font:'600 13px "Segoe UI Variable","Segoe UI",Inter,system-ui,sans-serif',fillColor:C.Color.WHITE,showBackground:true,
+      label:{text:'Jezero Crater · Perseverance landing region · click to descend',font:'600 13px "Segoe UI Variable","Segoe UI",Inter,system-ui,sans-serif',fillColor:C.Color.WHITE,showBackground:true,
         backgroundColor:C.Color.fromCssColorString('#09131ad9'),backgroundPadding:new C.Cartesian2(10,7),style:C.LabelStyle.FILL,pixelOffset:new C.Cartesian2(0,-22),
         verticalOrigin:C.VerticalOrigin.BOTTOM,disableDepthTestDistance:Number.POSITIVE_INFINITY}});
     this.globeReady=true;
@@ -134,7 +126,7 @@ export class MarsScene {
   private reduced(){return typeof matchMedia==='function'&&matchMedia('(prefers-reduced-motion: reduce)').matches;}
   private setGlobeVisible(on:boolean){
     this.globeMode=on;const g=this.viewer.scene.globe;if(g)g.show=on;
-    this.terrain.show=!on;this.rover.show=!on;this.viewer.entities.show=!on;if(this.globeData)this.globeData.show=on;
+    this.syncTerrainVisibility();this.rover.show=!on;if(this.viewer.scene.skyAtmosphere)this.viewer.scene.skyAtmosphere.show=on;this.viewer.entities.show=!on;if(this.globeData)this.globeData.show=on;
     const ctl=this.viewer.scene.screenSpaceCameraController;ctl.minimumZoomDistance=on?400000:80;ctl.maximumZoomDistance=on?4e7:45000;ctl.enableTilt=on?true:!this.is2D;
     this.viewer.scene.requestRender();
   }
@@ -151,6 +143,7 @@ export class MarsScene {
     const pos=C.Cartesian3.clone(cam.positionWC),dir=C.Cartesian3.clone(cam.directionWC),up=C.Cartesian3.clone(cam.upWC);
     cam.lookAtTransform(C.Matrix4.IDENTITY);cam.setView({destination:pos,orientation:{direction:dir,up}});
     this.onMode?.('globe');this.setGlobeVisible(true);
+    this.descending=true;setTimeout(()=>{this.descending=false;},instant||this.reduced()?700:3300); // block auto-descend while we fly up ourselves
     const sphere=this.viewer.scene.mapProjection.ellipsoid,dest=C.Cartesian3.fromDegrees(77.4,14,9_000_000,sphere),ori={heading:0,pitch:-Math.PI/2,roll:0};
     if(instant||this.reduced()){this.fadeGlobe(1,1,0);cam.setView({destination:dest,orientation:ori});this.viewer.scene.requestRender();return;}
     this.fadeGlobe(0,1,900);
@@ -168,8 +161,56 @@ export class MarsScene {
     this.viewer.camera.flyTo({destination:C.Cartesian3.fromDegrees(H.lon,H.lat,120000,sphere),orientation:{heading:0,pitch:-Math.PI/2,roll:0},
       duration:2.7,easingFunction:C.EasingFunction.CUBIC_IN_OUT,complete:finish});
   }
+  /** Scrolling the planet toward Jezero hands over to the detailed scene (no dead end at the coarse texture). */
+  private autoDescend(){
+    if(!this.globeMode||this.descending||!this.globeReady)return;
+    const carto=this.viewer.camera.positionCartographic;if(!carto||carto.height>1.9e6)return;
+    const lon=C.Math.toDegrees(carto.longitude),lat=C.Math.toDegrees(carto.latitude);
+    const d=Math.hypot((lon-77.4)*Math.cos(C.Math.toRadians(18.4)),lat-18.45);
+    if(d<14){this.descending=true;this.toLocal(false);setTimeout(()=>{this.descending=false;},4200);}
+  }
+  stopWalk(){this.walkCtl?.stop();}
+  /**
+   * Fly the camera along a route at walking height. `onTick` receives the fraction of ground distance covered (0..1).
+   * `ms` is the duration at 1x. Purely a visual replay of the already computed route.
+   */
+  walk(route:number[][],ms:number,onTick:(s:number)=>void,onEnd:()=>void):WalkController|undefined{
+    this.stopWalk();
+    if(this.globeMode||route.length<2)return undefined;
+    const R=this.grid.radius_m,pts=route.map(([lon,lat,z])=>new C.Cartesian3((lon*Math.PI/180*R-this.cx)*this.cos,lat*Math.PI/180*R-this.cy,this.zz(z)));
+    const cum=[0];for(let i=1;i<pts.length;i++)cum.push(cum[i-1]+Math.hypot(pts[i].x-pts[i-1].x,pts[i].y-pts[i-1].y));
+    const total=cum[cum.length-1];if(!(total>0))return undefined;
+    const at=(s:number)=>{const d=Math.max(0,Math.min(1,s))*total;let j=1;while(j<cum.length-1&&cum[j]<d)j++;
+      const k=cum[j]-cum[j-1]||1,u=Math.max(0,Math.min(1,(d-cum[j-1])/k));return C.Cartesian3.lerp(pts[j-1],pts[j],u,new C.Cartesian3());};
+    this.setPlanar(false);cancelAnimationFrame(this.anim);
+    if(this.walker)this.viewer.entities.remove(this.walker);
+    this.walker=this.viewer.entities.add({position:new C.CallbackProperty(()=>C.Matrix4.multiplyByPoint(this.frame,wp,new C.Cartesian3()),false) as any,
+      point:{pixelSize:13,color:C.Color.fromCssColorString('#ffb27a'),outlineWidth:3,outlineColor:C.Color.WHITE,disableDepthTestDistance:Number.POSITIVE_INFINITY}});
+    let wp=at(0),s=0,speed=1,playing=true,last=performance.now(),heading=0,first=true,raf=0,stopped=false;
+    const start=this.pose();
+    const frame=(now:number)=>{
+      if(stopped)return;const dt=now-last;last=now;
+      if(playing)s=Math.min(1,s+dt*speed/ms);
+      wp=at(s);const ahead=at(Math.min(1,s+.018)),behind=at(Math.max(0,s-.004));
+      const dx=ahead.x-behind.x,dy=ahead.y-behind.y;
+      if(Math.hypot(dx,dy)>1e-6){const target=Math.atan2(dx,dy);let d=target-heading;d=Math.atan2(Math.sin(d),Math.cos(d));heading=first?target:heading+d*Math.min(1,dt*.004);first=false;}
+      const eye=C.Cartesian3.clone(wp);eye.z+=26;
+      this.apply(eye,heading,-.5,620);this.motion();this.viewer.scene.requestRender();onTick(s);
+      if(s>=1&&playing){playing=false;onTick(1);ctl.stop(true);return;}
+      raf=requestAnimationFrame(frame);
+    };
+    const ctl:WalkController&{stop:(done?:boolean)=>void}={
+      pause:()=>{playing=false;},resume:()=>{if(s>=1)s=0;playing=true;last=performance.now();},
+      seek:(v:number)=>{s=Math.max(0,Math.min(1,v));},setSpeed:(x:number)=>{speed=x;},
+      get playing(){return playing;},
+      stop:(done?:boolean)=>{if(stopped)return;stopped=true;cancelAnimationFrame(raf);if(this.walker){this.viewer.entities.remove(this.walker);this.walker=undefined;}
+        this.walkCtl=undefined;onEnd();this.fly(start.target,start.heading,Math.min(-.6,start.pitch),Math.max(3200,Math.min(start.range,9000)),done?1400:700);}
+    };
+    this.walkCtl=ctl;raf=requestAnimationFrame(frame);return ctl;
+  }
   /** Single entry point for the Globe / 3D / 2D switch. */
   go(mode:'globe'|'3d'|'2d'){
+    this.stopWalk();
     if(mode==='globe'){this.toGlobe();return;}
     if(this.globeMode){this.toLocal(mode==='2d');return;}
     this.onMode?.(mode);this.home(mode==='2d');
@@ -181,6 +222,51 @@ export class MarsScene {
     this.toGlobe(true);setTimeout(()=>this.toLocal(false),1300);
   }
 
+  /** Terrain mesh sampled every `stride` posts (1 = the full 20 m grid). Double positions relative to the local frame (Cesium primitives require double precision). */
+  private mesh(stride:number){
+    const [a,,c,,,f]=this.grid.transform;
+    const axis=(n:number)=>{const v:number[]=[];for(let i=0;i<n;i+=stride)v.push(i);if(v[v.length-1]!==n-1)v.push(n-1);return v;};
+    const cols=axis(this.w),rows=axis(this.h),nc=cols.length,nr=rows.length,count=nc*nr;
+    const positions=new Float64Array(count*3),st=new Float32Array(count*2),zs=new Float32Array(count);
+    for(let ri=0;ri<nr;ri++){const r=rows[ri],y=f-(r+.5)*a-this.cy;
+      for(let ci=0;ci<nc;ci++){const col=cols[ci],n=ri*nc+ci,z=this.z[r*this.w+col];zs[n]=z;
+        positions[n*3]=(c+(col+.5)*a-this.cx)*this.cos;positions[n*3+1]=y;positions[n*3+2]=Number.isFinite(z)?this.zz(z):0;
+        st[n*2]=(col+.5)/this.w;st[n*2+1]=1-(r+.5)/this.h;}}
+    const idx=new Uint32Array((nr-1)*(nc-1)*6);let k=0;
+    for(let ri=0;ri<nr-1;ri++)for(let ci=0;ci<nc-1;ci++){const n=ri*nc+ci;
+      if(Number.isFinite(zs[n])&&Number.isFinite(zs[n+1])&&Number.isFinite(zs[n+nc])&&Number.isFinite(zs[n+nc+1])){
+        idx[k++]=n;idx[k++]=n+nc;idx[k++]=n+1;idx[k++]=n+1;idx[k++]=n+nc;idx[k++]=n+nc+1;}}
+    const geometry=new C.Geometry({attributes:Object.assign(new C.GeometryAttributes(),{
+      position:new C.GeometryAttribute({componentDatatype:C.ComponentDatatype.DOUBLE,componentsPerAttribute:3,values:positions}),
+      st:new C.GeometryAttribute({componentDatatype:C.ComponentDatatype.FLOAT,componentsPerAttribute:2,values:st})}),
+      indices:idx.subarray(0,k),primitiveType:C.PrimitiveType.TRIANGLES,boundingSphere:C.BoundingSphere.fromVertices(positions)});
+    return C.GeometryPipeline.computeNormal(geometry);
+  }
+  /** Fine mesh only when the camera is close; the half-resolution mesh is used for overview and fast motion. */
+  private updateLod(){
+    if(this.globeMode)return;const range=C.Cartesian3.magnitude(this.viewer.camera.position);
+    const fine=this.lodFine?range<5800:range<4800;
+    if(fine!==this.lodFine){this.lodFine=fine;this.syncTerrainVisibility();}
+  }
+  private syncTerrainVisibility(){this.terrainFine.show=!this.globeMode&&this.lodFine;this.terrainCoarse.show=!this.globeMode&&!this.lodFine;this.viewer.scene.requestRender();}
+  /** Cap the rendered pixel count (integrated GPUs on large / high-DPI screens). */
+  private scaleCap(){const cv=this.viewer.canvas,px=cv.clientWidth*cv.clientHeight*devicePixelRatio*devicePixelRatio;return Math.min(1,Math.sqrt(4.2e6/Math.max(px,1)));}
+  /** Render at lower resolution while the camera moves; restore full quality when it settles. */
+  private motion(){
+    const v=this.viewer,cap=this.scaleCap(),low=Math.max(.55,cap*.72);
+    if(Math.abs(v.resolutionScale-low)>1e-3)v.resolutionScale=low;
+    window.clearTimeout(this.lowTimer);
+    this.lowTimer=window.setTimeout(()=>{v.resolutionScale=this.scaleCap();v.scene.requestRender();},340);
+  }
+  /** Procedural star field (deterministic), used as the scene sky box. */
+  private starfield(){
+    const size=1024,faces:HTMLCanvasElement[]=[];let seed=20260;const rnd=()=>{seed=(seed*1664525+1013904223)>>>0;return seed/4294967296;};
+    for(let f=0;f<6;f++){const cv=document.createElement('canvas');cv.width=cv.height=size;const g=cv.getContext('2d')!;g.fillStyle='#04070b';g.fillRect(0,0,size,size);
+      for(let i=0;i<2300;i++){const x=rnd()*size,y=rnd()*size,m=rnd(),r=m>.985?2.4:m>.9?1.5:.8,tint=rnd();
+        g.fillStyle=`rgba(${tint>.85?255:226},${tint>.85?214:232},${tint<.12?255:240},${.35+rnd()*.65})`;g.beginPath();g.arc(x,y,r,0,6.2832);g.fill();}
+      faces.push(cv);}
+    return new C.SkyBox({sources:{positiveX:faces[0],negativeX:faces[1],positiveY:faces[2],negativeY:faces[3],positiveZ:faces[4],negativeZ:faces[5]}});
+  }
   texture(pixels:Uint8ClampedArray){const canvas=document.createElement('canvas');canvas.width=this.w;canvas.height=this.h;canvas.getContext('2d')!.putImageData(new ImageData(new Uint8ClampedArray(pixels),this.w,this.h),0,0);return canvas;}
   index(p:Point){const [a,,c,,,f]=this.grid.transform;const col=Math.floor((p.lon*Math.PI/180*this.grid.radius_m-c)/a),r=Math.floor((f-p.lat*Math.PI/180*this.grid.radius_m)/a);return col>=0&&col<this.w&&r>=0&&r<this.h?r*this.w+col:null;}
   /** Scene height of a source elevation (display exaggeration applied). */
@@ -202,7 +288,7 @@ export class MarsScene {
     const t0=performance.now(),ease=(x:number)=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
     const step=(now:number)=>{const k=Math.min(1,(now-t0)/ms),e=ease(k);
       this.apply(C.Cartesian3.lerp(from.target,target,e,new C.Cartesian3()),from.heading+dh*e,from.pitch+(pitch-from.pitch)*e,from.range+(range-from.range)*e);
-      this.viewer.scene.requestRender();if(k<1)this.anim=requestAnimationFrame(step);};
+      this.motion();this.viewer.scene.requestRender();if(k<1)this.anim=requestAnimationFrame(step);};
     this.anim=requestAnimationFrame(step);
   }
   intro(){const i=this.index({lon:77.397,lat:18.49})??0,home=this.local({lon:77.397,lat:18.49},i);
@@ -281,5 +367,5 @@ export class MarsScene {
         pixelOffset:new C.Cartesian2(0,-20),verticalOrigin:C.VerticalOrigin.BOTTOM,horizontalOrigin:C.HorizontalOrigin.CENTER,disableDepthTestDistance:Number.POSITIVE_INFINITY}}));}
     this.viewer.scene.requestRender();
   }
-  destroy(){cancelAnimationFrame(this.anim);this.fadeSerial++;this.routeSerial++;this.click.destroy();this.viewer.destroy();}
+  destroy(){this.stopWalk();window.clearTimeout(this.lowTimer);cancelAnimationFrame(this.anim);this.fadeSerial++;this.routeSerial++;this.click.destroy();this.viewer.destroy();}
 }
