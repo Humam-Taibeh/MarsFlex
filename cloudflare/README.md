@@ -51,3 +51,19 @@ npx wrangler pages deploy build --project-name marsflex --branch main
 Set the API address once: dashboard → Workers & Pages → marsflex → Settings → Variables and Secrets → add
 `API_ORIGIN` = `https://YOUR-NAME-marsflex.hf.space` (Production), then deploy again.
 Credentials go in the environment (`CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`), never in files.
+
+## Public hosting with the API on this PC (current setup)
+
+Address: https://marsflex.pages.dev  (Cloudflare Pages, free, no card)
+
+```
+set CLOUDFLARE_API_TOKEN=...   and   set CLOUDFLARE_ACCOUNT_ID=...      (environment only, never in files)
+cd frontend && npm run build:cf                                          (once, or after changes)
+python cloudflare/go_public.py                                           (starts API + tunnel, configures, deploys, checks)
+python cloudflare/go_public.py --stop                                    (stops them)
+```
+
+How it is protected: the API runs in production mode (rate limits, 256 KB body cap, safe headers, no `/docs`) and only
+answers calls that carry a secret key. The key lives in two places only: the API process and the Pages project (as a secret).
+The tunnel address on its own returns 403. The tunnel address changes each run; the script updates the Pages project each time.
+The PC has to stay on. A Cloudflare quick tunnel has no uptime guarantee.
