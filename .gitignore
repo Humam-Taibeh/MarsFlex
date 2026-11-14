@@ -21,3 +21,5 @@ Mars_Viking_MDIM21_ClrMosaic_global_232m.tif
 *.tif.aux.xml
 deploy/_space/
 build/
+.wrangler/
+cloudflare/node_modules/
