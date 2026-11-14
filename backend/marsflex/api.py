@@ -24,8 +24,10 @@ from marsflex.terrain import Terrain, Model, ground_distance
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / 'data/derived'
+from marsflex.hardening import PROD, harden
 app = FastAPI(title='MarsFlex scientific data and mission API', version='0.10.0',
-              description='Mars planetocentric coordinates. Research planning only; time model uncalibrated.')
+              description='Mars planetocentric coordinates. Research planning only; time model uncalibrated.',
+              docs_url=None if PROD else '/docs', redoc_url=None, openapi_url=None if PROD else '/openapi.json')
 COMPUTE_LOCK = threading.Lock()
 # Compress JSON/JS/CSS (the terrain payload and Cesium bundle are several MB uncompressed).
 app.add_middleware(GZipMiddleware, minimum_size=1024, compresslevel=5)
@@ -727,6 +729,7 @@ def route_trust(request: TrustRoute):
 
 # Built React/Cesium assets, served from the same origin as the API.
 # This mount is last so it cannot shadow the data endpoints.
+harden(app)
 FRONTEND=ROOT/'frontend/dist'
 if FRONTEND.is_dir():
     app.mount('/',StaticFiles(directory=FRONTEND,html=True),name='workbench')
