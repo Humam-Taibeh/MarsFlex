@@ -21,6 +21,10 @@ export default {
     const headers = new Headers(request.headers);
     headers.delete('cookie');                       // the app has no accounts; never forward cookies
     headers.set('x-forwarded-for', request.headers.get('cf-connecting-ip') || '');
+    if (env.PROXY_KEY) {                            // proves to the API that this call came from our Worker
+      headers.set('x-mf-key', env.PROXY_KEY);
+      headers.set('x-mf-client', request.headers.get('cf-connecting-ip') || '');
+    }
     const cacheable = request.method === 'GET' && CACHEABLE.some((p) => url.pathname.startsWith(p));
     const response = await fetch(upstream, {
       method: request.method,

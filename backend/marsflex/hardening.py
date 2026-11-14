@@ -11,6 +11,8 @@ from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 
 PROD = os.environ.get('MARSFLEX_PROD') == '1'
+# When set, /v1 calls are accepted only from our Cloudflare Worker, which sends this secret (so the public tunnel address is useless on its own).
+PROXY_KEY = os.environ.get('MARSFLEX_PROXY_KEY', '')
 
 # (path prefix, requests, seconds). Heavy compute endpoints get the tightest limit.
 LIMITS = [
@@ -26,7 +28,10 @@ _last_sweep = [time.monotonic()]
 
 
 def _client_ip(request: Request) -> str:
-    # Behind the host's proxy the last X-Forwarded-For entry is the one the host's proxy appended (the first can be forged).
+    # With the proxy key, the Worker tells us the real visitor address (only trusted when the key matches).
+    if PROXY_KEY and request.headers.get('x-mf-key') == PROXY_KEY and request.headers.get('x-mf-client'):
+        return request.headers['x-mf-client'].strip()
+    # Otherwise: the last X-Forwarded-For entry is the one the host's proxy appended (the first can be forged).
     forwarded = request.headers.get('x-forwarded-for')
     if forwarded:
         return forwarded.split(',')[-1].strip()
@@ -63,6 +68,9 @@ def harden(app: FastAPI) -> None:
         length = request.headers.get('content-length')
         if length and length.isdigit() and int(length) > MAX_BODY_BYTES:
             return JSONResponse({'detail': 'Request too large'}, status_code=413)
+        # 2b. Only our Worker may call the API when a proxy key is configured.
+        if PROXY_KEY and path.startswith('/v1/') and request.headers.get('x-mf-key') != PROXY_KEY:
+            return JSONResponse({'detail': 'Forbidden'}, status_code=403)
         # 3. Per-client rate limit on the API.
         rule = _limit_for(path)
         if rule:
