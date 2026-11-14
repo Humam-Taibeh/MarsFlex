@@ -38,3 +38,16 @@ npx wrangler dev --local --var API_ORIGIN:http://127.0.0.1:8791
 ```
 
 Checked this way: the home page, the Cesium files, `/v1/*` forwarding and the full browser walk-through (globe, descend, walk, stop) all work with no console errors.
+
+## Cloudflare Pages (no workers.dev subdomain needed)
+
+This is how the first deploy was done: https://marsflex.pages.dev
+
+```
+cp cloudflare/worker.js build/_worker.js        # "advanced mode": Pages runs this file in front of the static files
+npx wrangler pages deploy build --project-name marsflex --branch main
+```
+
+Set the API address once: dashboard → Workers & Pages → marsflex → Settings → Variables and Secrets → add
+`API_ORIGIN` = `https://YOUR-NAME-marsflex.hf.space` (Production), then deploy again.
+Credentials go in the environment (`CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`), never in files.

@@ -11,7 +11,7 @@ export default {
       return env.ASSETS.fetch(request);            // static files (only reached if run_worker_first lets it through)
     }
     if (!env.API_ORIGIN || env.API_ORIGIN.includes('YOUR-')) {
-      return new Response(JSON.stringify({ detail: 'API_ORIGIN is not set in wrangler.jsonc' }), {
+      return new Response(JSON.stringify({ detail: 'API_ORIGIN is not set (the Python API address)' }), {
         status: 503, headers: { 'content-type': 'application/json' } });
     }
     if (!['GET', 'HEAD', 'POST', 'OPTIONS'].includes(request.method)) {
