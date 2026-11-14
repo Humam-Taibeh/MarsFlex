@@ -20,3 +20,4 @@ data/source/imagery/[0-9a-f]*.json
 Mars_Viking_MDIM21_ClrMosaic_global_232m.tif
 *.tif.aux.xml
 deploy/_space/
+build/
