@@ -32,6 +32,7 @@ const hm=(min:number)=>{const h=Math.floor(min/60),m=Math.round(min-h*60);return
 /** Oxygen and reference-suit endurance for the planned walk (Pandolf 1977 + O2 energy equivalent + NASA EMU reference). */
 export function LifeSupportCard({life}:{life?:any}){
  if(!life)return <div className="life-card pending"><span className="trust-kicker">LIFE SUPPORT</span><small>Calculating oxygen and suit time…</small></div>;
+ if(life.status==='error')return <div className="life-card bad"><span className="trust-kicker">LIFE SUPPORT</span><small>Oxygen calculation unavailable. The server is probably an older version: close the launch window, run launch.py again, then press Ctrl+F5.</small></div>;
  if(life.status==='no_route')return <div className="life-card"><span className="trust-kicker">LIFE SUPPORT</span><small>No route, so life support is not assessed.</small></div>;
  const m=life.mission,frac=Math.max(0,Math.min(1,m.o2_remaining_fraction)),pnr=life.point_of_no_return,tone=!m.fits?'bad':frac<.25?'warn':'ok';
  return <div className={'life-card '+tone}>

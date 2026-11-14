@@ -416,3 +416,22 @@ button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{o
 .geo-camera button{font-size:12px!important}
 .geo-elevation-legend,.geo-block-note{border-radius:14px!important;background:var(--mf-panel)!important;backdrop-filter:blur(14px);border:1px solid var(--mf-line)!important}
 .geo-nav-hint{border-radius:999px!important;font-size:11.5px!important}
+
+/* always-visible actions in the map toolbar */
+.view-tools>.site-btn{width:auto!important;height:42px;padding:0 16px;border-radius:999px!important;font-size:13px;font-weight:700;color:var(--mf-text)!important;
+  background:var(--mf-panel)!important;backdrop-filter:blur(14px);border:1px solid #ff8a4c99!important}
+.view-tools>.site-btn span{color:var(--mf-accent);margin-right:6px}
+.view-tools>.site-btn:hover:not(:disabled){background:var(--mf-accent-soft)!important;transform:translateY(-1px)!important}
+.walking .view-tools>.site-btn{display:none}
+
+/* ---- free point selection ---- */
+.map-hint{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);z-index:5;padding:8px 16px;border-radius:999px;font-size:12px;color:#c4d2d9;background:var(--mf-panel);backdrop-filter:blur(14px);border:1px solid var(--mf-line);pointer-events:none;animation:mf-fade-up .8s var(--mf-ease) 1.2s backwards}
+.point-card{position:absolute;left:50%;bottom:24px;transform:translateX(-50%);z-index:8;display:flex;flex-direction:column;gap:6px;min-width:min(420px,calc(100% - 40px));padding:16px 18px;border-radius:18px;
+  background:var(--mf-panel);backdrop-filter:blur(22px) saturate(1.25);border:1px solid #ff8a4c66;box-shadow:0 24px 60px #000a,0 0 30px #ff8a4c1f;animation:mf-pop .35s var(--mf-ease)}
+.point-card>b{font-size:17px;font-weight:600;color:var(--mf-text);font-variant-numeric:tabular-nums}
+.point-card small{font-size:12px;color:var(--mf-muted)}.point-card small.warn{color:var(--mf-warn)}
+.point-actions{display:flex;gap:8px;margin-top:6px;flex-wrap:wrap}
+.point-actions button{border-radius:999px;padding:10px 16px;font-size:13px;font-weight:700;cursor:pointer;border:1px solid var(--mf-line-strong);background:transparent;color:var(--mf-text)}
+.point-actions button.primary{flex:1;border:0;color:#1a0d05;background:linear-gradient(135deg,#ffb27a,var(--mf-accent))}
+.point-actions button:disabled{opacity:.5;cursor:progress}
+.left-closed .point-card,.right-closed .point-card{}

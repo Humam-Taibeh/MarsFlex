@@ -280,8 +280,8 @@ export class MarsScene {
   private starfield(){
     const size=1024,faces:HTMLCanvasElement[]=[];let seed=20260;const rnd=()=>{seed=(seed*1664525+1013904223)>>>0;return seed/4294967296;};
     for(let f=0;f<6;f++){const cv=document.createElement('canvas');cv.width=cv.height=size;const g=cv.getContext('2d')!;g.fillStyle='#04070b';g.fillRect(0,0,size,size);
-      for(let i=0;i<2300;i++){const x=rnd()*size,y=rnd()*size,m=rnd(),r=m>.985?2.4:m>.9?1.5:.8,tint=rnd();
-        g.fillStyle=`rgba(${tint>.85?255:226},${tint>.85?214:232},${tint<.12?255:240},${.35+rnd()*.65})`;g.beginPath();g.arc(x,y,r,0,6.2832);g.fill();}
+      for(let i=0;i<4200;i++){const x=rnd()*size,y=rnd()*size,m=rnd(),r=m>.985?3.4:m>.93?2.2:m>.7?1.4:.9,tint=rnd();
+        g.fillStyle=`rgba(${tint>.85?255:226},${tint>.85?214:232},${tint<.12?255:240},${.6+rnd()*.4})`;g.beginPath();g.arc(x,y,r,0,6.2832);g.fill();}
       faces.push(cv);}
     return new C.SkyBox({sources:{positiveX:faces[0],negativeX:faces[1],positiveY:faces[2],negativeY:faces[3],positiveZ:faces[4],negativeZ:faces[5]}});
   }
